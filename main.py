@@ -20,7 +20,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 # ---------------------------
 PAST_DAYS = int(os.getenv("PAST_DAYS", "7"))
 MAX_ITEMS = int(os.getenv("MAX_ITEMS", "50"))
-DUP_THRESHOLD = float(os.getenv("DUi P_THRESHOLD", "0.60"))
 MODEL_NAME = os.getenv("MODEL_NAME", "all-MiniLM-L6-v2")
 
 HL, GL, CEID = "en-GB", "GB", "GB:en"
@@ -30,13 +29,49 @@ DATA_DIR.mkdir(exist_ok=True)
 
 
 # ---------------------------
-# Your search library (unchanged)
+# search library 
 # ---------------------------
 SEARCH_LIBRARY_TEXT = r"""
-Current_Affairs	(geopolitics OR migration OR economy OR conflict OR legislation OR terrorism OR disinformation OR misinformation OR government OR policy OR regulation) AND (briefing OR analysis OR update OR report)
-Supply_Chain	("supply chain" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR "supply chain disruption" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)
-Protest	(protest OR protests OR demonstration OR demonstrations OR unrest OR "civil resistance" OR "civil disobedience" OR boycott OR boycotts OR march OR marches OR strike OR strikes) AND (police OR capital OR city OR arrests OR arrested OR union OR workers OR students OR rally)
-Technology	(technology OR cybersecurity OR ransomware OR hacking OR AI OR "artificial intelligence" OR "machine learning" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)
+Emissions Monitoring | All Sectors | UK	(UK OR "United Kingdom" OR Britain OR England OR Scotland OR Wales OR "Northern Ireland") AND (carbon emissions OR CO2 emissions OR "greenhouse gas emissions")
+Net Zero Strategy | All Sectors | UK	(UK OR "United Kingdom") AND (net zero OR decarbonisation OR "carbon reduction targets" OR "emissions target")
+Climate Policy | All Sectors | UK	(UK OR "United Kingdom") AND ("climate policy" OR "carbon regulation" OR "emission standards" OR "carbon tax" OR "ETS")
+
+Emissions Monitoring | Power | UK	(UK OR "United Kingdom") AND ("power sector emissions" OR "electricity generation emissions" OR "power station CO2" OR "grid emissions")
+Energy Transition | Power | UK	(UK OR "United Kingdom") AND ("renewable energy transition" OR "clean energy investment" OR "energy transition" OR "renewable rollout")
+Fossil Fuels | Power | UK	(UK OR "United Kingdom") AND ("coal power emissions" OR "gas power emissions" OR "fossil fuel power stations")
+
+Emissions Monitoring | Transport | UK	(UK OR "United Kingdom") AND ("transport emissions" OR "vehicle emissions" OR "road transport emissions")
+Transport Policy | Transport | UK	(UK OR "United Kingdom") AND ("electric vehicles policy" OR "EV mandate" OR "ULEZ" OR "clean air zone" OR "transport decarbonisation")
+Aviation & Shipping | Transport | UK	(UK OR "United Kingdom") AND ("aviation emissions" OR "shipping emissions" OR "maritime emissions" OR "SAF")
+
+Emissions Monitoring | Industry | UK	(UK OR "United Kingdom") AND ("industrial emissions" OR "manufacturing CO2" OR "factory emissions")
+Heavy Industry | Industry | UK	(UK OR "United Kingdom") AND ("cement emissions" OR "steel emissions" OR "heavy industry emissions")
+Industrial Technology | Industry | UK	(UK OR "United Kingdom") AND ("carbon capture" OR CCS OR "industrial decarbonisation" OR "clean industrial")
+
+Emissions Monitoring | Buildings | UK	(UK OR "United Kingdom") AND ("building emissions" OR "heating emissions" OR "home insulation" OR "energy efficiency buildings")
+Agriculture & Methane | Agriculture | UK	(UK OR "United Kingdom") AND ("agriculture emissions" OR "methane emissions" OR "farming emissions")
+Waste & Landfill | Waste | UK	(UK OR "United Kingdom") AND ("waste emissions" OR "landfill emissions" OR "waste management emissions")
+
+Emissions Monitoring | All Sectors | Europe	(Europe OR "European Union" OR EU) AND (carbon emissions OR CO2 emissions OR "greenhouse gas emissions")
+Net Zero Strategy | All Sectors | Europe	(Europe OR "European Union" OR EU) AND (net zero OR decarbonisation OR "emissions target" OR "fit for 55")
+Climate Policy | All Sectors | Europe	(Europe OR "European Union" OR EU) AND ("climate policy" OR ETS OR "carbon border adjustment" OR CBAM OR "emission standards")
+
+Emissions Monitoring | Power | Europe	(Europe OR "European Union" OR EU) AND ("power sector emissions" OR "electricity emissions" OR "grid emissions")
+Energy Transition | Power | Europe	(Europe OR "European Union" OR EU) AND ("renewable energy transition" OR "clean energy investment" OR "energy transition")
+Fossil Fuels | Power | Europe	(Europe OR "European Union" OR EU) AND ("coal power emissions" OR "gas power emissions")
+
+Emissions Monitoring | Transport | Europe	(Europe OR "European Union" OR EU) AND ("transport emissions" OR "vehicle emissions")
+Transport Policy | Transport | Europe	(Europe OR "European Union" OR EU) AND ("electric vehicles policy" OR "transport decarbonisation" OR "Euro 7" OR "CO2 standards cars")
+Aviation & Shipping | Transport | Europe	(Europe OR "European Union" OR EU) AND ("aviation emissions" OR "shipping emissions" OR "ReFuelEU" OR "FuelEU Maritime")
+
+Emissions Monitoring | Industry | Europe	(Europe OR "European Union" OR EU) AND ("industrial emissions" OR "manufacturing CO2")
+Heavy Industry | Industry | Europe	(Europe OR "European Union" OR EU) AND ("cement emissions" OR "steel emissions")
+Industrial Technology | Industry | Europe	(Europe OR "European Union" OR EU) AND ("carbon capture" OR CCS OR "industrial decarbonisation")
+
+Emissions Monitoring | Buildings | Europe	(Europe OR "European Union" OR EU) AND ("building emissions" OR "heating emissions" OR "energy efficiency buildings")
+Agriculture & Methane | Agriculture | Europe	(Europe OR "European Union" OR EU) AND ("agriculture emissions" OR "methane emissions")
+Waste & Landfill | Waste | Europe	(Europe OR "European Union" OR EU) AND ("waste emissions" OR "landfill emissions")
+
 """.strip()
 
 
@@ -54,8 +89,8 @@ def parse_published_dt(published_str: str):
         return None
 
 
-def filter_last_n_days(df, n_days: int):
-    cutoff = datetime.now(timezone.utc) - timedelta(days=n_days)
+def filter_last_n_hours(df, hours: int):
+    cutoff = datetime.now(timezone.utc) - timedelta(hours=hours)
     df = df.copy()
     df["published_dt_utc"] = df["published"].apply(parse_published_dt)
     df = df[df["published_dt_utc"].notna()]
@@ -217,16 +252,28 @@ def semantic_dedupe_csv(infile: str, out_clean: str, out_audit: str,
     audit.to_excel(out_audit, index=False, engine = "openpyxl")
     return len(df), len(df_clean)
 
+def split_search_name(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Robustly split search_name into theme/sector/location.
+    Expected format: Theme | Sector | Location (spaces optional).
+    If malformed, fills Unknown.
+    """
+    s = df.get("search_name", pd.Series([""] * len(df))).astype(str)
 
-def update_master_excel(new_df: pd.DataFrame, master_path: Path):
-    if master_path.exists():
-        old_df = pd.read_excel(master_path)
-        combined = pd.concat([old_df, new_df], ignore_index=True)
-    else:
-        combined = new_df.copy()
+    # Split on '|' with optional surrounding whitespace
+    parts = s.str.split(r"\s*\|\s*", n=2, expand=True)
 
-    combined = combined.drop_duplicates(subset=["link"]).reset_index(drop=True)
-    combined.to_excel(master_path, index=False, engine="openpyxl")
+    # Ensure 3 columns exist
+    for i in range(3):
+        if i not in parts.columns:
+            parts[i] = ""
+
+    df["theme"] = parts[0].replace("", np.nan).fillna("Unknown").str.strip()
+    df["sector"] = parts[1].replace("", np.nan).fillna("Unknown").str.strip()
+    df["location"] = parts[2].replace("", np.nan).fillna("Unknown").str.strip()
+    return df
+
+
 
 
 def main():
@@ -237,22 +284,29 @@ def main():
     to_run = search_df[search_df["google_news_compatible"]].copy()
 
     results = collect_google_news(to_run, past_days=PAST_DAYS, max_items=MAX_ITEMS)
-    results = filter_last_n_days(results, n_days=PAST_DAYS)
+    
 
     if not results.empty:
         results = results.drop_duplicates(subset=["link"]).reset_index(drop=True)
+        results = split_search_name(results)
+
+        results = results.rename(columns={
+    "published": "published_date",
+    "link": "url",
+    "search_query": "keyword_query"
+})
+
+
 
     raw_results_file = DATA_DIR / f"google_news_raw_{ts}_past{PAST_DAYS}d.xlsx"
     audit_search_file = DATA_DIR / f"search_audit_{ts}.xlsx"
 
-    results = results.apply(
-        lambda s: s.dt.tz_localize(None)
-        if hasattr(s, "dt") and getattr(s.dt, "tz", None) is not None
-        else s
-    )
+    
+    results = results.apply
+    (lambda s: s.dt.tz_localize(None) if hasattr(s, "dt") and getattr(s.dt, "tz", None) is not None else s)
 
-    results.to_excel(raw_results_file, index=False, engine="openpyxl")
-    search_df.to_excel(audit_search_file, index=False, engine="openpyxl")
+    results.to_excel(raw_results_file, index=False, engine = "openpyxl")
+    search_df.to_excel(audit_search_file, index=False, engine = "openpyxl")
 
     # Dedupe the raw file we just created
     dedup_file = DATA_DIR / f"google_news_dedup_{ts}_past{PAST_DAYS}d.xlsx"
@@ -266,26 +320,26 @@ def main():
         model_name=MODEL_NAME,
     )
 
-    # Update the stable file (append + global dedupe)
-    latest = DATA_DIR / "topic_feeds.xlsx"
-    df_final = pd.read_excel(dedup_file)
-    update_master_excel(df_final, latest)
-    print(f"Updated latest file: {latest}")
+
+    # Always keep a stable single file for automation
+    latest = DATA_DIR / "latest_deduped.xlsx"
+    shutil.copyfile(dedup_file, latest)
+    print(f"Saved latest: {latest}")
+
 
     print(f"Saved raw:   {raw_results_file} | rows={len(results)}")
     print(f"Saved audit: {audit_search_file} | searches={len(search_df)}")
     print(f"Dedupe: original={orig} cleaned={cleaned}")
     print(f"Saved dedup: {dedup_file}")
     print(f"Saved dedup audit: {dedup_audit}")
+   
 
 
 if __name__ == "__main__":
     main()
 
 
-
 # %%
-
 
 
 
