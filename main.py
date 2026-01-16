@@ -17,7 +17,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # ---------------------------
 # CONFIG (can be overridden by GitHub Actions env vars)
 # ---------------------------
-PAST_DAYS = int(os.getenv("PAST_DAYS", "10"))
+PAST_DAYS = int(os.getenv("PAST_DAYS", "7"))
 MAX_ITEMS = int(os.getenv("MAX_ITEMS", "50"))
 DUP_THRESHOLD = float(os.getenv("DUP_THRESHOLD", "0.60"))  # FIXED env var name
 MODEL_NAME = os.getenv("MODEL_NAME", "all-MiniLM-L6-v2")
@@ -325,4 +325,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
