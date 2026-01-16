@@ -36,8 +36,8 @@ Current_Affairs	(geopolitics OR migration OR economy OR conflict OR legislation 
 Supply_Chain	("supply chain" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR "supply chain disruption" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)
 Protest	(protest OR protests OR demonstration OR demonstrations OR unrest OR "civil resistance" OR "civil disobedience" OR boycott OR boycotts OR march OR marches OR strike OR strikes) AND (police OR capital OR city OR arrests OR arrested OR union OR workers OR students OR rally)
 Technology	(technology OR cybersecurity OR ransomware OR hacking OR AI OR "artificial intelligence" OR "machine learning" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)
-Insider_Risk ("insider risk" OR "insider threat" OR "internal threat" OR "employee misconduct" OR "data exfiltration" OR "privileged access abuse" OR "malicious insider" OR "negligent insider" OR "insider attack" OR "corporate espionage" OR "information leakage" OR "unauthorised access" OR "policy violation" OR "security breach" OR "insider vulnerability")
-Fraud_Scam ("fraud" OR "scam" OR "phishing" OR "identity theft" OR "account takeover" OR "payment fraud" OR "credit card fraud" OR "wire fraud" OR "business email compromise" OR "fake invoice" OR "social engineering" OR "advance fee fraud")
+Insider_Risk	("insider risk" OR "insider threat" OR "internal threat" OR "employee misconduct" OR "data exfiltration" OR "privileged access abuse" OR "malicious insider" OR "negligent insider" OR "insider attack" OR "corporate espionage" OR "information leakage" OR "unauthorised access" OR "policy violation" OR "security breach" OR "insider vulnerability")
+Fraud_Scam	("fraud" OR "scam" OR "phishing" OR "identity theft" OR "account takeover" OR "payment fraud" OR "credit card fraud" OR "wire fraud" OR "business email compromise" OR "fake invoice" OR "social engineering" OR "advance fee fraud")
 """.strip()
 
 
@@ -131,6 +131,25 @@ def collect_google_news(df_searches: pd.DataFrame, past_days: int, max_items: in
                 }
             )
     return pd.DataFrame(out_rows)
+
+def remap_legacy_unmapped(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
+    m = df["search_name"].astype(str).eq("UNMAPPED_LINE")
+
+    sq = df.loc[m, "search_query"].astype(str)
+
+    df.loc[m & sq.str.startswith("Insider Risk"), "search_name"] = "Insider_Risk"
+    df.loc[m & sq.str.startswith("Fraud/Scam"), "search_name"] = "Fraud_Scam"
+
+    # optional: strip the legacy prefix from search_query (keeps query cleaner)
+    df.loc[df["search_name"].eq("Insider_Risk") & df["search_query"].astype(str).str.startswith("Insider Risk"),
+           "search_query"] = df["search_query"].astype(str).str.replace(r"^Insider Risk\s*", "", regex=True)
+
+    df.loc[df["search_name"].eq("Fraud_Scam") & df["search_query"].astype(str).str.startswith("Fraud/Scam"),
+           "search_query"] = df["search_query"].astype(str).str.replace(r"^Fraud/Scam\s*", "", regex=True)
+
+    return df
+
 
 
 def semantic_dedupe_excel(infile: str, out_clean: str, out_audit: str,
@@ -228,20 +247,17 @@ def semantic_dedupe_excel(infile: str, out_clean: str, out_audit: str,
 
 
 def update_master_excel_rolling(new_df: pd.DataFrame, master_path: Path, keep_days: int):
-    """
-    FIX: Master file will NOT accumulate older history forever.
-    It will keep only last `keep_days` based on published timestamp.
-    """
     if master_path.exists():
         old_df = pd.read_excel(master_path)
         combined = pd.concat([old_df, new_df], ignore_index=True)
     else:
         combined = new_df.copy()
 
-    # Global dedupe
+    # FIX: re-map legacy UNMAPPED rows
+    combined = remap_legacy_unmapped(combined)
+
     combined = combined.drop_duplicates(subset=["link"]).reset_index(drop=True)
 
-    # Rolling-window trim
     combined["published_dt_utc"] = combined["published"].apply(parse_published_dt)
     cutoff = datetime.now(timezone.utc) - timedelta(days=keep_days)
     combined = combined[combined["published_dt_utc"].notna()]
@@ -250,6 +266,7 @@ def update_master_excel_rolling(new_df: pd.DataFrame, master_path: Path, keep_da
     combined.drop(columns=["published_dt_utc"], errors="ignore").to_excel(
         master_path, index=False, engine="openpyxl"
     )
+
 
 
 def main():
@@ -309,4 +326,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
