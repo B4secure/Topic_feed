@@ -253,8 +253,7 @@ def update_master_excel_rolling(new_df: pd.DataFrame, master_path: Path, keep_da
     else:
         combined = new_df.copy()
 
-    # FIX: re-map legacy UNMAPPED rows
-    combined = remap_legacy_unmapped(combined)
+    combined["past_days"] = keep_days  # <-- forces consistent value
 
     combined = combined.drop_duplicates(subset=["link"]).reset_index(drop=True)
 
@@ -326,5 +325,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
