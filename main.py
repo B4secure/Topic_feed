@@ -4,7 +4,6 @@ import glob
 import urllib.parse
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
-import shutil
 
 import feedparser
 import pandas as pd
@@ -18,9 +17,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 # ---------------------------
 # CONFIG (can be overridden by GitHub Actions env vars)
 # ---------------------------
-PAST_DAYS = int(os.getenv("PAST_DAYS", "10"))
+PAST_DAYS = int(os.getenv("PAST_DAYS", "7"))
 MAX_ITEMS = int(os.getenv("MAX_ITEMS", "50"))
-DUP_THRESHOLD = float(os.getenv("DUi P_THRESHOLD", "0.60"))
+DUP_THRESHOLD = float(os.getenv("DUP_THRESHOLD", "0.60"))  # FIXED env var name
 MODEL_NAME = os.getenv("MODEL_NAME", "all-MiniLM-L6-v2")
 
 HL, GL, CEID = "en-GB", "GB", "GB:en"
@@ -30,15 +29,15 @@ DATA_DIR.mkdir(exist_ok=True)
 
 
 # ---------------------------
-# Your search library (unchanged)
+# Search library (FIXED: Insider/Fraud now tab-delimited)
 # ---------------------------
 SEARCH_LIBRARY_TEXT = r"""
 Current_Affairs	(geopolitics OR migration OR economy OR conflict OR legislation OR terrorism OR disinformation OR misinformation OR government OR policy OR regulation) AND (briefing OR analysis OR update OR report)
 Supply_Chain	("supply chain" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR "supply chain disruption" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)
 Protest	(protest OR protests OR demonstration OR demonstrations OR unrest OR "civil resistance" OR "civil disobedience" OR boycott OR boycotts OR march OR marches OR strike OR strikes) AND (police OR capital OR city OR arrests OR arrested OR union OR workers OR students OR rally)
 Technology	(technology OR cybersecurity OR ransomware OR hacking OR AI OR "artificial intelligence" OR "machine learning" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)
-Insider Risk ("insider risk" OR "insider threat" OR "internal threat" OR "employee misconduct" OR "data exfiltration" OR "privileged access abuse" OR "malicious insider" OR "negligent insider" OR "insider attack" OR "corporate espionage" OR "information leakage" OR "unauthorised access" OR "policy violation" OR "security breach" OR "insider vulnerability")
-Fraud/Scam ("fraud" OR "scam" OR "phishing" OR "identity theft" OR "account takeover" OR "payment fraud" OR "credit card fraud" OR "wire fraud" OR "business email compromise" OR "fake invoice" OR "social engineering" OR "advance fee fraud")
+Insider_Risk	("insider risk" OR "insider threat" OR "internal threat" OR "employee misconduct" OR "data exfiltration" OR "privileged access abuse" OR "malicious insider" OR "negligent insider" OR "insider attack" OR "corporate espionage" OR "information leakage" OR "unauthorised access" OR "policy violation" OR "security breach" OR "insider vulnerability")
+Fraud_Scam	("fraud" OR "scam" OR "phishing" OR "identity theft" OR "account takeover" OR "payment fraud" OR "credit card fraud" OR "wire fraud" OR "business email compromise" OR "fake invoice" OR "social engineering" OR "advance fee fraud")
 """.strip()
 
 
@@ -56,7 +55,7 @@ def parse_published_dt(published_str: str):
         return None
 
 
-def filter_last_n_days(df, n_days: int):
+def filter_last_n_days(df: pd.DataFrame, n_days: int) -> pd.DataFrame:
     cutoff = datetime.now(timezone.utc) - timedelta(days=n_days)
     df = df.copy()
     df["published_dt_utc"] = df["published"].apply(parse_published_dt)
@@ -66,16 +65,29 @@ def filter_last_n_days(df, n_days: int):
 
 
 def parse_search_library(text: str) -> pd.DataFrame:
+    """
+    Robust parsing:
+    - Preferred delimiter is TAB
+    - If a TAB is missing, tries to split on 2+ spaces
+    """
     rows = []
-    for line in text.splitlines():
-        line = line.strip()
+    for raw in text.splitlines():
+        line = raw.strip()
         if not line:
             continue
-        if "\t" not in line:
-            rows.append({"search_name": "UNMAPPED_LINE", "raw_query": line})
-            continue
-        name, query = line.split("\t", 1)
+
+        if "\t" in line:
+            name, query = line.split("\t", 1)
+        else:
+            parts = re.split(r"\s{2,}", line, maxsplit=1)
+            if len(parts) == 2:
+                name, query = parts[0], parts[1]
+            else:
+                rows.append({"search_name": "UNMAPPED_LINE", "raw_query": line})
+                continue
+
         rows.append({"search_name": name.strip(), "raw_query": query.strip()})
+
     return pd.DataFrame(rows)
 
 
@@ -118,16 +130,8 @@ def collect_google_news(df_searches: pd.DataFrame, past_days: int, max_items: in
     return pd.DataFrame(out_rows)
 
 
-def latest_file(pattern: str) -> str | None:
-    files = glob.glob(pattern)
-    if not files:
-        return None
-    files.sort(key=lambda f: os.path.getmtime(f), reverse=True)
-    return files[0]
-
-
-def semantic_dedupe_csv(infile: str, out_clean: str, out_audit: str,
-                        threshold: float, model_name: str) -> tuple[int, int]:
+def semantic_dedupe_excel(infile: str, out_clean: str, out_audit: str,
+                          threshold: float, model_name: str) -> tuple[int, int]:
     df = pd.read_excel(infile)
     df["compare_text"] = df["title"].fillna("").astype(str)
 
@@ -136,7 +140,7 @@ def semantic_dedupe_csv(infile: str, out_clean: str, out_audit: str,
     orig_idx = df.index[mask].to_numpy()
 
     if df_work.empty:
-        df.drop(columns=["compare_text"], errors="ignore").to_excel(out_clean, index=False)
+        df.drop(columns=["compare_text"], errors="ignore").to_excel(out_clean, index=False, engine="openpyxl")
         pd.DataFrame().to_excel(out_audit, index=False, engine="openpyxl")
         return len(df), len(df)
 
@@ -215,20 +219,34 @@ def semantic_dedupe_csv(infile: str, out_clean: str, out_audit: str,
     df_clean = df.loc[keep_mask].drop(columns=["compare_text"], errors="ignore").reset_index(drop=True)
     audit = pd.DataFrame(audit_rows)
 
-    df_clean.to_excel(out_clean, index=False, engine = "openpyxl")
-    audit.to_excel(out_audit, index=False, engine = "openpyxl")
+    df_clean.to_excel(out_clean, index=False, engine="openpyxl")
+    audit.to_excel(out_audit, index=False, engine="openpyxl")
     return len(df), len(df_clean)
 
 
-def update_master_excel(new_df: pd.DataFrame, master_path: Path):
+def update_master_excel_rolling(new_df: pd.DataFrame, master_path: Path, keep_days: int):
+    """
+    FIX: Master file will NOT accumulate older history forever.
+    It will keep only last `keep_days` based on published timestamp.
+    """
     if master_path.exists():
         old_df = pd.read_excel(master_path)
         combined = pd.concat([old_df, new_df], ignore_index=True)
     else:
         combined = new_df.copy()
 
+    # Global dedupe
     combined = combined.drop_duplicates(subset=["link"]).reset_index(drop=True)
-    combined.to_excel(master_path, index=False, engine="openpyxl")
+
+    # Rolling-window trim
+    combined["published_dt_utc"] = combined["published"].apply(parse_published_dt)
+    cutoff = datetime.now(timezone.utc) - timedelta(days=keep_days)
+    combined = combined[combined["published_dt_utc"].notna()]
+    combined = combined[combined["published_dt_utc"] >= cutoff].copy()
+
+    combined.drop(columns=["published_dt_utc"], errors="ignore").to_excel(
+        master_path, index=False, engine="openpyxl"
+    )
 
 
 def main():
@@ -260,7 +278,7 @@ def main():
     dedup_file = DATA_DIR / f"google_news_dedup_{ts}_past{PAST_DAYS}d.xlsx"
     dedup_audit = DATA_DIR / f"google_news_dedup_audit_{ts}.xlsx"
 
-    orig, cleaned = semantic_dedupe_csv(
+    orig, cleaned = semantic_dedupe_excel(
         infile=str(raw_results_file),
         out_clean=str(dedup_file),
         out_audit=str(dedup_audit),
@@ -268,12 +286,12 @@ def main():
         model_name=MODEL_NAME,
     )
 
-    # Update the stable file (append + global dedupe)
-    latest = DATA_DIR / "topic_feeds.xlsx"
+    # Update rolling master (FIX)
+    master = DATA_DIR / "topic_feeds.xlsx"
     df_final = pd.read_excel(dedup_file)
-    update_master_excel(df_final, latest)
-    print(f"Updated latest file: {latest}")
+    update_master_excel_rolling(df_final, master, keep_days=PAST_DAYS)
 
+    print(f"Updated rolling master: {master} (keep_days={PAST_DAYS})")
     print(f"Saved raw:   {raw_results_file} | rows={len(results)}")
     print(f"Saved audit: {audit_search_file} | searches={len(search_df)}")
     print(f"Dedupe: original={orig} cleaned={cleaned}")
@@ -283,19 +301,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-# %%
-
-
-
-
-
-
-
-
-
-
-
-
