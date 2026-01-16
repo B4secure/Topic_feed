@@ -17,7 +17,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # ---------------------------
 # CONFIG (can be overridden by GitHub Actions env vars)
 # ---------------------------
-PAST_DAYS = int(os.getenv("PAST_DAYS", "7"))
+PAST_DAYS = int(os.getenv("PAST_DAYS", "10"))
 MAX_ITEMS = int(os.getenv("MAX_ITEMS", "50"))
 DUP_THRESHOLD = float(os.getenv("DUP_THRESHOLD", "0.60"))  # FIXED env var name
 MODEL_NAME = os.getenv("MODEL_NAME", "all-MiniLM-L6-v2")
@@ -36,8 +36,8 @@ Current_Affairs	(geopolitics OR migration OR economy OR conflict OR legislation 
 Supply_Chain	("supply chain" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR "supply chain disruption" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)
 Protest	(protest OR protests OR demonstration OR demonstrations OR unrest OR "civil resistance" OR "civil disobedience" OR boycott OR boycotts OR march OR marches OR strike OR strikes) AND (police OR capital OR city OR arrests OR arrested OR union OR workers OR students OR rally)
 Technology	(technology OR cybersecurity OR ransomware OR hacking OR AI OR "artificial intelligence" OR "machine learning" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)
-Insider_Risk	("insider risk" OR "insider threat" OR "internal threat" OR "employee misconduct" OR "data exfiltration" OR "privileged access abuse" OR "malicious insider" OR "negligent insider" OR "insider attack" OR "corporate espionage" OR "information leakage" OR "unauthorised access" OR "policy violation" OR "security breach" OR "insider vulnerability")
-Fraud_Scam	("fraud" OR "scam" OR "phishing" OR "identity theft" OR "account takeover" OR "payment fraud" OR "credit card fraud" OR "wire fraud" OR "business email compromise" OR "fake invoice" OR "social engineering" OR "advance fee fraud")
+Insider_Risk ("insider risk" OR "insider threat" OR "internal threat" OR "employee misconduct" OR "data exfiltration" OR "privileged access abuse" OR "malicious insider" OR "negligent insider" OR "insider attack" OR "corporate espionage" OR "information leakage" OR "unauthorised access" OR "policy violation" OR "security breach" OR "insider vulnerability")
+Fraud_Scam ("fraud" OR "scam" OR "phishing" OR "identity theft" OR "account takeover" OR "payment fraud" OR "credit card fraud" OR "wire fraud" OR "business email compromise" OR "fake invoice" OR "social engineering" OR "advance fee fraud")
 """.strip()
 
 
@@ -65,30 +65,33 @@ def filter_last_n_days(df: pd.DataFrame, n_days: int) -> pd.DataFrame:
 
 
 def parse_search_library(text: str) -> pd.DataFrame:
-    """
-    Robust parsing:
-    - Preferred delimiter is TAB
-    - If a TAB is missing, tries to split on 2+ spaces
-    """
     rows = []
     for raw in text.splitlines():
         line = raw.strip()
         if not line:
             continue
 
+        name, query = None, None
+
+        # 1) Preferred: TAB delimited
         if "\t" in line:
             name, query = line.split("\t", 1)
+
+        # 2) Fallback: "Name  (query)" pattern (first "(" starts the query)
+        elif "(" in line:
+            left, right = line.split("(", 1)
+            name = left.strip()
+            query = "(" + right.strip()
+
+        # 3) Otherwise: truly unmapped
         else:
-            parts = re.split(r"\s{2,}", line, maxsplit=1)
-            if len(parts) == 2:
-                name, query = parts[0], parts[1]
-            else:
-                rows.append({"search_name": "UNMAPPED_LINE", "raw_query": line})
-                continue
+            rows.append({"search_name": "UNMAPPED_LINE", "raw_query": line})
+            continue
 
         rows.append({"search_name": name.strip(), "raw_query": query.strip()})
 
     return pd.DataFrame(rows)
+
 
 
 def is_google_news_compatible(q: str) -> bool:
@@ -253,6 +256,11 @@ def main():
     ts = datetime.now(timezone.utc).strftime("%d_%m%y_UTC")
 
     search_df = parse_search_library(SEARCH_LIBRARY_TEXT)
+    bad = search_df[search_df["search_name"] == "UNMAPPED_LINE"]
+    if not bad.empty:
+        print("UNMAPPED_LINE entries found:")
+        print(bad["raw_query"].tolist())
+
     search_df["google_news_compatible"] = search_df["raw_query"].apply(is_google_news_compatible)
     to_run = search_df[search_df["google_news_compatible"]].copy()
 
@@ -301,3 +309,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
