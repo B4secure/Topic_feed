@@ -36,11 +36,12 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run script (daily vs weekly)
+      - name: Run script
         env:
           RUN_MODE: ${{ github.event.schedule == '0 7 * * 3' && 'weekly' || 'daily' }}
+          PAST_DAYS_DAILY: "1"
+          PAST_DAYS_WEEKLY: "7"
         run: |
-          echo "RUN_MODE=$RUN_MODE"
           python main.py
 
       - name: Commit XLSX to repo
