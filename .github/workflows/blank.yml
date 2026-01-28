@@ -2,6 +2,7 @@ name: Topic News Collector
 
 on:
   schedule:
+    - cron: "0 7 * * *"
     - cron: "0 7 * * 3"      
   workflow_dispatch: {}
 
@@ -35,8 +36,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run script
+      - name: Run script (daily vs weekly)
+        env:
+          RUN_MODE: ${{ github.event.schedule == '0 7 * * 3' && 'weekly' || 'daily' }}
         run: |
+          echo "RUN_MODE=$RUN_MODE"
           python main.py
 
       - name: Commit XLSX to repo
