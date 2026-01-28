@@ -2,7 +2,7 @@ name: Topic News Collector
 
 on:
   schedule:
-    - cron: "0 0 * * 3"   # weekly, Monday 00:00 UTC
+    - cron: "0 7 * * 3"      
   workflow_dispatch: {}
 
 permissions:
