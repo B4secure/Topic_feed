@@ -17,7 +17,13 @@ from sklearn.metrics.pairwise import cosine_similarity
 # ---------------------------
 # CONFIG (can be overridden by GitHub Actions env vars)
 # ---------------------------
-PAST_DAYS = int(os.getenv("PAST_DAYS", "7"))
+RUN_MODE = os.getenv("RUN_MODE", "daily").lower()
+
+if RUN_MODE == "weekly":
+    PAST_DAYS = int(os.getenv("PAST_DAYS_WEEKLY", "7"))
+else:
+    PAST_DAYS = int(os.getenv("PAST_DAYS_DAILY", "1"))
+
 MAX_ITEMS = int(os.getenv("MAX_ITEMS", "50"))
 DUP_THRESHOLD = float(os.getenv("DUP_THRESHOLD", "0.60"))  # FIXED env var name
 MODEL_NAME = os.getenv("MODEL_NAME", "all-MiniLM-L6-v2")
@@ -26,6 +32,11 @@ HL, GL, CEID = "en-GB", "GB", "GB:en"
 
 DATA_DIR = Path("data")
 DATA_DIR.mkdir(exist_ok=True)
+DAILY_DIR = DATA_DIR / "daily"
+WEEKLY_DIR = DATA_DIR / "weekly"
+DAILY_DIR.mkdir(exist_ok=True)
+WEEKLY_DIR.mkdir(exist_ok=True)
+
 
 
 # ---------------------------
@@ -39,7 +50,7 @@ Technology	(technology OR cybersecurity OR ransomware OR hacking OR AI OR "artif
 Insider_Risk	("insider risk" OR "insider threat" OR "internal threat" OR employee OR contractor OR staff OR workforce) AND ("employee misconduct" OR "policy violation" OR "data exfiltration" OR "privileged access" OR "access abuse" OR "credential misuse" OR "unauthorised access" OR negligence OR sabotage OR "malicious insider" OR "corporate espionage" OR "information leakage" OR whistleblower OR termination OR disciplinary OR investigation OR breach)
 Fraud_Scam	(fraud OR scam OR phishing OR smishing OR vishing OR "identity theft" OR impersonation OR spoofing OR "account takeover" OR "payment fraud" OR "invoice fraud" OR "wire fraud" OR "business email compromise" OR BEC OR "fake invoice" OR "supplier fraud" OR "procurement fraud" OR "social engineering" OR extortion OR blackmail)AND (company OR business OR enterprise OR customer OR client OR employee OR bank OR financial OR payment OR transaction)
 """.strip()
-""".strip()
+
 
 
 def parse_published_dt(published_str: str):
@@ -312,20 +323,35 @@ def main():
     )
 
     # Update rolling master (FIX)
-    master = DATA_DIR / "topic_feeds.xlsx"
+        # Final deduped dataset from this run
     df_final = pd.read_excel(dedup_file)
-    update_master_excel_rolling(df_final, master, keep_days=PAST_DAYS)
 
-    print(f"Updated rolling master: {master} (keep_days={PAST_DAYS})")
-    print(f"Saved raw:   {raw_results_file} | rows={len(results)}")
-    print(f"Saved audit: {audit_search_file} | searches={len(search_df)}")
-    print(f"Dedupe: original={orig} cleaned={cleaned}")
-    print(f"Saved dedup: {dedup_file}")
-    print(f"Saved dedup audit: {dedup_audit}")
+    # 1) Update rolling master (recommended: always keep 7 days)
+    master = DATA_DIR / "topic_feeds.xlsx"
+    update_master_excel_rolling(df_final, master, keep_days=7)
+
+    # 2) Save daily snapshot (always)
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    daily_file = DAILY_DIR / f"topic_feeds_{today}.xlsx"
+    df_final.to_excel(daily_file, index=False, engine="openpyxl")
+
+    # 3) Save weekly snapshot (only on weekly runs)
+    if RUN_MODE == "weekly":
+        week = datetime.now(timezone.utc).strftime("%G-W%V")  # e.g., 2026-W05
+        weekly_file = WEEKLY_DIR / f"topic_feeds_{week}.xlsx"
+        df_final.to_excel(weekly_file, index=False, engine="openpyxl")
+
+    print(f"RUN_MODE={RUN_MODE}")
+    print(f"Master updated: {master}")
+    print(f"Daily snapshot: {daily_file}")
+    if RUN_MODE == "weekly":
+        print(f"Weekly snapshot: {weekly_file}")
+
 
 
 if __name__ == "__main__":
     main()
+
 
 
 
