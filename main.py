@@ -332,13 +332,13 @@ def main():
 
     # 2) Save daily snapshot (always)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    daily_file = DAILY_DIR / f"topic_feeds_{today}.xlsx"
+    daily_file = DAILY_DIR / f"topic_feeds_daily.xlsx"
     df_final.to_excel(daily_file, index=False, engine="openpyxl")
 
     # 3) Save weekly snapshot (only on weekly runs)
     if RUN_MODE == "weekly":
         week = datetime.now(timezone.utc).strftime("%G-W%V")  # e.g., 2026-W05
-        weekly_file = WEEKLY_DIR / f"topic_feeds_{week}.xlsx"
+        weekly_file = WEEKLY_DIR / f"topic_feeds_week.xlsx"
         df_final.to_excel(weekly_file, index=False, engine="openpyxl")
         weekly_latest = DATA_DIR / "topic_feeds_weekly_latest.xlsx"
         df_final.to_excel(weekly_latest, index=False, engine="openpyxl")
@@ -353,6 +353,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
