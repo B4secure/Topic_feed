@@ -1,42 +1,125 @@
-name: Topic Feeds - Weekly (7 days)
+name: Topic News Collector
 
 on:
   schedule:
-    - cron: "30 6 * * 3"   # Wednesday 06:30 UTC (3 = Wed)
+    - cron: "0 7 * * *"     # daily
+    - cron: "0 7 * * 3"     # weekly (Wed)
   workflow_dispatch:
+    inputs:
+      run_mode:
+        description: "Choose run mode"
+        required: true
+        default: "daily"
+        type: choice
+        options:
+          - daily
+          - weekly
+
+permissions:
+  contents: write
 
 jobs:
-  run:
+  daily:
+    # Run daily only when:
+    # - daily cron triggered, OR
+    # - manually dispatched with run_mode=daily
+    if: |
+      (github.event_name == 'schedule' && github.event.schedule == '0 7 * * *') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.run_mode == 'daily')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/lib/android
+          sudo apt-get clean
+
       - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run collector (weekly)
+      - name: Run script (daily)
+        env:
+          RUN_MODE: daily
+          PAST_DAYS_DAILY: "1"
+          PAST_DAYS_WEEKLY: "7"
+        run: |
+          python main.py
+
+      - name: Commit XLSX to repo (daily outputs)
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git pull --rebase
+
+          # Commit latest + daily snapshot + rolling master (if you want it versioned)
+          git add data/topic_feeds_latest.xlsx
+          git add data/topic_feeds_rolling_7d.xlsx
+          git add data/daily/*.xlsx
+
+          git commit -m "Update topic news feed (daily)" || echo "No changes"
+          git push
+
+
+  weekly:
+    # Run weekly only when:
+    # - weekly cron triggered, OR
+    # - manually dispatched with run_mode=weekly
+    if: |
+      (github.event_name == 'schedule' && github.event.schedule == '0 7 * * 3') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.run_mode == 'weekly')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/lib/android
+          sudo apt-get clean
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run script (weekly)
         env:
           RUN_MODE: weekly
+          PAST_DAYS_DAILY: "1"
           PAST_DAYS_WEEKLY: "7"
-          MAX_ITEMS: "50"
-          DUP_THRESHOLD: "0.60"
-          MODEL_NAME: "all-MiniLM-L6-v2"
         run: |
-          python your_script.py
+          python main.py
 
-      - name: Upload outputs
-        uses: actions/upload-artifact@v4
-        with:
-          name: topic-feeds-weekly
-          path: |
-            data/topic_feeds_latest.xlsx
-            data/topic_feeds_rolling_7d.xlsx
-            data/weekly/*.xlsx
-            data/search_audit_*.xlsx
-            data/google_news_dedup_*.xlsx
-            data/google_news_dedup_audit_*.xlsx
+      - name: Commit XLSX to repo (weekly outputs)
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git pull --rebase
+
+          git add data/topic_feeds_latest.xlsx
+          git add data/topic_feeds_rolling_7d.xlsx
+          git add data/weekly/*.xlsx
+
+          git commit -m "Update topic news feed (weekly)" || echo "No changes"
+          git push
+
