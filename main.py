@@ -340,6 +340,8 @@ def main():
         week = datetime.now(timezone.utc).strftime("%G-W%V")  # e.g., 2026-W05
         weekly_file = WEEKLY_DIR / f"topic_feeds_{week}.xlsx"
         df_final.to_excel(weekly_file, index=False, engine="openpyxl")
+        weekly_latest = DATA_DIR / "topic_feeds_weekly_latest.xlsx"
+        df_final.to_excel(weekly_latest, index=False, engine="openpyxl")
 
     print(f"RUN_MODE={RUN_MODE}")
     print(f"Master updated: {master}")
@@ -351,6 +353,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
