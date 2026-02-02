@@ -2,8 +2,8 @@ name: Topic News Collector
 
 on:
   schedule:
-    - cron: "0 7 * * *"     # daily
-    - cron: "0 7 * * 3"     # weekly (Wed)
+    - cron: "0 7 * * *"     # daily 07:00 UTC
+    - cron: "0 7 * * 3"     # weekly Wednesday 07:00 UTC
   workflow_dispatch:
     inputs:
       run_mode:
@@ -18,21 +18,31 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: topic-news-collector
+  cancel-in-progress: false
+
 jobs:
   daily:
-    # Run daily only when:
-    # - daily cron triggered, OR
-    # - manually dispatched with run_mode=daily
+    # Run daily ONLY when daily cron fired OR manual dispatch chose daily
     if: |
       (github.event_name == 'schedule' && github.event.schedule == '0 7 * * *') ||
       (github.event_name == 'workflow_dispatch' && github.event.inputs.run_mode == 'daily')
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - name: Pull latest
+        run: |
+          git pull --rebase
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -53,39 +63,73 @@ jobs:
           RUN_MODE: daily
           PAST_DAYS_DAILY: "1"
           PAST_DAYS_WEEKLY: "7"
+          MAX_ITEMS: "50"
+          DUP_THRESHOLD: "0.60"
+          MODEL_NAME: "all-MiniLM-L6-v2"
         run: |
           python main.py
 
-      - name: Commit XLSX to repo (daily outputs)
+      - name: List output files
         run: |
+          echo "==== data tree ===="
+          ls -R data || true
+
+      - name: Commit outputs (daily)
+        shell: bash
+        run: |
+          set -e
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          git pull --rebase
+          # Stage only if files exist
+          files=()
+          [ -f data/topic_feeds_latest.xlsx ] && files+=(data/topic_feeds_latest.xlsx)
+          [ -f data/topic_feeds_rolling_7d.xlsx ] && files+=(data/topic_feeds_rolling_7d.xlsx)
 
-          # Commit latest + daily snapshot + rolling master (if you want it versioned)
-          git add data/topic_feeds_latest.xlsx
-          git add data/topic_feeds_rolling_7d.xlsx
-          git add data/daily/*.xlsx
+          shopt -s nullglob
+          daily_files=(data/daily/*.xlsx)
+          shopt -u nullglob
 
-          git commit -m "Update topic news feed (daily)" || echo "No changes"
+          if [ ${#daily_files[@]} -gt 0 ]; then
+            files+=("${daily_files[@]}")
+          fi
+
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No output files found to commit."
+            exit 0
+          fi
+
+          git add "${files[@]}"
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update topic news feed (daily)"
           git push
 
 
   weekly:
-    # Run weekly only when:
-    # - weekly cron triggered, OR
-    # - manually dispatched with run_mode=weekly
+    # Run weekly ONLY when weekly cron fired OR manual dispatch chose weekly
     if: |
       (github.event_name == 'schedule' && github.event.schedule == '0 7 * * 3') ||
       (github.event_name == 'workflow_dispatch' && github.event.inputs.run_mode == 'weekly')
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - name: Pull latest
+        run: |
+          git pull --rebase
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -106,20 +150,49 @@ jobs:
           RUN_MODE: weekly
           PAST_DAYS_DAILY: "1"
           PAST_DAYS_WEEKLY: "7"
+          MAX_ITEMS: "50"
+          DUP_THRESHOLD: "0.60"
+          MODEL_NAME: "all-MiniLM-L6-v2"
         run: |
           python main.py
 
-      - name: Commit XLSX to repo (weekly outputs)
+      - name: List output files
         run: |
+          echo "==== data tree ===="
+          ls -R data || true
+
+      - name: Commit outputs (weekly)
+        shell: bash
+        run: |
+          set -e
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          git pull --rebase
+          files=()
+          [ -f data/topic_feeds_latest.xlsx ] && files+=(data/topic_feeds_latest.xlsx)
+          [ -f data/topic_feeds_rolling_7d.xlsx ] && files+=(data/topic_feeds_rolling_7d.xlsx)
 
-          git add data/topic_feeds_latest.xlsx
-          git add data/topic_feeds_rolling_7d.xlsx
-          git add data/weekly/*.xlsx
+          shopt -s nullglob
+          weekly_files=(data/weekly/*.xlsx)
+          shopt -u nullglob
 
-          git commit -m "Update topic news feed (weekly)" || echo "No changes"
+          if [ ${#weekly_files[@]} -gt 0 ]; then
+            files+=("${weekly_files[@]}")
+          fi
+
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No output files found to commit."
+            exit 0
+          fi
+
+          git add "${files[@]}"
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Update topic news feed (weekly)"
           git push
+
 
