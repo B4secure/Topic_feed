@@ -43,13 +43,12 @@ WEEKLY_DIR.mkdir(exist_ok=True)
 # Search library (FIXED: Insider/Fraud now tab-delimited)
 # ---------------------------
 SEARCH_LIBRARY_TEXT = r"""
-Current_Affairs    (geopolitics OR migration OR economy OR conflict OR legislation OR terrorism OR disinformation OR misinformation OR government OR policy OR regulation) AND (briefing OR analysis OR update OR report)
+Current_Affairs	(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR "government policy" OR legislation OR sanctions) AND (Europe OR UK OR "United States" OR global OR international)
 Supply_Chain    ("supply chain" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR "supply chain disruption" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)
-Protest    (protest OR protests OR demonstration OR demonstrations OR unrest OR "civil resistance" OR "civil disobedience" OR boycott OR boycotts OR march OR marches OR strike OR strikes) AND (police OR capital OR city OR arrests OR arrested OR union OR workers OR students OR rally OR tactics OR targets OR groups)
+Protest	(protest OR demonstration OR unrest OR boycott OR strike OR march OR "civil unrest") AND (retail OR "shopping centre" OR "town centre" OR luxury OR brand OR police OR arrested OR violence OR clashes)
 Technology    (technology OR cybersecurity OR ransomware OR hacking OR AI OR "artificial intelligence" OR "machine learning" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)
-Insider_Risk    ("insider risk" OR "insider threat" OR "internal threat" OR "employee misconduct" OR "data exfiltration" OR "privileged access abuse" OR "malicious insider" OR "negligent insider" OR "insider attack" OR "corporate espionage" OR "information leakage" OR "unauthorised access" OR "policy violation" OR "security breach" OR "insider vulnerability")
-Fraud_Scam    ("fraud" OR "scam" OR "phishing" OR "identity theft" OR "account takeover" OR "payment fraud" OR "credit card fraud" OR "wire fraud" OR "business email compromise" OR "fake invoice" OR "social engineering" OR "advance fee fraud")
-
+Insider_Risk	("convicted" OR "sentenced" OR "pleaded guilty") AND ("employee" OR "worker" OR "staff") AND ("data" OR "theft" OR "fraud" OR "stolen")
+Fraud_Scam	(fraud OR scam OR phishing OR "identity theft" OR "payment fraud" OR "money laundering" OR "cyber fraud" OR "bank fraud" OR "invoice fraud" OR "romance scam" OR "courier fraud" OR "retail fraud") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim)
 """.strip()
 
 
@@ -393,3 +392,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
