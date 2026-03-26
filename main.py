@@ -387,8 +387,9 @@ def main():
         weekly_latest = DATA_DIR / "topic_feeds_weekly_latest.xlsx"
         df_final.to_excel(weekly_latest, index=False, engine="openpyxl")
 
-    # Export dashboard feed — always runs at end
-    export_feed_json(df_final, PAST_DAYS, RUN_MODE)
+    # Export dashboard feed — use 7-day rolling master
+    df_master = pd.read_excel(master)
+    export_feed_json(df_master, 7, RUN_MODE)
 
     print(f"\nRUN_MODE={RUN_MODE}")
     print(f"Master updated: {master}")
