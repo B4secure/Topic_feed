@@ -108,8 +108,8 @@ jobs:
           fi
 
           git commit -m "Update topic news feed (daily)"
+          git pull --rebase
           git push
-
 
   weekly:
     if: |
