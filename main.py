@@ -1,6 +1,7 @@
 import os
 import re
 import glob
+import json
 import urllib.parse
 from pathlib import Path
 from datetime import datetime, timezone, timedelta
@@ -25,7 +26,7 @@ else:
     PAST_DAYS = int(os.getenv("PAST_DAYS_DAILY", "1"))
 
 MAX_ITEMS = int(os.getenv("MAX_ITEMS", "50"))
-DUP_THRESHOLD = float(os.getenv("DUP_THRESHOLD", "0.60"))  # FIXED env var name
+DUP_THRESHOLD = float(os.getenv("DUP_THRESHOLD", "0.60"))
 MODEL_NAME = os.getenv("MODEL_NAME", "all-MiniLM-L6-v2")
 
 HL, GL, CEID = "en-GB", "GB", "GB:en"
@@ -37,10 +38,12 @@ WEEKLY_DIR = DATA_DIR / "weekly"
 DAILY_DIR.mkdir(exist_ok=True)
 WEEKLY_DIR.mkdir(exist_ok=True)
 
+DOCS_DIR = Path("docs")
+DOCS_DIR.mkdir(exist_ok=True)
 
 
 # ---------------------------
-# Search library (FIXED: Insider/Fraud now tab-delimited)
+# Search library
 # ---------------------------
 SEARCH_LIBRARY_TEXT = r"""
 Current_Affairs	(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR "government policy" OR legislation OR sanctions) AND (Europe OR UK OR "United States" OR global OR international)
@@ -50,7 +53,6 @@ Technology    (technology OR cybersecurity OR ransomware OR hacking OR AI OR "ar
 Insider_Risk	("convicted" OR "sentenced" OR "pleaded guilty") AND ("employee" OR "worker" OR "staff") AND ("data" OR "theft" OR "fraud" OR "stolen")
 Fraud_Scam	(fraud OR scam OR phishing OR "identity theft" OR "payment fraud" OR "money laundering" OR "cyber fraud" OR "bank fraud" OR "invoice fraud" OR "romance scam" OR "courier fraud" OR "retail fraud") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim)
 """.strip()
-
 
 
 def parse_published_dt(published_str: str):
@@ -83,11 +85,9 @@ def parse_search_library(text: str) -> pd.DataFrame:
         if not line:
             continue
 
-        # Prefer tab, but accept 2+ spaces as delimiter
         if "\t" in line:
             name, query = line.split("\t", 1)
         else:
-            # split into 2 parts on 2+ spaces
             parts = re.split(r"\s{2,}", line, maxsplit=1)
             if len(parts) == 2:
                 name, query = parts[0], parts[1]
@@ -102,8 +102,6 @@ def parse_search_library(text: str) -> pd.DataFrame:
         rows.append({"search_name": name.strip(), "raw_query": query.strip()})
 
     return pd.DataFrame(rows)
-
-
 
 
 def is_google_news_compatible(q: str) -> bool:
@@ -130,8 +128,7 @@ def collect_google_news(df_searches: pd.DataFrame, past_days: int, max_items: in
         q = r["raw_query"]
         rss = google_news_rss_url(q, past_days)
         feed = feedparser.parse(rss)
-        
-        # DEBUG: Print how many entries found
+
         print(f"  {name}: Found {len(feed.entries)} raw entries")
 
         for entry in feed.entries[:max_items]:
@@ -145,27 +142,25 @@ def collect_google_news(df_searches: pd.DataFrame, past_days: int, max_items: in
                     "past_days": past_days,
                 }
             )
-    
-    # DEBUG: Show summary
+
     if out_rows:
         temp_df = pd.DataFrame(out_rows)
         print("\nRaw collection summary:")
         for name in df_searches["search_name"].unique():
             count = len(temp_df[temp_df["search_name"] == name])
             print(f"  {name}: {count} articles")
-    
+
     return pd.DataFrame(out_rows)
+
 
 def remap_legacy_unmapped(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
     m = df["search_name"].astype(str).eq("UNMAPPED_LINE")
-
-    sq = df.loc[m, "raw_query"].astype(str)  # FIXED: use raw_query not search_query
+    sq = df.loc[m, "raw_query"].astype(str)
 
     df.loc[m & sq.str.startswith("Insider Risk"), "search_name"] = "Insider_Risk"
     df.loc[m & sq.str.startswith("Fraud/Scam"), "search_name"] = "Fraud_Scam"
 
-    # optional: strip the legacy prefix from raw_query (keeps query cleaner)
     df.loc[df["search_name"].eq("Insider_Risk") & df["raw_query"].astype(str).str.startswith("Insider Risk"),
            "raw_query"] = df["raw_query"].astype(str).str.replace(r"^Insider Risk\s*", "", regex=True)
 
@@ -173,7 +168,6 @@ def remap_legacy_unmapped(df: pd.DataFrame) -> pd.DataFrame:
            "raw_query"] = df["raw_query"].astype(str).str.replace(r"^Fraud/Scam\s*", "", regex=True)
 
     return df
-
 
 
 def semantic_dedupe_excel(infile: str, out_clean: str, out_audit: str,
@@ -191,16 +185,12 @@ def semantic_dedupe_excel(infile: str, out_clean: str, out_audit: str,
     keep_global_idx = set()
     audit_rows = []
 
-    # Dedupe within each topic (search_name)
     for topic, gdf in df.groupby("search_name", dropna=False):
         gdf = gdf.copy()
-
-        # compare only titles WITHIN this topic
         gdf["compare_text"] = gdf["title"]
         mask = gdf["compare_text"].str.len() > 0
         gwork = gdf[mask].copy()
 
-        # if nothing to compare, keep all rows in this topic
         if gwork.empty:
             keep_global_idx.update(gdf.index.tolist())
             continue
@@ -247,7 +237,6 @@ def semantic_dedupe_excel(infile: str, out_clean: str, out_audit: str,
             groups.setdefault(r, []).append(i)
 
         for members in groups.values():
-            # Keep earliest original row index within this topic
             keep_i = min(members, key=lambda k: gwork_idx[k])
             keep_row = gwork_idx[keep_i]
             keep_global_idx.add(keep_row)
@@ -280,23 +269,49 @@ def update_master_excel_rolling(new_df: pd.DataFrame, master_path: Path, keep_da
     else:
         combined = new_df.copy()
 
-    combined["past_days"] = keep_days  # <-- forces consistent value
-
+    combined["past_days"] = keep_days
     combined = combined.drop_duplicates(subset=["link"]).reset_index(drop=True)
-
     combined["published_dt_utc"] = combined["published"].apply(parse_published_dt)
     cutoff = datetime.now(timezone.utc) - timedelta(days=keep_days)
     combined = combined[combined["published_dt_utc"].notna()]
     combined = combined[combined["published_dt_utc"] >= cutoff].copy()
-    
-    # REMOVE timezone info before writing to Excel
+
     if 'published_dt_utc' in combined.columns:
         combined = combined.drop(columns=["published_dt_utc"], errors="ignore")
 
-    combined.to_excel(
-        master_path, index=False, engine="openpyxl"
-    )
+    combined.to_excel(master_path, index=False, engine="openpyxl")
 
+
+# ---------------------------
+# NEW: Export feed.json for dashboard
+# ---------------------------
+def export_feed_json(df: pd.DataFrame, past_days: int, run_mode: str):
+    """Export deduplicated articles to docs/feed.json for the GitHub Pages dashboard."""
+    run_type = "Weekly run" if run_mode == "weekly" else "Daily run"
+
+    articles = []
+    for _, row in df.iterrows():
+        articles.append({
+            "search_name":  str(row.get("search_name", "")),
+            "search_query": str(row.get("search_query", "")),
+            "title":        str(row.get("title", "")),
+            "published":    str(row.get("published", "")),
+            "link":         str(row.get("link", "")),
+            "past_days":    int(row.get("past_days", past_days)),
+        })
+
+    payload = {
+        "generated_at":  datetime.now(timezone.utc).isoformat(),
+        "lookback_days": past_days,
+        "run_type":      run_type,
+        "articles":      articles,
+    }
+
+    output_path = DOCS_DIR / "feed.json"
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+
+    print(f"feed.json written → {len(articles)} articles → {output_path}")
 
 
 def main():
@@ -305,20 +320,19 @@ def main():
     search_df = parse_search_library(SEARCH_LIBRARY_TEXT)
     print(f"Parsed search library: {len(search_df)} rows")
     print(f"Search names found: {search_df['search_name'].unique()}")
-    
-    # FIX: Apply the remapping function
+
     search_df = remap_legacy_unmapped(search_df)
-    
+
     bad = search_df[search_df["search_name"] == "UNMAPPED_LINE"]
     if not bad.empty:
         print("UNMAPPED_LINE entries found:")
         print(bad["raw_query"].tolist())
-    
+
     print(f"After remapping, search names: {search_df['search_name'].unique()}")
 
     search_df["google_news_compatible"] = search_df["raw_query"].apply(is_google_news_compatible)
     to_run = search_df[search_df["google_news_compatible"]].copy()
-    
+
     print(f"\nRunning {len(to_run)} compatible searches:")
     for _, row in to_run.iterrows():
         print(f"  - {row['search_name']}: {row['raw_query'][:60]}...")
@@ -332,15 +346,12 @@ def main():
     raw_results_file = DATA_DIR / f"google_news_raw_{ts}_past{PAST_DAYS}d.xlsx"
     audit_search_file = DATA_DIR / f"search_audit_{ts}.xlsx"
 
-    # FIX: Remove timezone info before writing to Excel
-    # Don't use the apply method you had, just handle datetime columns properly
     if 'published_dt_utc' in results.columns:
         results = results.drop(columns=["published_dt_utc"], errors="ignore")
 
-    # Write to Excel WITHOUT datetime timezone info
     results.to_excel(raw_results_file, index=False, engine="openpyxl")
     search_df.to_excel(audit_search_file, index=False, engine="openpyxl")
-    
+
     print(f"\nResults by category:")
     if not results.empty:
         category_counts = results["search_name"].value_counts()
@@ -349,7 +360,6 @@ def main():
     else:
         print("  No results found")
 
-    # Dedupe the raw file we just created
     dedup_file = DATA_DIR / f"google_news_dedup_{ts}_past{PAST_DAYS}d.xlsx"
     dedup_audit = DATA_DIR / f"google_news_dedup_audit_{ts}.xlsx"
 
@@ -361,26 +371,24 @@ def main():
         model_name=MODEL_NAME,
     )
 
-    # Update rolling master
-    # Final deduped dataset from this run
     df_final = pd.read_excel(dedup_file)
 
-    # 1) Update rolling master (recommended: always keep 7 days)
     master = DATA_DIR / "topic_feeds.xlsx"
     update_master_excel_rolling(df_final, master, keep_days=7)
 
-    # 2) Save daily snapshot (always)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     daily_file = DAILY_DIR / f"topic_feeds_daily.xlsx"
     df_final.to_excel(daily_file, index=False, engine="openpyxl")
 
-    # 3) Save weekly snapshot (only on weekly runs)
     if RUN_MODE == "weekly":
-        week = datetime.now(timezone.utc).strftime("%G-W%V")  # e.g., 2026-W05
+        week = datetime.now(timezone.utc).strftime("%G-W%V")
         weekly_file = WEEKLY_DIR / f"topic_feeds_week.xlsx"
         df_final.to_excel(weekly_file, index=False, engine="openpyxl")
         weekly_latest = DATA_DIR / "topic_feeds_weekly_latest.xlsx"
         df_final.to_excel(weekly_latest, index=False, engine="openpyxl")
+
+    # Export dashboard feed — always runs at end
+    export_feed_json(df_final, PAST_DAYS, RUN_MODE)
 
     print(f"\nRUN_MODE={RUN_MODE}")
     print(f"Master updated: {master}")
@@ -389,7 +397,5 @@ def main():
         print(f"Weekly snapshot: {weekly_file}")
 
 
-
 if __name__ == "__main__":
     main()
-
