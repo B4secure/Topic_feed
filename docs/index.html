@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B4 Secure — Intelligence Feed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f4f0;
+    --surface: #ffffff;
+    --surface2: #f0efe9;
+    --border: #e2e0d8;
+    --border2: #cccac0;
+    --text: #1a1916;
+    --text2: #5c5a53;
+    --text3: #9c9a90;
+    --green: #1a6b42;
+    --green-bg: #e6f4ed;
+    --live-dot: #22c55e;
+
+    --fraud-bg: #fef3e2; --fraud-text: #92400e; --fraud-border: #f59e0b;
+    --cyber-bg: #eff6ff; --cyber-text: #1e40af; --cyber-border: #3b82f6;
+    --protest-bg: #fdf2f8; --protest-text: #831843; --protest-border: #ec4899;
+    --theft-bg: #fff1f2; --theft-text: #881337; --theft-border: #f43f5e;
+    --supply-bg: #f0fdf4; --supply-text: #14532d; --supply-border: #22c55e;
+    --current-bg: #f5f3ff; --current-text: #4c1d95; --current-border: #8b5cf6;
+    --default-bg: #f8fafc; --default-text: #334155; --default-border: #94a3b8;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  /* TOP BAR */
+  .topbar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--live-dot);
+    box-shadow: 0 0 0 3px rgba(34,197,94,0.2);
+    flex-shrink: 0;
+  }
+  .brand-name { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+  .brand-sub { font-size: 12px; color: var(--text3); margin-top: 1px; }
+
+  .live-badge {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; color: var(--text2);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 5px 12px; border-radius: 20px;
+    font-family: 'DM Mono', monospace;
+  }
+  .live-badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--live-dot);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  /* METRICS */
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .metric {
+    background: var(--surface);
+    padding: 20px 24px;
+  }
+  .metric-label { font-size: 11px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; }
+  .metric-value { font-size: 32px; font-weight: 300; line-height: 1.1; margin: 6px 0 4px; letter-spacing: -0.02em; }
+  .metric-sub { font-size: 12px; color: var(--text3); }
+  .metric-sub.up { color: var(--green); }
+
+  /* MAIN LAYOUT */
+  .main { max-width: 860px; margin: 0 auto; padding: 24px 24px 80px; }
+
+  /* FILTER BAR */
+  .filter-bar {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 16px; flex-wrap: wrap;
+  }
+  .filter-label { font-size: 12px; color: var(--text3); margin-right: 4px; }
+
+  .filter-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 500;
+    padding: 5px 14px; border-radius: 20px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .filter-btn:hover { border-color: var(--border2); color: var(--text); }
+  .filter-btn.active {
+    background: var(--text); color: #fff; border-color: var(--text);
+  }
+
+  /* SEARCH */
+  .search-wrap { position: relative; margin-bottom: 20px; }
+  .search-input {
+    width: 100%;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    padding: 11px 16px 11px 40px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .search-input:focus { border-color: var(--border2); }
+  .search-input::placeholder { color: var(--text3); }
+  .search-icon {
+    position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+    color: var(--text3); pointer-events: none;
+  }
+
+  /* ARTICLE CARDS */
+  .articles { display: flex; flex-direction: column; gap: 2px; }
+
+  .article-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: flex; align-items: flex-start; gap: 14px;
+    text-decoration: none; color: inherit;
+    transition: border-color 0.15s, box-shadow 0.15s;
+    border-left: 3px solid transparent;
+  }
+  .article-card:hover {
+    border-color: var(--border2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-decoration: none;
+  }
+
+  .article-body { flex: 1; min-width: 0; }
+  .article-meta {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 6px; flex-wrap: wrap;
+  }
+  .article-source { font-size: 12px; color: var(--text3); }
+  .article-dot { font-size: 10px; color: var(--border2); }
+  .article-time { font-size: 12px; color: var(--text3); font-family: 'DM Mono', monospace; }
+
+  .article-title {
+    font-size: 14px; font-weight: 500; line-height: 1.45;
+    color: var(--text);
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+
+  /* CATEGORY TAGS */
+  .tag {
+    display: inline-flex; align-items: center;
+    font-size: 11px; font-weight: 500;
+    padding: 3px 8px; border-radius: 5px;
+    white-space: nowrap; flex-shrink: 0;
+  }
+
+  /* EMPTY STATE */
+  .empty { text-align: center; padding: 60px 20px; color: var(--text3); }
+  .empty-title { font-size: 16px; font-weight: 500; margin-bottom: 6px; color: var(--text2); }
+
+  /* COUNT */
+  .results-count { font-size: 12px; color: var(--text3); margin-bottom: 12px; }
+
+  @media (max-width: 600px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .main { padding: 16px 16px 60px; }
+    .metric-value { font-size: 26px; }
+  }
+
+  /* PASSWORD GATE */
+  #gate {
+    position: fixed; inset: 0; z-index: 999;
+    background: var(--bg);
+    display: flex; align-items: center; justify-content: center;
+  }
+  #gate.hidden { display: none; }
+  .gate-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 40px 36px;
+    width: 100%; max-width: 360px;
+    text-align: center;
+  }
+  .gate-logo {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    margin-bottom: 24px;
+  }
+  .gate-logo-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--live-dot);
+  }
+  .gate-logo-text { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+  .gate-title { font-size: 14px; color: var(--text2); margin-bottom: 20px; }
+  .gate-input {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    width: 100%; padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface2);
+    color: var(--text);
+    outline: none;
+    margin-bottom: 10px;
+    text-align: center;
+    letter-spacing: 0.1em;
+    transition: border-color 0.15s;
+  }
+  .gate-input:focus { border-color: var(--border2); background: var(--surface); }
+  .gate-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 500;
+    width: 100%; padding: 11px;
+    background: var(--text); color: #fff;
+    border: none; border-radius: 8px;
+    cursor: pointer; transition: opacity 0.15s;
+  }
+  .gate-btn:hover { opacity: 0.85; }
+  .gate-error {
+    font-size: 12px; color: #dc2626;
+    margin-top: 10px; min-height: 18px;
+  }
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div id="gate">
+  <div class="gate-box">
+    <div class="gate-logo">
+      <div class="gate-logo-dot"></div>
+      <span class="gate-logo-text">B4 Secure — Intelligence Feed</span>
+    </div>
+    <div class="gate-title">Enter your access password to continue</div>
+    <input class="gate-input" type="password" id="gate-input" placeholder="Password" autocomplete="current-password">
+    <button class="gate-btn" id="gate-btn">Access feed</button>
+    <div class="gate-error" id="gate-error"></div>
+  </div>
+</div>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="brand-dot"></div>
+    <div>
+      <div class="brand-name">B4 Secure — Intelligence Feed</div>
+      <div class="brand-sub">Automated threat monitoring · Europe</div>
+    </div>
+  </div>
+  <div class="live-badge">
+    <div class="live-badge-dot"></div>
+    <span id="live-time">Loading…</span>
+  </div>
+</div>
+
+<div class="metrics">
+  <div class="metric">
+    <div class="metric-label">Articles today</div>
+    <div class="metric-value" id="m-total">—</div>
+    <div class="metric-sub" id="m-sub">Loading…</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Categories</div>
+    <div class="metric-value" id="m-cats">—</div>
+    <div class="metric-sub" id="m-cats-sub">unique sources</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Lookback window</div>
+    <div class="metric-value" id="m-lookback">—</div>
+    <div class="metric-sub" id="m-run-type">—</div>
+  </div>
+  <div class="metric">
+    <div class="metric-label">Last updated</div>
+    <div class="metric-value" id="m-updated" style="font-size:20px;padding-top:6px">—</div>
+    <div class="metric-sub" id="m-updated-sub">—</div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="filter-bar">
+    <span class="filter-label">Category</span>
+    <button class="filter-btn active" data-cat="all">All</button>
+    <div id="cat-filters"></div>
+  </div>
+
+  <div class="search-wrap">
+    <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M10.5 10.5L14 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <input class="search-input" type="text" id="search" placeholder="Search articles…" autocomplete="off">
+  </div>
+
+  <div class="results-count" id="results-count"></div>
+  <div class="articles" id="articles-list"></div>
+</div>
+
+<script>
+const CATEGORY_STYLES = {
+  fraud:         { bg: '#fef3e2', text: '#92400e', border: '#f59e0b' },
+  cyber:         { bg: '#eff6ff', text: '#1e40af', border: '#3b82f6' },
+  protest:       { bg: '#fdf2f8', text: '#831843', border: '#ec4899' },
+  theft:         { bg: '#fff1f2', text: '#881337', border: '#f43f5e' },
+  supply_chain:  { bg: '#f0fdf4', text: '#14532d', border: '#22c55e' },
+  current_affairs:{ bg: '#f5f3ff', text: '#4c1d95', border: '#8b5cf6' },
+  default:       { bg: '#f8fafc', text: '#334155', border: '#94a3b8' },
+};
+
+function getCatKey(name) {
+  return name.toLowerCase().replace(/\s+/g, '_');
+}
+
+function getCatStyle(name) {
+  const key = getCatKey(name);
+  return CATEGORY_STYLES[key] || CATEGORY_STYLES.default;
+}
+
+function cleanCatName(name) {
+  return name.replace(/_/g, ' ');
+}
+
+function formatTime(isoStr) {
+  try {
+    const d = new Date(isoStr);
+    return d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) + ' UTC';
+  } catch { return isoStr; }
+}
+
+function timeAgo(dateStr) {
+  try {
+    const d = new Date(dateStr);
+    const diff = Math.floor((Date.now() - d) / 60000);
+    if (diff < 60) return diff + 'm ago';
+    if (diff < 1440) return Math.floor(diff / 60) + 'h ago';
+    return Math.floor(diff / 1440) + 'd ago';
+  } catch { return ''; }
+}
+
+function extractSource(link) {
+  try {
+    const url = new URL(link);
+    return url.hostname.replace('www.', '');
+  } catch { return ''; }
+}
+
+let allArticles = [];
+let activeCategory = 'all';
+
+function render() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const list = document.getElementById('articles-list');
+  const countEl = document.getElementById('results-count');
+
+  const filtered = allArticles.filter(a => {
+    const catMatch = activeCategory === 'all' || getCatKey(a.search_name) === activeCategory;
+    const qMatch = !q || a.title.toLowerCase().includes(q) || cleanCatName(a.search_name).toLowerCase().includes(q);
+    return catMatch && qMatch;
+  });
+
+  countEl.textContent = `${filtered.length} article${filtered.length !== 1 ? 's' : ''}${activeCategory !== 'all' ? ' in ' + cleanCatName(activeCategory.replace(/_/g,' ')) : ''}${q ? ' matching "' + q + '"' : ''}`;
+
+  if (filtered.length === 0) {
+    list.innerHTML = `<div class="empty"><div class="empty-title">No articles found</div><div>Try a different search or category</div></div>`;
+    return;
+  }
+
+  list.innerHTML = filtered.map(a => {
+    const style = getCatStyle(a.search_name);
+    const source = extractSource(a.link);
+    return `
+      <a class="article-card" href="${a.link}" target="_blank" rel="noopener"
+         style="border-left-color: ${style.border}">
+        <div class="article-body">
+          <div class="article-meta">
+            <span class="tag" style="background:${style.bg};color:${style.text}">${cleanCatName(a.search_name)}</span>
+            ${source ? `<span class="article-source">${source}</span><span class="article-dot">·</span>` : ''}
+            <span class="article-time">${timeAgo(a.published)}</span>
+          </div>
+          <div class="article-title">${a.title}</div>
+        </div>
+      </a>`;
+  }).join('');
+}
+
+async function init() {
+  try {
+    const res = await fetch('feed.json?t=' + Date.now());
+    const data = await res.json();
+    allArticles = data.articles || [];
+
+    // Metrics
+    document.getElementById('m-total').textContent = allArticles.length;
+    const cats = [...new Set(allArticles.map(a => a.search_name))];
+    document.getElementById('m-cats').textContent = cats.length;
+    document.getElementById('m-cats-sub').textContent = 'categories tracked';
+
+    const lookback = data.lookback_days || (allArticles[0]?.past_days ?? '?');
+    document.getElementById('m-lookback').textContent = lookback + 'h';
+    document.getElementById('m-run-type').textContent = data.run_type || 'Scheduled run';
+
+    const genAt = new Date(data.generated_at);
+    document.getElementById('m-updated').textContent = genAt.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    document.getElementById('m-updated-sub').textContent = genAt.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+
+    document.getElementById('live-time').textContent = 'Live · ' + genAt.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) + ' UTC';
+
+    // Category filters
+    const filterContainer = document.getElementById('cat-filters');
+    filterContainer.innerHTML = cats.map(cat => {
+      const style = getCatStyle(cat);
+      return `<button class="filter-btn" data-cat="${getCatKey(cat)}"
+        style="--active-bg:${style.border}">${cleanCatName(cat)}</button>`;
+    }).join('');
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCategory = btn.dataset.cat;
+        render();
+      });
+    });
+
+    render();
+  } catch (e) {
+    document.getElementById('articles-list').innerHTML =
+      `<div class="empty"><div class="empty-title">Could not load feed</div><div>Make sure feed.json exists in the same folder</div></div>`;
+    console.error(e);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────
+// SET YOUR PASSWORD HERE — change the value inside the quotes below
+const FEED_PASSWORD = 'changeme';
+// ─────────────────────────────────────────────────────────────────
+
+const SESSION_KEY = 'b4_feed_auth';
+
+function checkGate() {
+  if (sessionStorage.getItem(SESSION_KEY) === 'granted') {
+    document.getElementById('gate').classList.add('hidden');
+    return true;
+  }
+  return false;
+}
+
+function tryUnlock() {
+  const val = document.getElementById('gate-input').value;
+  if (val === FEED_PASSWORD) {
+    sessionStorage.setItem(SESSION_KEY, 'granted');
+    document.getElementById('gate').classList.add('hidden');
+    init();
+  } else {
+    const err = document.getElementById('gate-error');
+    err.textContent = 'Incorrect password. Try again.';
+    document.getElementById('gate-input').value = '';
+    document.getElementById('gate-input').focus();
+    setTimeout(() => { err.textContent = ''; }, 3000);
+  }
+}
+
+document.getElementById('gate-btn').addEventListener('click', tryUnlock);
+document.getElementById('gate-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') tryUnlock();
+});
+
+document.getElementById('search').addEventListener('input', render);
+document.getElementById('live-time').textContent = new Date().toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' }) + ' UTC';
+
+if (checkGate()) init();
+</script>
+</body>
+</html>
