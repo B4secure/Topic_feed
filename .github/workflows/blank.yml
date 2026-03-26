@@ -36,10 +36,6 @@ jobs:
           persist-credentials: true
           fetch-depth: 0
 
-      - name: Pull latest
-        run: |
-          git pull --rebase --autostash
-          
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -108,8 +104,8 @@ jobs:
           fi
 
           git commit -m "Update topic news feed (daily)"
-          git pull --rebase
-          git push
+          git push origin HEAD:main
+
 
   weekly:
     if: |
@@ -123,10 +119,6 @@ jobs:
         with:
           persist-credentials: true
           fetch-depth: 0
-
-      - name: Pull latest
-        run: |
-          git pull --rebase
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -196,4 +188,4 @@ jobs:
           fi
 
           git commit -m "Update topic news feed (weekly)"
-          git push
+          git push origin HEAD:main
