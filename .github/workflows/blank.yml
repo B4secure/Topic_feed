@@ -24,7 +24,6 @@ concurrency:
 
 jobs:
   daily:
-    # Run daily ONLY when daily cron fired OR manual dispatch chose daily
     if: |
       (github.event_name == 'schedule' && github.event.schedule == '0 7 * * *') ||
       (github.event_name == 'workflow_dispatch' && github.event.inputs.run_mode == 'daily')
@@ -73,6 +72,8 @@ jobs:
         run: |
           echo "==== data tree ===="
           ls -R data || true
+          echo "==== docs tree ===="
+          ls -R docs || true
 
       - name: Commit outputs (daily)
         shell: bash
@@ -81,10 +82,10 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-          # Stage only if files exist
           files=()
           [ -f data/topic_feeds_latest.xlsx ] && files+=(data/topic_feeds_latest.xlsx)
           [ -f data/topic_feeds_rolling_7d.xlsx ] && files+=(data/topic_feeds_rolling_7d.xlsx)
+          [ -f docs/feed.json ] && files+=(docs/feed.json)
 
           shopt -s nullglob
           daily_files=(data/daily/*.xlsx)
@@ -111,7 +112,6 @@ jobs:
 
 
   weekly:
-    # Run weekly ONLY when weekly cron fired OR manual dispatch chose weekly
     if: |
       (github.event_name == 'schedule' && github.event.schedule == '0 7 * * 3') ||
       (github.event_name == 'workflow_dispatch' && github.event.inputs.run_mode == 'weekly')
@@ -160,6 +160,8 @@ jobs:
         run: |
           echo "==== data tree ===="
           ls -R data || true
+          echo "==== docs tree ===="
+          ls -R docs || true
 
       - name: Commit outputs (weekly)
         shell: bash
@@ -171,6 +173,7 @@ jobs:
           files=()
           [ -f data/topic_feeds_latest.xlsx ] && files+=(data/topic_feeds_latest.xlsx)
           [ -f data/topic_feeds_rolling_7d.xlsx ] && files+=(data/topic_feeds_rolling_7d.xlsx)
+          [ -f docs/feed.json ] && files+=(docs/feed.json)
 
           shopt -s nullglob
           weekly_files=(data/weekly/*.xlsx)
@@ -194,5 +197,3 @@ jobs:
 
           git commit -m "Update topic news feed (weekly)"
           git push
-
-
