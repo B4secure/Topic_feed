@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-03-26T07:03:00Z",
+  "lookback_days": 1,
+  "run_type": "Morning run",
+  "articles": [
+    {
+      "search_name": "Fraud",
+      "search_query": "fraud OR scam OR counterfeit AND (retail OR luxury OR outlet)",
+      "title": "Organised retail fraud ring dismantled across three Bicester Village outlets",
+      "published": "Fri, 26 Mar 2026 05:00:00 GMT",
+      "link": "https://example.com/article1",
+      "past_days": 1
+    },
+    {
+      "search_name": "Cyber",
+      "search_query": "cyber OR phishing OR ransomware AND (retail OR luxury)",
+      "title": "NCSC advisory: increased phishing targeting luxury retail staff credentials",
+      "published": "Fri, 26 Mar 2026 03:00:00 GMT",
+      "link": "https://example.com/article2",
+      "past_days": 1
+    },
+    {
+      "search_name": "Protest",
+      "search_query": "protest OR demonstration OR activist AND (outlet OR village OR retail)",
+      "title": "Animal rights protestors plan demonstration outside La Vallée Village",
+      "published": "Fri, 26 Mar 2026 02:00:00 GMT",
+      "link": "https://example.com/article3",
+      "past_days": 1
+    },
+    {
+      "search_name": "Current_Affairs",
+      "search_query": "(geopolitics OR migration OR economy OR conflict) AND (Europe OR UK)",
+      "title": "Changes to UK visa and settlement rules after the 2025 immigration white paper",
+      "published": "Fri, 20 Mar 2026 07:00:00 GMT",
+      "link": "https://example.com/article4",
+      "past_days": 7
+    },
+    {
+      "search_name": "Theft",
+      "search_query": "theft OR robbery OR shoplifting AND (luxury OR outlet OR village)",
+      "title": "Surge in organised retail theft reported across European outlet villages in Q1",
+      "published": "Thu, 25 Mar 2026 14:00:00 GMT",
+      "link": "https://example.com/article5",
+      "past_days": 1
+    },
+    {
+      "search_name": "Supply_Chain",
+      "search_query": "supply chain OR logistics OR counterfeit goods AND (luxury OR retail)",
+      "title": "Counterfeit luxury goods seizure at Rotterdam port linked to outlet resale networks",
+      "published": "Thu, 25 Mar 2026 10:00:00 GMT",
+      "link": "https://example.com/article6",
+      "past_days": 1
+    }
+  ]
+}
