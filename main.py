@@ -285,10 +285,7 @@ def update_master_excel_rolling(new_df: pd.DataFrame, master_path: Path, keep_da
 # ---------------------------
 # NEW: Export feed.json for dashboard
 # ---------------------------
-def export_feed_json(df: pd.DataFrame, past_days: int, run_mode: str):
-    """Export deduplicated articles to docs/feed.json for the GitHub Pages dashboard."""
-    run_type = "Weekly run" if run_mode == "weekly" else "Daily run"
-
+def _build_articles(df: pd.DataFrame, past_days: int) -> list:
     articles = []
     for _, row in df.iterrows():
         articles.append({
@@ -299,18 +296,53 @@ def export_feed_json(df: pd.DataFrame, past_days: int, run_mode: str):
             "link":         str(row.get("link", "")),
             "past_days":    int(row.get("past_days", past_days)),
         })
+    return articles
 
+
+def export_daily_feed_json(df_today: pd.DataFrame, df_master: pd.DataFrame, past_days: int):
+    """Export daily accumulated feed — today's run merged into 7-day rolling master."""
+    articles = _build_articles(df_master, past_days)
     payload = {
         "generated_at":  datetime.now(timezone.utc).isoformat(),
         "lookback_days": past_days,
-        "run_type":      run_type,
+        "run_type":      "Daily run",
+        "feed_type":     "daily",
         "articles":      articles,
     }
+    output_path = DOCS_DIR / "daily_feed.json"
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    print(f"daily_feed.json written → {len(articles)} articles → {output_path}")
 
+
+def export_weekly_feed_json(df: pd.DataFrame):
+    """Export weekly feed — only written on weekly runs."""
+    articles = _build_articles(df, 7)
+    payload = {
+        "generated_at":  datetime.now(timezone.utc).isoformat(),
+        "lookback_days": 7,
+        "run_type":      "Weekly run",
+        "feed_type":     "weekly",
+        "articles":      articles,
+    }
+    output_path = DOCS_DIR / "weekly_feed.json"
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    print(f"weekly_feed.json written → {len(articles)} articles → {output_path}")
+
+
+def export_feed_json(df: pd.DataFrame, past_days: int, run_mode: str):
+    """Legacy single feed.json — kept for portal backwards compatibility."""
+    articles = _build_articles(df, past_days)
+    payload = {
+        "generated_at":  datetime.now(timezone.utc).isoformat(),
+        "lookback_days": past_days,
+        "run_type":      "Weekly run" if run_mode == "weekly" else "Daily run",
+        "articles":      articles,
+    }
     output_path = DOCS_DIR / "feed.json"
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-
     print(f"feed.json written → {len(articles)} articles → {output_path}")
 
 
@@ -387,9 +419,13 @@ def main():
         weekly_latest = DATA_DIR / "topic_feeds_weekly_latest.xlsx"
         df_final.to_excel(weekly_latest, index=False, engine="openpyxl")
 
-    # Export dashboard feed — use 7-day rolling master
+    # Export dashboard feeds
     df_master = pd.read_excel(master)
-    export_feed_json(df_master, 7, RUN_MODE)
+    export_daily_feed_json(df_final, df_master, PAST_DAYS)   # always — accumulates 7 days
+    export_feed_json(df_final, PAST_DAYS, RUN_MODE)           # legacy single feed.json
+
+    if RUN_MODE == "weekly":
+        export_weekly_feed_json(df_master)                    # only on weekly runs
 
     print(f"\nRUN_MODE={RUN_MODE}")
     print(f"Master updated: {master}")
