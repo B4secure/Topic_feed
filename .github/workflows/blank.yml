@@ -81,7 +81,9 @@ jobs:
           files=()
           [ -f data/topic_feeds_latest.xlsx ] && files+=(data/topic_feeds_latest.xlsx)
           [ -f data/topic_feeds_rolling_7d.xlsx ] && files+=(data/topic_feeds_rolling_7d.xlsx)
-          [ -f docs/feed.json ] && files+=(docs/feed.json)
+          [ -f docs/feed.json ]         && files+=(docs/feed.json)
+          [ -f docs/daily_feed.json ]   && files+=(docs/daily_feed.json)
+          [ -f docs/weekly_feed.json ]  && files+=(docs/weekly_feed.json)
 
           shopt -s nullglob
           daily_files=(data/daily/*.xlsx)
@@ -165,7 +167,9 @@ jobs:
           files=()
           [ -f data/topic_feeds_latest.xlsx ] && files+=(data/topic_feeds_latest.xlsx)
           [ -f data/topic_feeds_rolling_7d.xlsx ] && files+=(data/topic_feeds_rolling_7d.xlsx)
-          [ -f docs/feed.json ] && files+=(docs/feed.json)
+          [ -f docs/feed.json ]         && files+=(docs/feed.json)
+          [ -f docs/daily_feed.json ]   && files+=(docs/daily_feed.json)
+          [ -f docs/weekly_feed.json ]  && files+=(docs/weekly_feed.json)
 
           shopt -s nullglob
           weekly_files=(data/weekly/*.xlsx)
