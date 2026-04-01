@@ -421,11 +421,42 @@ def main():
 
     # Export dashboard feeds
     df_master = pd.read_excel(master)
-    export_daily_feed_json(df_final, df_master, PAST_DAYS)   # always — accumulates 7 days
+
+    # Daily feed: accumulate this week's daily runs into docs/daily_feed.json
+    # Load existing daily_feed.json if it exists and merge, keeping 7 days
+    daily_json_path = DOCS_DIR / "daily_feed.json"
+    if daily_json_path.exists() and RUN_MODE == "daily":
+        try:
+            with open(daily_json_path, "r", encoding="utf-8") as f:
+                existing = json.load(f)
+            existing_articles = existing.get("articles", [])
+            # Convert to DataFrame and merge with today's
+            if existing_articles:
+                df_existing = pd.DataFrame(existing_articles)
+                # Only keep columns that match df_final
+                common_cols = [c for c in df_final.columns if c in df_existing.columns]
+                df_existing = df_existing[common_cols]
+                df_merged = pd.concat([df_existing, df_final[common_cols]], ignore_index=True)
+                df_merged = df_merged.drop_duplicates(subset=["link"]).reset_index(drop=True)
+                # Keep only last 7 days
+                df_merged["published_dt_utc"] = df_merged["published"].apply(parse_published_dt)
+                cutoff = datetime.now(timezone.utc) - timedelta(days=7)
+                df_merged = df_merged[df_merged["published_dt_utc"].notna()]
+                df_merged = df_merged[df_merged["published_dt_utc"] >= cutoff]
+                df_merged = df_merged.drop(columns=["published_dt_utc"], errors="ignore").reset_index(drop=True)
+                export_daily_feed_json(df_final, df_merged, PAST_DAYS)
+            else:
+                export_daily_feed_json(df_final, df_final, PAST_DAYS)
+        except Exception as e:
+            print(f"Daily feed merge warning: {e}")
+            export_daily_feed_json(df_final, df_final, PAST_DAYS)
+    else:
+        export_daily_feed_json(df_final, df_final, PAST_DAYS)
+
     export_feed_json(df_final, PAST_DAYS, RUN_MODE)           # legacy single feed.json
 
     if RUN_MODE == "weekly":
-        export_weekly_feed_json(df_master)                    # only on weekly runs
+        export_weekly_feed_json(df_master)                    # only on weekly runs — stays frozen
 
     print(f"\nRUN_MODE={RUN_MODE}")
     print(f"Master updated: {master}")
