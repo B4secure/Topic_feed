@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-04-01T10:37:35.672875+00:00",
+  "generated_at": "2026-04-01T10:37:35.694918+00:00",
   "lookback_days": 7,
-  "run_type": "Daily run",
-  "feed_type": "daily",
+  "run_type": "Weekly run",
+  "feed_type": "weekly",
   "articles": [
     {
       "search_name": "Current_Affairs",
