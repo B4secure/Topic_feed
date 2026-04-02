@@ -106,6 +106,7 @@ jobs:
           fi
 
           git commit -m "Update topic news feed (daily)"
+          git pull --rebase origin main
           git push origin HEAD:main
 
 
@@ -192,4 +193,5 @@ jobs:
           fi
 
           git commit -m "Update topic news feed (weekly)"
+          git pull --rebase origin main
           git push origin HEAD:main
