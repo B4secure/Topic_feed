@@ -75,39 +75,30 @@ jobs:
       - name: Commit outputs (daily)
         shell: bash
         run: |
-          set -e
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
           files=()
           [ -f data/topic_feeds_latest.xlsx ] && files+=(data/topic_feeds_latest.xlsx)
           [ -f data/topic_feeds_rolling_7d.xlsx ] && files+=(data/topic_feeds_rolling_7d.xlsx)
-          [ -f docs/feed.json ]         && files+=(docs/feed.json)
-          [ -f docs/daily_feed.json ]   && files+=(docs/daily_feed.json)
-          [ -f docs/weekly_feed.json ]  && files+=(docs/weekly_feed.json)
+          [ -f docs/feed.json ]        && files+=(docs/feed.json)
+          [ -f docs/daily_feed.json ]  && files+=(docs/daily_feed.json)
+          [ -f docs/weekly_feed.json ] && files+=(docs/weekly_feed.json)
 
           shopt -s nullglob
           daily_files=(data/daily/*.xlsx)
           shopt -u nullglob
+          [ ${#daily_files[@]} -gt 0 ] && files+=("${daily_files[@]}")
 
-          if [ ${#daily_files[@]} -gt 0 ]; then
-            files+=("${daily_files[@]}")
-          fi
-
-          if [ ${#files[@]} -eq 0 ]; then
-            echo "No output files found to commit."
-            exit 0
-          fi
+          [ ${#files[@]} -eq 0 ] && echo "No output files found." && exit 0
 
           git add "${files[@]}"
-
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-            exit 0
-          fi
+          git diff --cached --quiet && echo "No changes to commit." && exit 0
 
           git commit -m "Update topic news feed (daily)"
+          git stash || true
           git pull --rebase origin main
+          git stash pop || true
           git push origin HEAD:main
 
 
