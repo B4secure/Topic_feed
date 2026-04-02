@@ -18,12 +18,13 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: topic-news-collector
-  cancel-in-progress: false
 
 jobs:
   daily:
+    concurrency:
+      group: topic-feed-daily
+      cancel-in-progress: false
+      
     if: |
       (github.event_name == 'schedule' && github.event.schedule == '0 7 * * *') ||
       (github.event_name == 'workflow_dispatch' && github.event.inputs.run_mode == 'daily')
@@ -111,6 +112,10 @@ jobs:
 
 
   weekly:
+    concurrency:
+      group: topic-feed-daily
+      cancel-in-progress: false
+      
     if: |
       (github.event_name == 'schedule' && github.event.schedule == '0 7 * * 3') ||
       (github.event_name == 'workflow_dispatch' && github.event.inputs.run_mode == 'weekly')
