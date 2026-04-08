@@ -1,9 +1,7 @@
 name: Topic News Collector
 
 on:
-  schedule:
-    - cron: "0 7 * * *"     # daily 07:00 UTC
-    - cron: "0 7 * * 3"     # weekly Wednesday 07:00 UTC
+  
   workflow_dispatch:
     inputs:
       run_mode:
