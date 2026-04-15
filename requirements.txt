@@ -9,3 +9,4 @@ scikit-learn
 sentence-transformers
 torch
 openpyxl
+deep_translator
