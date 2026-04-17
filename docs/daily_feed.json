@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-17T08:03:13.286720+00:00",
+  "generated_at": "2026-04-17T13:20:49.642435+00:00",
   "lookback_days": 1,
   "run_type": "Daily run",
   "feed_type": "daily",
@@ -7,612 +7,9 @@
     {
       "search_name": "Current_Affairs",
       "search_query": "(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR \"government policy\" OR legislation OR sanctions) AND (Europe OR UK OR \"United States\" OR global OR international)",
-      "title": "INSIGHT: Europe capro market tightens as geopolitics, supply chain disruption push costs up - ICIS",
-      "published": "Fri, 10 Apr 2026 12:08:05 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxORnRvV0l2NTNNMnpEV2JvTl9yMEw4bURlNkZkdHQtZVk4dGY5cEw3NzdzTEtveWlKTkRNRWtHa1F3WmlsZTR3WXktUmE1ZUdVRnRKYTlXVGlKdkVYOUVkQW5nQWRtV01tcVl5cG9fRTJqQUFveGtlOUtCcjBtMUlpUVJPWTd5UnRjZXJzWlJZMmxmUWwtTWtxT2JjZFNSVWZtTG5STi1DSmZmSGVQWEVUYW4zeEtrRDh1UWRKWERqQTd4NS1IRGtDVk10dlgwMnNOamJMWmlKYzFMVEluWDJ0VFFMTEZFTXJM?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Current_Affairs",
-      "search_query": "(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR \"government policy\" OR legislation OR sanctions) AND (Europe OR UK OR \"United States\" OR global OR international)",
-      "title": "Iran conflict 2026: UK deploys Sky Sabre to Saudi Arabia - Janes",
-      "published": "Fri, 10 Apr 2026 11:22:53 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNbjNCaGhXdHhwNi16LTdLWDVqb01Lb2hWNVRvZzBPSmxjS21jamtOR1hmQnltU1MxZlMxM1R4R0Z0Mmhxc3BkQ1VNN2p1Z3AwSlVKM3lUeHd2RnVpelViLTVsXzUxR2Y5YWw3eXVwVXdiU2RMRkFaeXRBTEtiOVhhaG1xQUtjOUNhX09wclJtS3RESEdQaFNxUHRYNXVIVzVBVm1xZVpfMHgwV3czak4yZUQ0SQ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Current_Affairs",
-      "search_query": "(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR \"government policy\" OR legislation OR sanctions) AND (Europe OR UK OR \"United States\" OR global OR international)",
-      "title": "UK housing market slows as ongoing Middle East conflict raises borrowing costs, RICS reports - Show House",
-      "published": "Fri, 10 Apr 2026 11:03:45 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQZFJUMTVVTjM4clBWaE9jTEdvbDZVcF9pbmlpN0dDVEJhckNRVkQwb3h5NTBvNWh6SUVJT0lxS042V0JIRmFVY2NEdlJOSVpkVDdWNDVibkdfbTh3dEZSSFRCSUtZc3V2Skk4WTJyYWlUX0hFdVBLZmhfMU5tZWNKOVBaVGI2SFVuZEV2d2JIVERqOEd1dVRSb1R0YUlTUnFEdW9FVVFDVUdRakowRVdyV3UwMmxNTHpzbWpZQktaTnhnUkU?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Current_Affairs",
-      "search_query": "(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR \"government policy\" OR legislation OR sanctions) AND (Europe OR UK OR \"United States\" OR global OR international)",
-      "title": "Starmer, Trump, and why we’re seeing a breakdown of UK-US communication - The Independent",
-      "published": "Fri, 10 Apr 2026 12:36:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdHdqRFhaQ29oNEpmX2gyNTh5TXY0RUxNTkZ5Z2phNEcyQTJFZlpWdGpuMVQ1WnhQNFV6R2lJdVlVb2NYU09IY3Z0dTk2ajVPVEdGNGpBSDRfOGozcXRnQlRlVC1nLWo2bEJ5VklnWTlZc0RrMkZRejVsazBoUGtLc2RvdU1xUnYzck8tWFpZS1pDU3VYa1FkZ0M5bHUwRGc?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Current_Affairs",
-      "search_query": "(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR \"government policy\" OR legislation OR sanctions) AND (Europe OR UK OR \"United States\" OR global OR international)",
-      "title": "Conflict and sanctions threaten global shipping order, warns world’s largest marine insurer - Tradewinds News",
-      "published": "Fri, 10 Apr 2026 08:24:24 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxQZDdvUXlrLTk3b3RCOVI0VXVaaUxoMWU0MnY2dExkbTdNTTZPaUd5VHBqbjY0WENHZzRXM3RIS3JrWWxDWjZLWUZXb1lQQzd0MzJKUUtvSk5XUGZDWm5tQ0NsNkNVOXJUek5XaE94RG9FdDlwVG5DUGlfX1FWMjhBRldzczNqUGQ5YU9WZzJocjBrbk9MRW4xMTl3dlRVNVF3LUxTZHJxX2ItWllnZWtNYW1lQXhpUXNyZS1pVjhTc25Lekk3d0ZiNzFwMk9kejVwVlRnaFIzUWpuakE?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Current_Affairs",
-      "search_query": "(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR \"government policy\" OR legislation OR sanctions) AND (Europe OR UK OR \"United States\" OR global OR international)",
-      "title": "Cruise tourism boosts global economy and local communities - Travel Daily Media",
-      "published": "Fri, 10 Apr 2026 12:07:13 GMT",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOWXoyaGE5MFV0amctWnd1M0l3cUY1dTJTRkFvQ24ybDRhZ2ptVE1PZ0x6ZlVsZjR2WmxMenRNWGtWNlVvbFY4OFd0VURfem5fQXBHb1NoZ0txQ1JDUEhPbUR2NkVoZHFXV1N2QnZOZlJFZ0l0SmY5cVVDODVYWlMxRHkyV3Z2MUZMV1dWei16TTlsVU5wTEVJ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Shoreham Port Opens Its Doors to the Next Generation with Inaugural Port Career Day - Shoreham Port",
-      "published": "Fri, 10 Apr 2026 11:50:15 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUHJZQ3dsTm4tbFZKem9iY2pMcGUwNFB2bENWaU5hQ1NZenFYSFBmYWFhdV9PRnRXNWU4dTZzSWNmVXJCNVdpN1FZenpoT0Zvd1U5VlZrWUZJb0V0OW9ZQ1c2RnJrcWItdmpyUHR3cm1HcTg2WkVPV0JEM3VraTEyY0kxY0NMRTdjMm01RGQ3NE9yaVAzTm9ZemNkcXJNbC1UaHVmVE9NNmxMNzRObWtUOFJFaU9ad0dtWFVWZHc0R1BOX084ckxZTDdDbTcxZnQ0c0tJTjJ5SV8?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Plans submitted for Strategic Rail Freight Interchange in Oxfordshire - Rail Business Daily",
-      "published": "Fri, 10 Apr 2026 10:02:55 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWlE2bEpUci1tNDFLdlBsaklncC1DeHJpMFBzd2FKUXUyR2lyV0xEWjZITUZUNkJNWm9naXVhMEhjdkJPWmNKLUVXeEdFUHltdWRlSzVyUk9hQVJEd1lFRmgyX2dpdFZyVzAyWkRaRGxDUHRSdklwLUVZTFM5WU1jTk0xRmtpZ0ZRbmVmOXlPYVh2dTdDUmhaNFg1blM1SWltLTFJejFBTEc?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Contract signed for dry port project in Egypt’s 10th of Ramadan City - Logistics Manager",
-      "published": "Fri, 10 Apr 2026 11:18:39 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPMDNQV0xXSS1Kay1fUjFzMHh0Sm5ob205SW5QUmRHc1NNWHpzUkZEbjRlSzJQTTEtQXZCbXgwdHlVUVZZdVpteGZhdktva19nM215T2VWVy1HZjZPMHZaQ2ZkSzZ6YUtNSjdTZjRMUkliV3J1ZDFJU1EzQVI0eXRxNmozcmIyWnd1YXVBdzB1RWtCbkNaR09iZUw2UFYzOWEyVEl3?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "The Week in Trade: Freight watchers remain uneasy over Strait of Hormuz, new avenue for defence exporters and Heathrow’s value to UK trade - The Chartered Institute of Export & International Trade",
-      "published": "Fri, 10 Apr 2026 11:10:42 GMT",
-      "link": "https://news.google.com/rss/articles/CBMikAJBVV95cUxNd21nT3lxdVpMNDNDTlpUdU9UWmFJbmpEaThCa2U5WHNBRnFYNTFmRGhtRnZOZi0wZVM5eV9mV0twLTBDb0lXcmN2OUI1eDlIS3B5Mzl0WWl0Q09WY1FESkc4WlFTRHhaVEFCT0lDN3J3V3hQVDNURmFfWFc5N2tqR3NtMzlDQWkwNktnR0k5U19fc2FuNzhLSHJlbFJZUE81ZVBpRUtTZ0NUUzdRclNPZjNsZU1TbUlpVzlKWVEya2dVS01WME4zSFpJYU1BMVREZkRKQ2FFejJzLTJudkFERWp6U2Y5aUZOdno5c0pXT3ZGZFh3b2d5TjNnT2dKRXRvWkF0QU5CbEJoU0JvT1ZkQg?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "IFS: Strengthening Supply Chain Resilience With AI Pricing - Supply Chain Digital Magazine",
-      "published": "Fri, 10 Apr 2026 11:35:12 GMT",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQR0ZqMUZOVXZQbHYzSThYc0lsNVI0ajJRdlFCb01vVWZlRS1JNS1VcHlDRTBRSXJwcVo2Z3Y1NkJ1eWZDbFZZbTh6V1VER0tVTjE4WTNFUUtfbWtKbzc3c2JUZnBVR0ZKWTBpUzdEOGN3WWxpME9ydXN6dEZkQ0xfNHNUWklwQ1pfcUhySGduRTJTcXlsVHg2Zw?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Bunker Spill Closes Port of Antwerp to River Traffic - Ship & Bunker",
-      "published": "Fri, 10 Apr 2026 09:24:17 GMT",
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVnlWNkFWQ3Y0dTg0WVR2dC1SbUVMcmVKNnZmYklBUUt3QUQ3czBwRTBMc183NTFjWG9tcFZjdUxrN1h2QmR0VDFIemRRNDlCbE8weTlfblJ5TFR1R2FYWkh6TUZ6YTM3YmFEaXctQllyNHl0YTRhbW94Vml5Z2hDZm80QWZuMnYzdkM3dVotbVE2NDUtM093RnpDaw?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "ICO says Met Police FOI compliance has never risen above 75% - Local Government Lawyer",
-      "published": "Fri, 10 Apr 2026 08:50:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNV2Q1dFZnR1dUb3lta3RNWHJkZlEzTm1tamFxbG9QUF9qbmV3WmZKV2tmN0tQdDdnSWJPTF8wS3ctYU1PVmttaFQ0dTBock9xbnNTSDVBU0dwTU1UWG5EWExONHNKaGV0RTFBWW9DTDNaUmVxRkdtdU9Uczk3WllfRHNuc2xwVGh2Z0tVUUJOejRmanhScmVySFZuNHZvb0FFV1lucGNHUFJSMGljY0FxUGxrbGlCNFhFTkRvN3pJc1Iwcm4tSWRtMkJkXzgwWTRjMWNfekFQQmtudnZhWGhvYw?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Investors demand freight and logistics sector act on air pollution - AirQualityNews",
-      "published": "Fri, 10 Apr 2026 10:47:42 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxONmtxLTFwaHdIWWRiTXZudjNSM2hiYlVqeVhqZFBFRE4wWlpFS1ZxVl81cXE5dUNXM2lNMDZNYlB0UW1NOWJfZFc0cl9uaFJNckdJR1dVTms0NmUyMUR1RF94YVhicFBxVEtScUhfTUhwcnQ0VElSZFlWZXFFRTVrTl83cnYzcWYyVVdwZWFVcEhDclU2ZUNxajc3OUpaTmdnckNpdEEwREtRc0FnOGdmd05HZTRBNmJv?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "EU AI Act Compliance: a technical audit guide for the 2026 deadline - Raconteur",
-      "published": "Fri, 10 Apr 2026 08:59:24 GMT",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPT3k2Vm9ZUUhhdWtLRnE1enQxRjdfc1VCYjVSMC11OFNrTWo4U3FnRnlOWGkweHRicEdwaVAzbTVmVTlueWJucE9lenR5LTZ1SDJjeFdGdDZoZ2xlak40RjRGVlhqd0R4QkF6WE9fMHVmX3ZDNG5UWUstTXhJUnVwZG01dG1JN2JYN3B1Mk1QS3h6eTFVaWxlY25WSnYwT3hpaW9BaWtHTHRiYXJ3?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Fragmented global regulatory approach to data sovereignty poses significant compliance challenges - Omdia",
-      "published": "Fri, 10 Apr 2026 09:01:03 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQb3MtNXAyb3VpSFQweG4zYThBWUxZMVJCclFta2xYYlJheUZSQ3pIOHRZWnp0LVpMT2padVdfUUxuN3cyaHRrZHR5RE8yRXBaVEc4NW5xUUlDS0FiSEpTdEFqS2FEZjVTT3BjLXktUGF6c2dNanh4WGdvVzczdkoyYlhTTzNxYUxyRjJLSC1LYWZ3dV9lMVozZTc3SGUyTkFBbF9yMkxiUUNtT0M0c1ZhejBpUUN3cjFyVWVNT0RDeEVxN2xyaWlMdXJJaXJKZ1Z2MEc5LTR2bw?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Foodservice inflation eases in February, but supply chain risks grow - DRAM Scotland",
-      "published": "Fri, 10 Apr 2026 08:58:36 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQdkNKZXhIcUdUT19iQWFtX1gyQldTQmpROUstUHoxQlljbTE2RkozRjdfLVZiaEoxVC1JaDFUb0RwTGhxVHV4SGRQOWRHNVZ1cWRGR2dsYmFaX3JnTUhoSW5vdlBsWGZXWkxLWjQyOTNLcmJzSUdnaWlxVTRpSXZrcjFmc3ZPTjYySnFuOE00eW1aVDNkZlVhS1UtNkw0T3FJWDBSOXlwWVBDZw?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Tech executives to be criminally liable for non-compliance with Ofcom - UKTN",
-      "published": "Fri, 10 Apr 2026 10:12:01 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZEF3YlZ0VTdYNVU5N3k5d0E4WTFyTzMwV2RHOTNBYjlnMGZYN0N4WTRWSDM4NzBRRzBfUjJDYjJBVEcxZkVRQ0tZbVg2b2JaRVQ3RlNFMEw5dFhvcnFHaldfZjE0WHZuWnUxRXlPVEo2YTNodFdVSGJzREJLMnU1Q1UtU0NhbTlad29YNWRIeVptb2M1UjEwcm5kQllPMlRIV1BHUmI3YkRkVlU?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Deloitte Legal bolsters shipping and yachting practice in Genoa with Cecilia Vernetti and team - Leaders League",
-      "published": "Fri, 10 Apr 2026 09:35:33 GMT",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOb18xeW5MdVNIOE9RMFBqT2p4dGVmR1I2X3hBU0g3Y1pPV0tHcDVjOERTTXRuZVh2M3NuNHp3RHBDMi1STXY1bXBPMHBrQ2R5eFVRLWJxNTlPMGljNjgtUEF3aVZpandsbVhNM2tkMUxTYk1XNnJ2dDVUbmthczlqU3hDeEpYVjRUakNSaFcwWDNCUWE2V2g1QWh6dzU1TEVyTGc1NUdxSTYwcEpCbjd6ckxWTnRybXE3TkpsYVIwVUQxWVFWWGFvZ1VDNXo?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Sunrise sells 154,000ft² Gothenburg logistics facility - Logistics Manager",
-      "published": "Fri, 10 Apr 2026 11:42:30 GMT",
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOTVpwQ0FtMVVkQkE1Q2Y4NGUxUlFYb3FLQmlUeW1LX1ZCUnkxMFN2SjN2UlF6TExHLVBHT2VWVzZ6dXVZV3dtSmkxQXhudFJOSnRFa2R2UTlxcWdyMzMyeHJVMXhzZUJNYlFJaUw3aTZWOHh0alNuVnBtdE9nYVNQZ1c2UHJSLURJTVVub0hkUHFVTjZCZVo4?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "The Right Mortgage appoints compliance manager - Cover Magazine",
-      "published": "Fri, 10 Apr 2026 10:53:29 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPR0QwZ3NLZGZ6Z2NHaVpqODNYTGt2STFKUkNScUwwMUN5V3BXaHQxekcwZWZjX1gzR0tqMGFXMWFfX1Z3R0Q5bm53WXNXdGY0YXNMSno5ekFodm1pNVN3YUs1Mk4tdV91R2JQaHZVN210azFTbkNsR0JySWYyMTlHcU9WTmJEb3hZ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "€1bn logistics property venture launches in five countries - Trans.INFO",
-      "published": "Fri, 10 Apr 2026 09:25:13 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9RUDhuU3M3MjZEa1lGTnM4ME8tdXFDanNNOUtqbHhrY2ZpR0hGamtacjhBakNwZjR4VGtkR1lycG0wR1BqNEdYUEpsVHpfWEtnNnZRZXBRa0xJWXNDZHh4cWlHUFhqdw?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Tritax London Logistics Fund raises a further £110m - Property Week",
-      "published": "Fri, 10 Apr 2026 09:53:15 GMT",
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOdUVBWlZ3QVlyeDJ4cjJMSG1IVmhTeUMzQ2NtYnl1QVNtN0hfaGp3R0FXTGxaVWhMMEQtNEpaSTBIM18wc0NYV1NEdmpPc1R2RVdGWmVuckJJYUhxMzVMc1duMDBfdHdwYnQ2b3hqTDZYN2dUZ21tMEtCa3Y0eldseWdRYkdfUU8xOE9wRg?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Peruvians go to polls hoping to break cycle of instability - The Guardian",
-      "published": "Fri, 10 Apr 2026 12:30:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQcDFPbUdpbUFCQjU2NTNxcmhNMjNJS2FESV9lcDJBSTZ3WC1CTnJZTkRfWm9BS0Q1UTJvV01xRnhxWEhDZE9zSThHeGRDTk8wanpSNzBlWFlUS3NQS25oNC1zWms3b19ENUN4US16TXU2Q3RnNmVnVGpob2NNeHlKaXpSRQ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Nigeria moves towards freight network liberalisation - International Railway Journal",
-      "published": "Fri, 10 Apr 2026 11:49:56 GMT",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOZnlUdTczaldzTzM4NWRQaFpTS0owLU9hNDFuTnBEeTdISlhhdW84ZkpxWEtXRkE5emRTZmhISlBiOG55ak5ZN25kdGdNVWg5cnd0c3kwWUZzWG5LSU1mcHdJSkx1eWZsekowVUtEWGRTc19lM0hCenFyb1doNTJwaU85TzFXXzVIckR6eENMZkVYVzg?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Losses in iron ore exports due to attacks on logistics amounted to $150 million in Q4 – NBU - GMK Center",
-      "published": "Fri, 10 Apr 2026 09:30:56 GMT",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOMWhBWkN6LW9IS1MyUnpEcDRqSTU1SmRaRWRyVXVKYXBoSXdxWHItMG53dVRRbjhRWEllV0pTanZqSUhTc1R0c2hZVTVGYWd3T1NBX19lcWk1eFVJSHV2OXBUa2NoNzRNRUpJTWhRU0dOUlhMUjBrVlU2bmc4alp5Q3Q3RUY4WEN1blN5X0lBS2dpV0dOTHUxVmtOVUhOYWNyUFp0d0poa1lMVEVlNThVcDY1TERkNm_SAbwBQVVfeXFMT2hOVFczc09FNWlCa0dZZmdiVU13dzFXMEw2N0hodk5yYThTb1NtUnp2Y1RzNmVUUHBrNFo0M2dzODM4a05RMTU5UERJX1JULVhHaHJWMFFoUFhuQXJtc3VVQ2J0UE5CczVLM0pBR3VGVVJQek5JTS05ZHlpR1hsNUtSVHYzb2xrSjVwWWZ3akRZbmY2MlFZRk10NzVOSTF4YnptVjB1QUlSSzNGZHYwMXJySkszWFdOU212dTE?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Planning approved for New Pre‑16 Vocational Centre in Port Talbot - Wales 247",
-      "published": "Fri, 10 Apr 2026 08:43:15 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQT2cxOVMzdGdMNUkzVzFOQnVZS3Vid2NlQmJoYnBLTE5GXzdYbXloWGlVeExxNm1CMllERFpyM3VsdlBkX3dMcEhGdFlVYlB6YVdpUUdhdkxJa21jWXY0cllkaDNEM1RjTm01emZodHFFck1nMV84VU41OFRZN1ZRRGo1d2dTUDI2Tl9jTkZIZm1GcUNrUUwxWXE1WmVaMm5ueGc?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Maersk shifts Northern Star to Yangshan terminal - Port Technology",
-      "published": "Fri, 10 Apr 2026 10:54:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUXJ4THZ1aWM4MDB5UktqZDJCblRPN0t0amUxMGJRaVVFUUJGWjBVaEF3LXByX2xUVFN5Q0QwTXpnRzg3c1Z0czNmS0t5R3hTRTZxWVMwT2NUcHBjR1hydWFqVHMwbXhncTdhb3hyYjBlQmUyT3RYQ0VNcGJnRk13OVV4UVE2QkU?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "China Merchants Port reports drop in 2025 profit despite revenue increase - Baird Maritime",
-      "published": "Fri, 10 Apr 2026 11:23:17 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZUtlTFljYVIzOWw5TnotaXM2RWZKd2lobVRlS0hsSUpuSmU0THFyS3VIUXNIQ05tclV1YWxmSFVyMGRESkxzSkFqSW9abWNjSWNRek9mdzFZVDFCSlFoV2I4QTk2UUZuWWh2ZWdIT1JBcGlWUVZvUnJRdEs3Q28ySkRtNmxoQUoyMk45WHBzMWpFRXNnQWxrQ3FFQThFZldhZWJIUTBYcWkzNUItN2Q4bkQ1VFpzdm4xM2fSAccBQVVfeXFMUFBPNmJqRFNtWnduZ0xGYzZxU0pVUmRzZFNuajNaSDhaXzZhVmtyb0FkUnZaZ3pSNWk0Qm5adzdINkZPR1JGc0FLMDVRTWhHQ2w5RTBaT0U0TUh6cXpMUzZ0c1p0TDIzNFlaZVBuRXR1Y2h1eWRzS0dnYkpZNHg2Tk1seDB3d00weEtWQU51c085Z0JCeC14bVdQV1lZenhXV0lfVVBzN0c4cjQ2SS0tZU56NHFjeXFZcHhpdjVHWlhpcVp6SXl6SQ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "ONE unveils MAX Africa service via Med hubs - Port Technology",
-      "published": "Fri, 10 Apr 2026 10:54:30 GMT",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdi16WDdHNnVNRFRoZ2N3MTRRQ2hJUXNmakZvOVF5VFlPTlFkRXZCdzdFUmpTOWZPNUpiZzZEQWFxRVFSdFdOSi1ITkFmcHk0RE5pQnRpOG9PT0I5UWxaTDJBRWtPcTRkVUQ1eF9aYi1CNWFYZE9qajdyMTd1UFphWA?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "‘Mindless pricing’ of shipping stocks prompts hedge fund to go short - Tradewinds News",
-      "published": "Fri, 10 Apr 2026 09:44:03 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPUWJQM3lrM2pMZ2ZfaHNpekZpVVJuanFyS0V2eWlMYWJmMmhQanZZMDgtRDR2RTZsc29QMjFjU1FLZ1hpUkw2WV80VlJhS0p0UVJPZlNrNTlESjdkNW1HNjdXUWpOMGRlWXNObzk0UTFlX1dNdHkxU08zR3pYMDJxMzZDNnF2eTM5MFlvRWRLY1JuS2RyZkJubmQ1V2pjTWVvN2pUTG1WUW5RdGhvZWRUVVVKV1U0Ujh0THc?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Zelensky says Russia will unlikely fully cover budget deficit despite sanctions relief - Ukrinform",
-      "published": "Fri, 10 Apr 2026 08:32:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPV0gyWi0ydzJIcjhzYk5PRm42MndsUGlLRUEwZlNjNkNiVVJtUVgwelpnaXU5ME1yMFV2MEpYVFJUQkZYVlNhWHF1eXZDTmhldWxyLXdSaWZFWDlJZkhtZjBWaU8tWHMwZzA2TEhtNnZVdXZSUEpxWnBsODFsbG5acXRiODU2OFNZMFRISDRWS1I4UlhzNGM3WnBoZVYwYm1vYWRpNFRuY2ZHczdtckw0RzZWVGFldjRLMkJERW1pYW12VjdkVjltQ09OZUpXMlpLbE1YeWVwONIB3AFBVV95cUxOVzRBQXFENnhtSWFSRmdUektEa2VoaU1WMVFsRjkzT0t4clZudU10OUZSMnY5TnZLQjFPYlU0dkNqc1FkNXZuWG1LWWFIQkZfSVNIVDZFUV9od215c0dfNTRIU2tJVmI2QWJKUklGWTFkdU5Ram1SdWZydkRucFkxQWRGY2tpOGJjbGtLS1ppQnhFX25LTUlmb20tOVIyTm5HZ0FwUXJjUldQcDVoamZWTFYtOFBxRUFReGQyRTYwYWdWOE1RdWhEOU5leTkxQWVSTzU1eTFUUXliaVlL?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "Black Sea port Novorossiysk partially resumes oil and fuel loadings after drone attack, sources say - Reuters",
-      "published": "Fri, 10 Apr 2026 11:23:11 GMT",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOamRpa1Jhbi14elJEOTMyaE5tYU5Tc1JNSEU1Q3RYN2EwQVJKcjlxcS1odWpVRWx1NTdmWG1MdHJacW8zYkZjdE5QYm9laDdkUHcwTWlORGZuTnBWandWN2FlYXBnTWk1QTRBUGN4RFhDcmpmZHc2V1YzTlBVOFdsSmp0aVhEVVg2M1VhTWZhbDBqM0QtS0pjakEzbDZad2hDa0VvSzVRYVk2bWpTMGNjd19aU3p5X3hpeVUzMzN1MUJGSW5NYnc?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Supply_Chain",
-      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR compliance OR \"supply chain disruption\" OR fragmentation OR instability) AND (company OR manufacturer OR factory OR supplier OR export OR import OR production)",
-      "title": "How AI Is Transforming Biopharma Quality and Compliance - PharmTech.com",
-      "published": "Fri, 10 Apr 2026 12:10:50 GMT",
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQYzNWQkxSN0xxSkp6TjR2anJBc3o5U05qRkVGcHlBTUpYSVBfVDBxVE9nSDlhZXlvUzVwNzlQSTBXUGhGNFJfcGZqSWh1SlJVbXVjNmtFZlBVUmJJZnd4UkpLdW0tRVZYcEgzV1c2bDB2ZUdEQXNNcUdkQmJ1SU1QbC1Pc2kyTG9ZQW55TjlJMA?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Protest",
-      "search_query": "(protest OR demonstration OR unrest OR boycott OR strike OR march OR \"civil unrest\") AND (retail OR \"shopping centre\" OR \"town centre\" OR luxury OR brand OR police OR arrested OR violence OR clashes)",
-      "title": "March UK retail footfall sees boost from Mother's Day and Easter trading - fashionunited.uk",
-      "published": "Fri, 10 Apr 2026 09:17:49 GMT",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQN2R4eWtySFVGZTdPYXpaV2FNSENPcmRhNXZtcXhEYS00bm1HN1hBbnItRnJhVXRsR3dlZzgwSWZmSnBrQVZtcUJCNDNaWlZja3o3bm5tbFg1UWRWZEo5M1hMZkNFWnVXdlNFSVdNSE5jektZYmRZSEt5MHBuZGlNZThfX0M5V0IybnV5Z2xjb1o0b0NudXNPV3BNbDRhYVJFemp0Y04xZ19BY3NvUXZPRVhYLVRmczR3RnlyU0Z6NA?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Protest",
-      "search_query": "(protest OR demonstration OR unrest OR boycott OR strike OR march OR \"civil unrest\") AND (retail OR \"shopping centre\" OR \"town centre\" OR luxury OR brand OR police OR arrested OR violence OR clashes)",
-      "title": "Four people told to leave hotel area during protest, police confirm - Yahoo News UK",
-      "published": "Fri, 10 Apr 2026 09:52:25 GMT",
-      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBiNU84RGFGNDc1VXI1VGl0V1BRZHpWTDdzNUN0UmdJM3Zyb0ZxSExYdzNaTE9ES183MXVNeU9rVWdmTUJfdWpmWU9rU0I2Tk9WSUhxOTBMZXk1MXMzMTFLNmdmTFpIaGJWYUNhWDE0OXRPNHQ2MWdrYQ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Nokia’s 5G And AI Moves Test Whether Share Momentum Can Last - Yahoo Finance UK",
-      "published": "Fri, 10 Apr 2026 12:11:02 GMT",
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE53XzRQN2ZaNUhWQmpMUTUtai1ESkJPeGF6TmNFTmpDRHNxaEJtVUNTd2hWdXJMeHFhRDhIb3dqc0t3STVjTXlHS1dHX2psVnpmQUUxTzd6UWYxSTdhZVJrUWZLVVRyWlRFcXhuV1dfUi1lSkpLQUFueHJBMA?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Samsung Galaxy A57 5G and Galaxy A37 5G Now Available - samsung.com",
-      "published": "Fri, 10 Apr 2026 11:33:36 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQkxLR1FXTmpMN3hCUWtCRFcwTHVFUnlCZ1RPc2g0Y3dRekk0QU4tc1B2YjZ6TGFXblo0WE50aWpuVHhQRThjTENSdnZSMkM2TlpNSExQb0ZfTncxcDVsa2NKUUhnbDF2cm1qb0dfRU0yNVM1U0NQS19BeUlBX1BBMHQzMGZLMHRt?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "US summons bank bosses over cyber risks from Anthropic’s latest AI model - The Guardian",
-      "published": "Fri, 10 Apr 2026 10:36:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQR2UyZ2pxRVQ4VzU5U19CRWYtdFBfNk1MbkdiNzJmeVY0cUM2Qjd2QzdpRnhwclpvcW9sbk9GNHhPZ05zejBROVM5aFVSaTEyT3RsMEl6QlNMRm5DQzB1NjVnRHZlTFhlTXlLYUNGSGQ2NTZXVjhJZGJjdVJZcWFsXzNlaE53LWxCS0FZWTFOUVBzQXpsWGlBLUFFNFdxWHI2WldLd0ljaFJFTlhtVDFfbHlJaHdfWmpYUXptN0pwcU5jOWJYTzJCZ09RaGk?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Thinking microscopes: agentic AI and the future of electron microscopy - Nature",
-      "published": "Fri, 10 Apr 2026 12:45:24 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1IMW9Ka2oxblctX25vellWLWc2OGpSTU13TzZoR3MzWEpXNkRyWVNnSTZFSWxRV2JndXFQZGNmVUtpMHZCMUY5QnhCUnJ5SDZWd2NfT2VCTW9LZDRqZWpF?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "AI-powered app for long-terms conditions rolled out in Warrington - Home | Digital Health",
-      "published": "Fri, 10 Apr 2026 10:06:43 GMT",
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPV0tlYmlXMlg3cW1ENkpxTHJMSnlwM3NmQlpSeTBCR0djUE5LZVNlVVBHbFFtVWloLXhFa3dFZVRQVHZ4VFQ2QXlHVkNsRXVOX0hLSzJSV0RBVkx3bWNVVTNuMTNxUUk3blBiZHM5Uk1BbUdMb1FEQmhhbE9iZWpNZXE0d0VGQnMtRk9FZ1pGWHN1OXVaeFhQZzBlb0FMcG5pYVpDMQ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Agentic AI assistants set to be judge and jury for brands - DecisionMarketing",
-      "published": "Fri, 10 Apr 2026 09:23:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNZmhnUkRhZzBKYTFpN2dLYklRdWh0NUpfekpQQmYyM3NzODJrWjRZcXg5VlNtUmNLSy1IUENNWW1BZUFOaGFOYXE3WTBnTjVZdGstbVVGd3pxSDZWUDZqZFI3YnBTRmMzTjRVdWVwLTdDVWNyelNHa0VHbVRpeEVhTWNONnRYTHRxME04UFZWMGJFaUJtVnRrM3lqRG92dFdYSHZkTkZB?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "From predictive to prescriptive: Equinor eyes next steps for AI - Upstream Online",
-      "published": "Fri, 10 Apr 2026 09:22:30 GMT",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONlhuMWZpUUJYZmRCUndtRTFVX0x6R1pJelJpbUotalUxclV2NkhhZTVGMHdDTE9FSDRxZGplWE5TdzBZU1p0WElEQTBmdUpSdDlWVWNBZGJINWJHOFBNUWJyemFXblRQSi1Wc0VYNk9RRjFSMm53TFpHazVWb1hqM1kzdXUtbjhmN0pnNzBkZWJHRUJtY1czUHhPZkFIVW5FNlBQWWxycnhnajhnUVR1bWpDYktIYmc?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Thinktank science museum introduces AI-powered digital guide - Blooloop",
-      "published": "Fri, 10 Apr 2026 10:22:57 GMT",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1hTnNTOF9lRWIwaGpIYzNOQWpPX0ZRN3ZaSVo1QVR3aE0yS01uVVpTc3gyRUg5YzQ4UkcwaXJCWDlrWmZXM1dVenlaX3cwQXhnbFV5TzllTGZxNVB5ekt6Z0tPT1NWekZ4cmFN?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Cloud repatriation: Between the cloud and a hard place - Spiceworks",
-      "published": "Fri, 10 Apr 2026 12:29:53 GMT",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOY1g3OWljekhrcEhGMTU3TmZmX2pEMXU1SzhBYzd5azlhSlVxcEZkTVc0X2RvdVljRmR4N1M3TWp6TUttY2lLVEdhQ1BxUEpXa1JHVGpIWTBkSWR4SjRJTDRaS29BUDZqZ3NVN0tkX3BTTGxKSGJwejktd0F2MTBuYnZUT0ZrVzNJSEZZRndMaXJQSGVlTjVDTQ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Study Finds Exponential Quantum Advantage in Machine Learning Tasks - The Quantum Insider",
-      "published": "Fri, 10 Apr 2026 12:15:19 GMT",
-      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPMkF5WkVicUFFajhQVDN0VkEyT1ZFUlg1YnBLV2ZQMzd4eDFhSFpMZGVDbXYxOFkxb1c0MUU5RG9wUE0yM296WVhlMF9EZ3NJVm0wek9mQjRRalYwZnhEcWhLZm44SjRHTFQ1YXlybmJrQ1R1cWR5OVFqYzNZZ1MxVmE2ZENRcWpDeHllWkxxdjk1TmlGME1xcFdMN2NoVFB3VkFmT0RDZmdJZ3BRUFE?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Wasabi strikes deal for Seagate’s Lyve Cloud unit - CRN UK",
-      "published": "Fri, 10 Apr 2026 11:28:32 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNc1RtaW9RR2t3elJyVWJkd2FYeENjdmpaX29EekxkbTVJd0JFNEZUMDJGMVFYeDV5VmJZQlNzLXIzTHlnQ2NmVXVNLTB1MXVjSkNrelQ5bUFHaUR5V2I1QU5GOFc0UWY2Sm1PTF9takJWdzQ4N1h4c211UDlTY3hzR2xn?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Siemens and NVIDIA advance AI chip verification to trillion‑cycle scale - New Electronics",
-      "published": "Fri, 10 Apr 2026 08:22:19 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZzllYmhkOW4xMHF5OUFwaDNHMEpUclVKWFowc2JUMS14NHB2Y2x4TS1FQk5HOUpCd0dRd2hWejZ3VnYtN3BqLWtPUmRMeDQ0ODhYTndaLXVCYWVFanVrSnRrbE1oc2k2Zm5KSzVuLVJveU9qVDJjMjhtU0NMZmt6NEU5QjFRNUpLelA5QXdHRHpEZnVqVHNPWmZfelFudWlGa2FtbHBIckdKTTM3bmE5VDk3czdUc1hx?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Intel, Google partner to advance AI infrastructure with Xeon CPUs and IPUs - verdict.co.uk",
-      "published": "Fri, 10 Apr 2026 10:03:36 GMT",
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTFBZM2F2a0J5UWpjbmU5WG9nYXprMzM5TnV2cjNpNlBRRXRGN1JHZWRab1BtYVZKcTB5YjhoNXoxVzZrczBXMkJQNXd2RDJfSkcxYnh3RU9QdF9NajRJanV4TVpUNzdlMEItVnFGLVVwLVZFa0k?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Analytica 2026: Connecting data across drug discovery workflows - Drug Target Review",
-      "published": "Fri, 10 Apr 2026 08:25:26 GMT",
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPMWJjelM5TnNQc3VNbWlaaEtJcWlQbmVPZ0U4ZDE2ZExwMkZrZldpXzliSHVlYW5jM3dTZ1MwdnlHbUp6QmpXaFluanduT2dXdzFUaUdXNHpzMWotR3hyb1pJaHY4VEh0dXd1ZEJRaVN1SkxjcVh5NTRhRm53SlJuVzJnR2E2alFidUo5OGJERnl5UGo0RjAtc2NjVmxiZXB0ZG0zWWMxNE9ZWFFZZ1Y3Nk05NEN6d0U?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "UK and Portugal strengthen use of robotics in marine research - Machinery Market",
-      "published": "Fri, 10 Apr 2026 08:18:42 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQRlhsTVV0cW9GRl9ocURTSnU5bEV6N0JQaExuZVJXTnNzMTV2X0tHSDh0bHNYM0ZZOEpZREZZaXh3QkxsQVNnWVlKdG8wVlA0YUZoN0RiREhXaktidkFfNGJsWFRxUEhKOWg3VS0zdkxvY3ZLSUVoeFpiMUxidnQ2LVJmamppWkY4ZDUta0o1OTloWTBiSE5tcks0QVlvai1ZYVFiWGdZdTRNMTg?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "EBV Elektronik launches MOVE platform to support next‑generation robotics development - New Electronics",
-      "published": "Fri, 10 Apr 2026 08:38:25 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQM2Q5ZHkyVUd0Q3ZKLUd1Y3hDSE55eUZLbkF1WllfbmFJVzhoeUNYNEJFYndhRi1OeENxajJHZzFHOFpNWU5OaExCQ1BjNVFVd3NUTjdoWGEyZHdtcWFNX2E4MThpdEtZYThac3QzMFNZMVJ6NnB5T0pCcUFyakN2LUVLRmdpRmQxSklWdlB3clVLY1ZQRkk4djUzZUx5VWNrWDRaRkhXd1VESUMwWjYxc3ppWnZab2pwSVB6SVdEQnZmRkFwLUNkQm5odw?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Stockport technology company acquired European engineering group - Marketing Stockport",
-      "published": "Fri, 10 Apr 2026 09:00:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNbndWbUFWeFE5QkYzdXJ6WW14ZWlwZGQ5dENQcVVyOUo1NDBtMmxNbTZKX29JWVJQbmkteGJlb0FrcmRWTlhrV0VPeThQMmR4MERzMFd2RUxEYjJKWEpyUnFfejlzVE1RZ2JsWjNCRDhrWHl1cHl4YTk3THJrblJhZkRHM19INzU5N3pBSi1xNlF1RXcwaFNiVmI1VElTbURJaVVJOUR3?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Keeping Customers Moving: How Smart Technology Is Helping LNER and Network Rail Deliver a More Reliable Railway - Trending Now Infrastructure",
-      "published": "Fri, 10 Apr 2026 12:34:35 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxQVU9DRTVhcWhVTzcwTkJKaGFxTE5RU0tGZTBZYzZXOHZpUTdtSHJCVjFPSjlGdXg1SlFCVnNCdjEzbUdIOFpWeVZrYzlvOXJSUk5ORnVlelFJbFpxdXBualQ4UjYtRVdxb1pBNENkcUtHXzBIcVJ2V1R1VGpqa3UydWI2WHlXY2ZfdzJ1UTBkenZRY1N0LUFQcFNQTWd5dXY5MFZabTdneWxFTTZzOVU0UUs4U1p4ckJ2SHQydmRaLXgxSEtXQzNoSEFNWjZRTjV3NmdtWmtST3dleDF3aEdRd3QyX1RBR1VxcVNGaHBGMnE3TzZk?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "AI and ML at Heart of Hyundai's Autonomous Driving Venture - AI Magazine",
-      "published": "Fri, 10 Apr 2026 08:05:56 GMT",
-      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9BcEx1ZDBlYU0zUVVIN2t5aGNHbS1DMktYSDZ6Q0RucFR2bDJNX2x5Wll0NEota2EtcFd3a0RuaXF3WFlZYkxBRTQtcF82Q0VxakhRSXdOSzJ3VDJFNWYxVHpKdklrVWEzZ0pn?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "In The AI Age, Do You Still Need To Spend Money On Expensive Phone Cameras? - TechRound",
-      "published": "Fri, 10 Apr 2026 10:54:44 GMT",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOVTlHZ1hpcE9GNTBEUmM3dmdOdE5UcVNES0QyT2lWeW9VVnphdWMyYUVpNG9DcnUxbnBna0VsTWdmYmdxT29FeEExNWFzRkxFQ0w0YWFaUkxhWmpub0Z3QjZleXFGZTZwb0U0SzN6WTBrZVd4ZHNsRmF6ekhYcUQ3cg?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "AI & Automation Trends Redefining CX in 2026 - CX Today",
-      "published": "Fri, 10 Apr 2026 11:26:55 GMT",
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPM1NzVFNmR1BGbE9hZ01ROWRXZnp4UVBCM0xtb1JvaFdfRUxCYkVoaVhRQVZsX0ZNYS1SY0dLZWRaT0NDMm1SZXBNc192ZW9nWVJqRFZoQnlMYWZtLU1BblRpRnZzUzh4VkVkcnE0NDIyQ2Q2cDJqWk5wUFo4eDZ4a09Oclc0T3RxSmNvakt5QjA?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Insider_Risk",
-      "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
-      "title": "Former Lexington sober living home worker convicted of federal fraud - AOL.com",
-      "published": "Fri, 10 Apr 2026 10:55:22 GMT",
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1kaVRZQ0Q1Ny1renNSLVY1OVZxNmtULUt0dVk3RFNINUd6RW16ZmliOUl4NHBNSkV0dmdkaG5pS3pxQ1pTSnpQQzJacnFJUmZVSmdGXzVjRXdfT1F5akhZczNLQ1d3OFozVC02R1NsUWxLcklLNmlNX2x1YmREeWs?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Insider_Risk",
-      "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
-      "title": "Cambodian Fraud Leader Sentenced to Nine Years for 3.8B Won Scam - 조선일보",
-      "published": "Fri, 10 Apr 2026 10:31:44 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOQ181VDNWTHdYWk9pS0YwWHlTckJnQV8xa3lXd00tLTYwU2VpVU5YQnpWR0t5ZlQ5VmNCaFdBR2ZIZDhzQnlTRjZWd0pOdGV1MENYQTczZDQzcnM5TktqcGhLX3BZdi1XMDNxUm0zVTdnb0hoQ2ZlUmswTjlCWTNTeU9VYnY1MWxl?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Insider_Risk",
-      "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
-      "title": "Northeast Ohio retailer sentenced and convicted for SNAP trafficking - Mahoning Matters",
-      "published": "Fri, 10 Apr 2026 09:00:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMickFVX3lxTE1sc2V5WWN4RlJuaEliY25VUmlCTm96aEVqLVUzV0RyRVNuRnRSQTZUUE5EcXotemg4bVBCZzBxVDR3MGdYeHFubkxRWDlVZ1ZETGptYUdDNFBFTERtdTUyWW5FdFdibWJEUHlzcmFrZjF1dw?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Fraud_Scam",
-      "search_query": "(fraud OR scam OR phishing OR \"identity theft\" OR \"payment fraud\" OR \"money laundering\" OR \"cyber fraud\" OR \"bank fraud\" OR \"invoice fraud\" OR \"romance scam\" OR \"courier fraud\" OR \"retail fraud\") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim)",
-      "title": "Everest Health and Mains Lab join forces to combat fraud, waste and claims leakage in UAE healthcare using AI - ZAWYA",
-      "published": "Fri, 10 Apr 2026 10:17:09 GMT",
-      "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQbXYxc1F0OVJwSHF1X2hqZGVuRWptbXJwMXExUnY1YTU0b2Z3YzRqUTBBQm1RSGx2OEhyX3ducF9kZ0psX29nZWxmUGJrRnR1TGRxTG5oR1BMTVRUREZDT2Z1Yldkb1N2bzBJeS1iQV8tckdNd0QwZjA2VFFYaE1EeTQzRzc2OG9maXhPblU1R29BSE02a1pzLWhpMllvcThoQm9menYwaWgwdXV2TzJsZHpzNDh4SWowWmU4d2oyNURqRG0zVTFsX01OclViYUEzV1RCbVlDalA3NGJyRmliUXM0T1QtYjVqdDhlSzdsR2R3Q2FxX1hhVjN2UURfaHFf?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Fraud_Scam",
-      "search_query": "(fraud OR scam OR phishing OR \"identity theft\" OR \"payment fraud\" OR \"money laundering\" OR \"cyber fraud\" OR \"bank fraud\" OR \"invoice fraud\" OR \"romance scam\" OR \"courier fraud\" OR \"retail fraud\") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim)",
-      "title": "Merlin Group faces ED action in Kolkata over alleged land scam and investor funds - Prop News Time",
-      "published": "Fri, 10 Apr 2026 10:33:57 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPd3FuOUpTWGcwZ29fSjRZRW9sZnN1LWZYVGhkWUlCOHlibDB0eHlsbVkzN3M4ckJCdEdfemhWMDlYdG9Ld2UxcGVOU1loeUlXQXM5ZWVWMUpjMUNpckRkbHNFOTdxUExBY0tCLWJoakFuTjRoOFduRFprZ1o0M2d4OGRqaEx3Ri0tNW9SLU0tSDh4Sml0TFdxZkpvVGVSWVJLTW1JNXNQdWZTMkQ1dWRrSkRqdDVwYVBaN3EzbGRlemFBYWZMMkdMVlFqRGFmcGZvWXM4?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Fraud_Scam",
-      "search_query": "(fraud OR scam OR phishing OR \"identity theft\" OR \"payment fraud\" OR \"money laundering\" OR \"cyber fraud\" OR \"bank fraud\" OR \"invoice fraud\" OR \"romance scam\" OR \"courier fraud\" OR \"retail fraud\") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim)",
-      "title": "Two North Carolina women sentenced in Montana bank fraud, identity theft case - NBC Montana",
-      "published": "Fri, 10 Apr 2026 12:25:50 GMT",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPeFV6TmcwQlNUc2dQZ2RVWFJOUDkzWkMtSl90bldxSkN1c18xekltZktwNTFwOERvNHVBSUFnbXhUSlZwdEZOWXVPNDBMYmNqZGd1dFlLUlowNk5WYnA5QVAwUTh0T2wyWlh0T1g4ZnRZcFVZdDdtTTI4NEwwQzBfQk1VeVRjOVpCejF3ZWZTOE45ajY4Y0hyT0JHM2ZPU3ZrcWEtOU1VUGpxZUttTWJj?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Fraud_Scam",
-      "search_query": "(fraud OR scam OR phishing OR \"identity theft\" OR \"payment fraud\" OR \"money laundering\" OR \"cyber fraud\" OR \"bank fraud\" OR \"invoice fraud\" OR \"romance scam\" OR \"courier fraud\" OR \"retail fraud\") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim)",
-      "title": "Resident reports ID fraud and theft: Chagrin Falls police blotter - Cleveland.com",
-      "published": "Fri, 10 Apr 2026 11:31:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOSkFRSmhweFI5WVFsNlpSVkpjVklka0VEN29Oa2dWQTdheTdFWWJlLVpIdEJFSS1Fc0ZPWk9tZjhNRDhOSmdRbHhRQW9xV3hOWEVaQlJnWjMxMXhxaFBPTHVxV2Y4ZEJkUmJYaVlPOGtuRlRvV3pJLUlXX1kyNi1pTEk2OWhvNGNGWTR0MTlBZUVoMTJoMkdOQlNHUnFzemMxbXlvbUk1VHFXcU04dXpDZE45bUNYelQ4SEHSAc4BQVVfeXFMT29vdldTamJERXZMeENoNVBLeTVvaktfblVTRHdMQmt0ZldIUU15RzlVUkpwUTZNdVBYWnRGVWN1WHZCelpuX0xiYlltMkNmYWN6bVllbUh3M3B3RUlmeDVlR3RMZjU4OG5ISjg1UzV6MnV0akhXZWRxU1RuaGZXUW55X2kxcjVuZHB4VFR1SnVhbHJ6Qm1EUlllYXVoTk8zWkd0Z3BUc3F4LWdTcWpLMHAtZU5MSEk2cDZwMkFlMGNOMHdGUGZ6cTJ0bFBZTlE?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Fraud_Scam",
-      "search_query": "(fraud OR scam OR phishing OR \"identity theft\" OR \"payment fraud\" OR \"money laundering\" OR \"cyber fraud\" OR \"bank fraud\" OR \"invoice fraud\" OR \"romance scam\" OR \"courier fraud\" OR \"retail fraud\") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim)",
-      "title": "2 more guilty in Feeding Our Future fraud case, bringing conviction total to 65 - KIMT",
-      "published": "Fri, 10 Apr 2026 11:35:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQZ25NOHdFNHJWSlkwdUFvQTJhVVg2WTlLYnhJdmtiRUpUWUUweXFlZlFrQl9LX0hkcjdfbVF3SWlYaE5sbnBtR0x0WTMtMFYySGZkRVNHM3J2bFlPdkkxaldTQmplOHNzMFg1X3kwQ01MY0VPbDlwaUJId01WY2ZuNnJ3akZDa2dTVVJKTDQ1SEpmazJtcF9sOVdmRXctWjh5QmY3NVB5LVd3bzUwRmh6anZBbHpBRlFpeTdYa1NQa29BbmlIYkM5dENNUThzcDhVRzcwOWVnUWZoUzBOWTFtNTFOTzVCd1M4dHc?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Fraud_Scam",
-      "search_query": "(fraud OR scam OR phishing OR \"identity theft\" OR \"payment fraud\" OR \"money laundering\" OR \"cyber fraud\" OR \"bank fraud\" OR \"invoice fraud\" OR \"romance scam\" OR \"courier fraud\" OR \"retail fraud\") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim)",
-      "title": "The Fraud behind Trump’s Fraud Task Force - emptywheel",
-      "published": "Fri, 10 Apr 2026 12:05:05 GMT",
-      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPTnJvN24yT29IZWF5YThoRzNlT0VXTmhtc1J0SGNlQzBYZDlNaS1hcF81Q1VKeVh3b3VYTXdRd2wxUWVzZEdqMHg3ODZvcWlJTXFfd0lUOHdtT3p0amowYXQzREZnRDg1SjZrQ3hQSEV2eTg4d1FYSHhiUmJyUVYtOA?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Current_Affairs",
-      "search_query": "(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR \"government policy\" OR legislation OR sanctions) AND (Europe OR UK OR \"United States\" OR global OR international)",
       "title": "Sudan: High-income countries must use Berlin meeting to save lives as conflict hits three-year mark - Amnesty International",
       "published": "Fri, 10 Apr 2026 19:48:24 GMT",
       "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxOV1N1WWtpb1p0NWdxaXVrWmRtQkVkbHRvb0tYa0toQms1VUR5aHpTZ0YydEd4YlBOd1poSVl3dEJ3eUVZcFBSaW5YU1A3X2ZBNWwwSVR2bjcxVXBFbUNjNVF2M2dPMmFpY3ZERmJwVGI4WmZueFZEUTB0VW5pc3doOHNTU1hNYTVqY3pUQWNvZXR6R2pXbnZOLXo2dFlDeXpBaHprNmZKcTZBX3hrMXZ1MThCS0VtYWlVc3U0aUtCS1Vtb3ZTcDJKVmtKNzBBRkNabEY4R2wzaURNd3hMLWNF?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Current_Affairs",
-      "search_query": "(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR \"government policy\" OR legislation OR sanctions) AND (Europe OR UK OR \"United States\" OR global OR international)",
-      "title": "Iran conflict will define us for a generation, says PM - BBC",
-      "published": "Fri, 10 Apr 2026 13:20:08 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9ReDlaUnhfMVpQX0x3ZFFSa3otMjIwNUZ5Z3ltaE9fWC0xTVlnUHNybzNiY09QWjY1U2tfSFZpZ2tXQk1tR09nd0dvejRkZjZwNTM0c1o1UzZwZw?oc=5",
       "past_days": 1,
       "source": "google_rss"
     },
@@ -658,15 +55,6 @@
       "title": "Poland: \"Frog Patrol\" saves thousands of amphibians during migration - Yahoo News UK",
       "published": "Fri, 10 Apr 2026 13:38:21 GMT",
       "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPdDVFNXNsTF9VOGc0X181TnBMQ3Bkcy15Zk1sZkcwcnMwUGlrMS0zM3F1RkstNG1qNElhSWwyb1FQUjJHZUk2SC1VMlpNZjBlcjZjSmFtbXF2VkV0bWJzMUwxS3FjMzdBU1l4NXl0MUZqeUllSjNMaHNGcEc3T01TTw?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Current_Affairs",
-      "search_query": "(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR \"government policy\" OR legislation OR sanctions) AND (Europe OR UK OR \"United States\" OR global OR international)",
-      "title": "African Women Make Economic Gains Through Global Gig Economy - TriplePundit",
-      "published": "Fri, 10 Apr 2026 13:02:08 GMT",
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1UajhtUmxUcVFDT1JQblM0SDVqOEtzNkRpYmx6MFM4UWVvRU1WMVh4bUNJUWd5S1ZiZzNlTTk4OVFmUktwQU5NOVNiQlFCRVB3ZG13OHJXRW1NZnB3S0RDLUtaV1lPcF9LWlFLSm1uYjlwQUtOc0dB?oc=5",
       "past_days": 1,
       "source": "google_rss"
     },
@@ -988,15 +376,6 @@
     {
       "search_name": "Protest",
       "search_query": "(protest OR demonstration OR unrest OR boycott OR strike OR march OR \"civil unrest\") AND (retail OR \"shopping centre\" OR \"town centre\" OR luxury OR brand OR police OR arrested OR violence OR clashes)",
-      "title": "Early Easter gives retail footfall a lift in March, but April outlook comes with a warning - FashionNetwork - The World's Fashion Business News",
-      "published": "Fri, 10 Apr 2026 12:59:41 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxOY3pjMkpZUFVmTDhSWElGSHRnbjlSM0lKcFpndUZWT21KUm9naW9HTVZoc1BEa1pHTUk4aGRBS2tSbXFDMEJ2WmNCeGNsck9IcFRUM29JLXVDdDAzeHYwSXE4MUtBVURUSDFDZ1Q5bGZNNmJGb2ZmQ3BLRFc0cWtjRjI2N2tXYzBjZFpGU0ZkM21DelVUT25mSVFNVTlkUVc2U3ZjOTdacmhyaGpOWllETEI5ZGdkVF8xeDJDNjEyeEVvbElVY2c2US1ZNnNaZ0VQamJJ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Protest",
-      "search_query": "(protest OR demonstration OR unrest OR boycott OR strike OR march OR \"civil unrest\") AND (retail OR \"shopping centre\" OR \"town centre\" OR luxury OR brand OR police OR arrested OR violence OR clashes)",
       "title": "Big rise in crime across east London last month - Romford Recorder",
       "published": "Sat, 11 Apr 2026 04:00:00 GMT",
       "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQLXRTc1cybVk2RVc5V1pzNGwxeWFWNEV0SWpXczZaVkRUWWhRY25sMHRnSGtocV95dlJwNXdjTDZOSHVZVVFYY0oxZlVPUDhKazVhVlpjMXYzbC0zdXB3QVF4R2VyLXVWNTFRdXdVdzVmczA1eXF4b0xwVTdMUnZQc3VJNVAzdkNnY0lNbWdR?oc=5",
@@ -1027,15 +406,6 @@
       "title": "Scooter Rider Deceased After Crash in March in the Kerns Neighborhood - City of Portland, Oregon (.gov)",
       "published": "Fri, 10 Apr 2026 17:56:17 GMT",
       "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPMVlBRmx5RnY1a0RCQ1pRbm8wMjJmRmZ1TUg0bDVjOUk4cWNuZzFGLWx6aE15VGtWcndlWHJ3a004cEs2QXlnVTc2NE9rZldfNGRSTi12aWhxYkt2cGpUeDJadUlaVlQ5Rk43MnNlMzFnYkdkRU12bFVrUk82UGVFT2xJYlFONk9zQXhqQ05vcHV3TUlPSjQ3Z3h2SDhaR3dJSjJGSFo1SjU0QQ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Protest",
-      "search_query": "(protest OR demonstration OR unrest OR boycott OR strike OR march OR \"civil unrest\") AND (retail OR \"shopping centre\" OR \"town centre\" OR luxury OR brand OR police OR arrested OR violence OR clashes)",
-      "title": "Four people told to leave hotel area during protest, police confirm - Daily Echo",
-      "published": "Fri, 10 Apr 2026 09:52:25 GMT",
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQNUhPVE1WSTU2NWVUOUxMa2tHZ2swOEtncXJwaWlnZUFjemJzUjFRaXkwUHhmYllKaFNFeUN3NmhycmxLeUhZSVg0Wm9MVDNJcm0xa2lUWVFlSXBJb2tsNUVEODAxakR5RFk5MzhQTVBtMlB0emVxUTJqS3F5a1g3RTZ4emNhSjQ3Q2plbDFxbmlWc1E?oc=5",
       "past_days": 1,
       "source": "google_rss"
     },
@@ -1132,15 +502,6 @@
     {
       "search_name": "Technology",
       "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "The Editor's Post: Cutting edge ideas and ethical AI conundrums with tech for good pioneers - Pioneers Post",
-      "published": "Fri, 10 Apr 2026 12:12:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQcmxFYWJ6aDRaUE9lRTc2YXZPSEdpRG9kc2N4TTZ6OFc3NnpTRGprb2tQZEVfX3gwbDNETkxRaTJxRWNSV212bnQ0bXl6bW1zTkdUNnBWd0djQlRDMVAxWnlSYWljYm9JNEgwcC1COFFTdDNhMWFuVDRlWFVBSWt4bVhOc3ZVS1hvZlRRaWF1TU1RbjI2dDBmUEpnQkVIVF9zTE5lQjNNaUMweW80YjVraDluV3V1cmtBNjB2eUNWSWFmUG9UR3JhZQ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
       "title": "Intel secures Google cloud and AI infrastructure deal - Network World",
       "published": "Fri, 10 Apr 2026 19:43:47 GMT",
       "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaHJKbDVwa3JLQzFxcS1Nb0RNRDhSX25WUUdkRzZBOS1OOTc2d0NDM0Y5OGZoWEpoVGhxYjdGVVdtM2YwVlc2dWY0NTl2T3dfc0RQSElydkxMbHlwalJCanZVdTFrSF9XSl9XTDlGbVRFa1BaYklBX3VMQ29uODFIVGpCWGNwaE9pQXMxcFFjeEo4U2Y5MnZCSEhBN2w2ZFRpaENsNWZB?oc=5",
@@ -1186,15 +547,6 @@
     {
       "search_name": "Technology",
       "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "EU NextGen Project creates personalised cardiology through AI and data integration - Open Access Government",
-      "published": "Fri, 10 Apr 2026 12:55:08 GMT",
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQUnNXMzhQYTYtTUJMWnZrZFJyblZJaVZxUDFLV25pLVlxaUxZbGtRSXJjb0laSlhxcGlMNE91WFpnR1NCeGVrWHNKbndJeFczZWdtMmdLeXlqRXdRbEJkLXVXbVJPTUFuaFdPNEMxN1g1TTNZcjd3MG95dWV6Z2tVZHRPbUs5Sm0tdXhySkZ1dWdQaWR4VERFVzllYVl2N3VqLWEyd1ItNDRPd2FaVWwwdHBoby1TV0Q1S2xzSHhidllUMW5vQXc?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
       "title": "Khoros Launches Aurora AI: A New Dawn for Enterprise Community - PR Newswire UK",
       "published": "Fri, 10 Apr 2026 22:55:00 GMT",
       "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPekVVRmZvLVZEczRNNUNMSDFCdG16VDl0dXlmQmdSVEo2RW5JSzVIU2xlWDduZ0FULVRjQmcyMUlrUXBRUFBNODFPSWRhNVlZMjJCQ0ozS0tSTlNRVldxMFZJSDAtejhSZTQ5YkZ2b1lXUmVSNUIwMXJwMnJ6RnhlOEJFRXhsMEVvS1BxQVM5VG9wOEYwRlYyR25rby1TZEhMTHcxSlpnUE9DVjAyTXo4TzNPaFVYNl9LRmw4?oc=5",
@@ -1222,24 +574,6 @@
     {
       "search_name": "Technology",
       "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Solar Power Accelerator (SPA) rebrands to RPX: Adds customised AI and BaaS offering - PR Newswire UK",
-      "published": "Fri, 10 Apr 2026 13:00:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNbDZ5S2ZwUzQ0MXdjRjhVZW9PWE5wZkkyLUFvRUhOLVRHWkdiZHF5dUFwYURPbkRUSV9fR1VLemNueXFUa3l2RGVqR0FQZEwxM3VOQTZXamFJek5Eb0pxanNSQnNQMzhSTnJiZk1jREtyVUh3UmxGQnhRMmpMQVhIUDd2a2R6eXcyRWRQdGNReU1EblNwaTBKZzZRaktlQ0VvUXE2NW83aXB0V05UaXRkUEtxOFJmcVZaYmRNZ3JwOWtuZERhNVhCakNiQmV6VmljMGttbg?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "AI models lose their shirts on Premier League bets - Financial Times",
-      "published": "Fri, 10 Apr 2026 11:50:17 GMT",
-      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNdnE0ZHcwVUlxaUxMMTZUUGk2TWpfMjRQSWk4QzZ4c2hKek0xRWFLeDdsVmpUS0l3M09YTC1pYXFaNHN2TU1obHVPdElrci1JRG5GYUo1bVdZblpncktqa1Z3MWJUOEJDcXAwOGY4UDZyOXdiYzd2Zk91eFYyNUUwMEpmc1o?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
       "title": "Global energy demands within the AI regulatory landscape - Brookings",
       "published": "Fri, 10 Apr 2026 20:29:25 GMT",
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNN1lUOVBNdER1bW5yWmtlOVhnbnFuVEFRZlBUSFgtWnBoOElvWE5ObjVONUx2Z1prVWhuZEJlZEFxZlU1Z3FSdHFSclgxaGhOVEdBak1zbDhLeElfQVp1LWtmc3ZGMG82bnhRc0U3T0IzXzlwVllwbG5rY2dvVnN6TzNORXlKdHFNQ3V4Z0xsZUtGRjJUVENr?oc=5",
@@ -1249,27 +583,9 @@
     {
       "search_name": "Technology",
       "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "CMA focus on AI, collusion and competition law: What you need to know - TLT LLP",
-      "published": "Fri, 10 Apr 2026 08:12:43 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQN08wRFRwMVdtZlF0cVYxbHY2Qk12VmhQTUljY3JmVzVydVMtbmFuSDlhT2s5TE5tcFp4d2Y2NkJtZXVBYm5TbmZJdldmQVc3elNZNm9RbzJXdEl3Q1pGYzZvUDlmc21nZDVOV3pPTktsM2VnMTF1UEhIa0VfM3dDaWhhN0g0bWdZQ1g3OE9NdmU0Nl9NTHROdWFTRE8takZFck1zUHVpbnI?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
       "title": "Social media and AI's impact on children's neurological development: A conversation with Alyson Stoner - IAPP",
       "published": "Fri, 10 Apr 2026 16:21:38 GMT",
       "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPcURGMTZIaHFTbDY5SnFVanhWVkw0d0FmRHRyLUM0SVJwV1J3UDRJMnk5ZVdRT0tnWmpjdVdqUlhsbGtlQ28tVm14SW1YT2lISURUd3JOeEpvSlUtaExkb1FfM2k2WXBWRWNNcm1EWW1BUmVZSlZxdUoydzJOSmo5cXE0b0Fxb3lzanZ6Y284M1k0b0pMcy1zOGVRRjFQeDU1aTR4bzlPS01CS3RwZ0Z2TnJQbXJKTzF4WklKVWM0cnhjcEk?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Technology",
-      "search_query": "(technology OR cybersecurity OR ransomware OR hacking OR AI OR \"artificial intelligence\" OR \"machine learning\" OR automation OR quantum OR semiconductor OR software OR cloud OR 5G OR robotics) AND (launch OR update OR vulnerability OR breach OR research OR earnings OR partnership OR regulation) -(rumor OR review OR gaming OR crypto OR podcast OR live OR blog)",
-      "title": "Cargill deploys private 5G to aid factory AI and automation efforts - cio.com",
-      "published": "Fri, 10 Apr 2026 10:05:12 GMT",
-      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQWlhEZG5XQ1BmRldTYnZwalFFMHFIUHNZNlI1NlZoWk9BM1kxR2syelB6V1VMSTFzM09XSnFyanZZNUk2VC0xTnBOX3dNVlE3R184QV8wS3k5bXhFYXd3VHJ0THlBRlNXblN2N1hnZk1UeC1kcnFCMEdjRnZBQmF4WXVMcXpDSkV3aDF4UHlwczJQSHB6ZmIxZk5BUFROVXR3VnBkYl92VDhGb0kz?oc=5",
       "past_days": 1,
       "source": "google_rss"
     },
@@ -1384,24 +700,6 @@
     {
       "search_name": "Insider_Risk",
       "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
-      "title": "Danbury farmer sentenced to prison for $1.7M theft of subsidies - InsuranceNewsNet",
-      "published": "Fri, 10 Apr 2026 12:35:04 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQYVhNMjN1QXJscF93M2lPWjZoOHFndV84cC1rMTEtNFp3UTV2dUlxYzdUUVpEckRSc0RqM3k1WmV1aU1Rc2hKOTRaRllETHd5LUJZdlpvSnBsUDU1NWJRRF96TWtXZkZJem9UcTJ5dFJrQjZhb3g5cDN3SkdjM2pXbUlsOGJHekt6Ymt3ZUdaMlVxVHJNcU5TVlZDemxCcjJ5SlE?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Insider_Risk",
-      "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
-      "title": "Convicted thief with 50-page record jailed six years - MaltaToday",
-      "published": "Fri, 10 Apr 2026 08:59:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSGgtQjBmdG15VngtZGZ0Sk9xTjZkQUZhSTQ2eDRHbzJCM2NUa2xGOGRyMUpTc0x2aVhaejVGZ0E5ckdjbUpHaXJoN2VNV1FMWGw1OTZheVRLMVVBbHBwblVJbENCb2xTaUhJRWE0NDhraDRCLU1mM25pMTFCMmo4dGJPXzdTT1lRM04zcFdnRzZrakdvaEt1OFkyTDlSakJLQmJNSmJTS3Z2SVhyY3pR?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Insider_Risk",
-      "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
       "title": "Ex Shoprite employee gets five years behind bars for stealing R400,000 - Daily Dispatch",
       "published": "Fri, 10 Apr 2026 16:00:09 GMT",
       "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQU2xMbDNTLTlLMzJyNmpWaS1LMzRIR29RTElIUE5EUUNycVFlQVNhRjVjOFZGYUo4SUVCSVJEUXc4aUxFVnpOUWljVFFYTGowdG5tUExHUklLcWFzQmVxVW55SzVROGNZODlQaWJuVmFzMXg0aHZVUGJlMUNBT3RiYWI0elJDd05fTHMyNnFubDR1RlUyWmdpNUw3Z0RkcVNnbzd6TEpfTVJYM1FOVWdVMVRfRnJ2dHdE?oc=5",
@@ -1474,45 +772,9 @@
     {
       "search_name": "Insider_Risk",
       "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
-      "title": "N.J. tax preparer sentenced in largest COVID tax relief fraud case in the country, feds say - Yahoo",
-      "published": "Fri, 10 Apr 2026 12:14:51 GMT",
-      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOajhMRmdSZGVjdEFtQ2p5anNNdUNRcW85ZzJ4RmVSUHYzLWJHUG1iVmQ1ZTlXY01HTG1kX0o4bnlDeHdzZDc5YnBxNnhkQURDYm12UDdyckVfNXZSbG94LWtNVGxaT3lfeGE2MHdJWi1EaFk2NXdIcjI2VHRlUVFrUF9rdw?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Insider_Risk",
-      "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
       "title": "Feds recommend prison for former Bay City nonprofit director - MLive.com",
       "published": "Fri, 10 Apr 2026 17:38:00 GMT",
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPSW53Vm5selFKLXNHdDI3UTF2dkZGOXV2c3RLamxRVTltTlFkekliM1lkeEUyQXg4Q2ZfVDZhc3FEcUhYOGk4SEphVjRjOUd0RDljRkF0WFhwc25mZkUxZW1wWVBRWmExZVMtVmJzaU14ZlliT3BpbHBGRlJybXFCTC1abUxxeGdKQkpFOGdHWVlDOVpaRjJHR19sM25peDVpMHJMY1AtS2lYRTRtdmtodUlEQi1fbWh3YnEtb3p5OGNyTmQwT2xYVXUtUW_SAcwBQVVfeXFMT0lud1ZubHpRSi1zR3QyN1ExdnZGRjl1dnN0S2psUVU5bU5RZHpJYjNZZHhFMkF4OENmX1Q2YXNxRHFIWDhpOEhKYVY0YzlHdEQ5Y0ZBdFhYcHNuZmZFMWVtcFlQUVphMWVTLVZic2lNeGZZYk9waWxwRkZScm1xQkwtWm1McXhnSkJKRThnR1lZQzlaWkYyR0dfbDNuaXg1aTByTGNQLUtpWEU0bXZraHVJREItX21od2JxLW96eThjck5kME9sWFV1LVFv?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Insider_Risk",
-      "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
-      "title": "Attorney general announces Medicaid fraud, exploitation cases - KTLO",
-      "published": "Fri, 10 Apr 2026 12:20:00 GMT",
-      "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPUWluWVpJTFB1Y19OeTQ4UnFnc1VDbWljZ1hjTzh6VDhnV05tVXJZWGJEUGJKTFFlb0xTU3NEOVdCRHNyVWpXTHZJS0Z0OU92aDJtSThvSEFTUkdmRDdLVndYSDY3Z21aUUNPTkFidGNhblNtdHFmb2d3Z3F3N0pCQlZJLTZRRG4tU2dDOEcydzhYamtKdm8wLQ?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Insider_Risk",
-      "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
-      "title": "The Pearson gold heist ringleader has been sentenced to four years in prison and must repay $22 million - MSN",
-      "published": "Fri, 10 Apr 2026 09:02:17 GMT",
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPUTJVVVNyUkJILXJkWWxpRngxbjJyOHpvRVZSZGo5bVJHb2pIbE9fblFVNHlrbnI1d0E5TVNrVlhINVRQbWExcS1VbTY3Nk93dWlFOGxzaWxrZXVPM1dIYm9zTXR1WWRYZ0MtdVdpdW9zdGxtcU9SaUh6SGw4cmplQ1M1WTc2YXV3WXM1NHZicWdFLVZaUGVHcFYxSnV4V2o1RnlUaXhKQi1OR0hYOEZVYkpKQ3NlVFVfc0k3dHNqYUJOVnI2X1BCMnVfQVN4V0lpeXBGVE91QVYzVllYRGEwMXFUVEpZNlU?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Insider_Risk",
-      "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
-      "title": "Two prolific shoplifters convicted after £10k London theft spree - London Now",
-      "published": "Fri, 10 Apr 2026 09:08:21 GMT",
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNVTFzVUZPbTMtR3dFWXJNVVFWMUNuWTQxakJ5d2phb1diVnROM2N2NVAxblpuZmkzN0VIa2RHRmd2OFBsdXc1VUVINkxfQXhJRWJsbjRFNVRrcWJrS3dLQXpKc3I0Szc0blFBQ0w2bFJ5Zm9lVU04M0pscy1vbFItQmhIYXliSzlYdWs1ZFJYY25EMk80aXc?oc=5",
       "past_days": 1,
       "source": "google_rss"
     },
@@ -1555,15 +817,6 @@
     {
       "search_name": "Insider_Risk",
       "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
-      "title": "Woman sentenced to 20 years for arson at Kyle home - AOL.com",
-      "published": "Fri, 10 Apr 2026 09:15:32 GMT",
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9TdUZPdUpLVEdnbGthZTFLV2hzeXMtNkJ0dmRVX3d0QlZKR0VpRy1nbUhMSWcwc29qb3NyeGQ5ZjBoYW5TYXBDUlk4QWlYVHBxR2t3X3piXzUyNER3Q2RMR3FnV1JUMy05Q2QxS3JiTThWUnAxdFBLMGd3?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Insider_Risk",
-      "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
       "title": "2 Mexican nationals sentenced after repeat deportations and WA arrests - MyNorthwest.com",
       "published": "Sat, 11 Apr 2026 01:40:05 GMT",
       "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTFBqVndpclFqNzhnN1JGbWl4V1hiWW1DcjRyNVYyY25ETDBzdzgwdGVvTXZTZzlzcGF1NVMyUXpQb1dEaUxWcl82RU9fV1lWRmYydUpnQ3MzdHA5c0d1NlZ3eFZoUDVmamNHa2paMWpjNGp5a1kyTnc?oc=5",
@@ -1585,15 +838,6 @@
       "title": "Video shows vehicle appearing to be cut in half following deadly crash - KOTA Territory News",
       "published": "Sat, 11 Apr 2026 00:58:00 GMT",
       "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOR2Nxemgza2o3dGhMWm5TTVZMcUtwTDJCbVRGN3hiSllidnhyMjRFcVR3T09qYmVjRnoyajg3NGZuUzRPbGEzejJCNVFJbHRtTDZCWXhxeUxOVldnaVBoZFlwYUVUNHZwbFljYTlISHRqeWM4UVRnaE96b1VmRFN2Y3dqdVFLTW9LeGo1M0xOWXFZaUw0aHFzR0NRdjNEZ1hzSF85eHVQSk5qcjBzMTA3X24xbU7SAbQBQVVfeXFMTkdjcXpoM2tqN3RoTFpuU01WTHFLcEwyQm1URjd4YkpZYnZ4cjI0RXFUd09PamJlY0Z6Mmo4NzRmblM0T2xhM3oyQjVRSWx0bUw2Qll4cXlMTlZXZ2lQaGRZcGFFVDR2cGxZY2E5SEh0anljOFFUZ2hPem9VZkRTdmN3anVRS01vS3hqNTNMTllxWWlMNGhxc0dDUXYzRGdYc0hfOXh1UEpOanIwczEwN19uMW1O?oc=5",
-      "past_days": 1,
-      "source": "google_rss"
-    },
-    {
-      "search_name": "Insider_Risk",
-      "search_query": "(\"convicted\" OR \"sentenced\" OR \"pleaded guilty\") AND (\"employee\" OR \"worker\" OR \"staff\") AND (\"data\" OR \"theft\" OR \"fraud\" OR \"stolen\")",
-      "title": "Armonk Man Pleads Guilty In Attack On New Castle Police Officer - News12 | Bronx",
-      "published": "Fri, 10 Apr 2026 10:59:11 GMT",
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQaUxrQVZWU2ZFQzhxaXdfS290VGZCeXpLQXVjSnVuUjdHdUc0a0U4aVdySzdBR2pfcDN1MjUxcTdCU0k5UncxYW5fbzJZNDBtQl9iWTRzaEFLUkNmMWg1TDJ6VDFEdktuTVlSUnlwX2I3RkxaT1pJVFR3T2Zac1lveG84aXhPak9Od19PQlc5U29hWmxuNktqemdZTzl4SVNxVTJhbTZXZ04xc1l5N1hvQW5tM0ZCQmFPVDBDVFpxOA?oc=5",
       "past_days": 1,
       "source": "google_rss"
     },
@@ -9928,6 +9172,528 @@
       "title": "Crypto holders fear for their safety at paris blockchain week - The Currency analytics",
       "published": "Thu, 16 Apr 2026 12:56:16 GMT",
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRWY1WlFSWVM5OFlLNldhM0l0ak0wd05jQmFIVTNDNVhUQmdoU3ZUNXBTRkJxS3FseDVjcHdqalpxMTdJRWpkOEZGOEkxTkFaMXhSUm91ZzM1VlBYVjZjYmhTRHpQdzFXdlJfZUhCNE51NzdPaW50S0FFdmdjUldCRlJkM19CTTA4Sk5pM2hVUXFrZ0dwczJ5N2xLVjFxMHZ0SmxZM3M1YzE1Q1N6SHpuN1VPYw?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Current_Affairs",
+      "search_query": "(geopolitics OR migration OR economy OR conflict OR terrorism OR disinformation OR \"government policy\" OR legislation OR sanctions OR protest OR demonstration OR \"civil unrest\" OR riot OR strike OR blockade OR \"fuel protest\" OR \"farmers protest\" OR \"general strike\" OR disorder OR \"far right\" OR \"far left\" OR extremism OR \"hate crime\" OR \"antisemitic\" OR \"Islamophobic\" OR \"dispersal order\" OR \"anti-social behaviour\" OR \"flash mob\") AND (Europe OR UK OR \"United States\" OR global OR international OR France OR Germany OR Spain OR Italy OR Belgium OR Netherlands OR Ireland)",
+      "title": "New Assistant Chief Constable appointed for Counter Terrorism and Organised Crime in the South East - thamesvalley.police.uk",
+      "published": "Fri, 17 Apr 2026 11:41:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxQTF9DZWtObmQwTTBtRUtteWdFcmJHWnZqcFNuVEpLRFNjYmgza0lZeHFpQzdJTThrR0t6SGJYR3lhNVpNQmlia2l6YXd4Q3ZrWEwtT1A4QWx1VlBJN2dLZFNiREdtQmlaeDI2YnlmakI2MlFyQXhpSHB4S2ROaEFLdExKQlVBalJ2N2dvb1BiTW9kRzhHc0kwNGpyZEtaMzFIelZydDAybEs1SzNac1A2T0IybzVsWjk1WXF6SDFWdGhUZ2U3MUtwVkFBdDBkazZjdFN6S1BFUm1YWXB5bDVBZGNYVkpHbFZ0N0JuTFVJcWV1VlhBUlNGTXgyY3JQTGp2R25kOTQ1eW01Qk0?oc=5",
+      "past_days": 1,
+      "source": "google_rss"
+    },
+    {
+      "search_name": "Supply_Chain",
+      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR \"supply chain disruption\" OR fragmentation OR instability OR \"road closure\" OR \"port strike\" OR \"transport strike\" OR \"freight disruption\" OR \"fuel protest\" OR \"farmers protest\" OR \"lorry driver\" OR \"trucker strike\" OR haulage OR \"border delay\" OR \"customs delay\" OR \"import ban\" OR \"export ban\" OR \"trade war\" OR \"trade disruption\" OR \"raw material shortage\" OR \"component shortage\") AND (company OR manufacturer OR factory OR supplier OR export OR import OR production OR delivery OR route OR network OR Europe OR UK OR global)",
+      "title": "German forecast 2026–2029: road freight stabilises below 2019 - Trans.INFO",
+      "published": "Fri, 17 Apr 2026 10:39:36 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE4tS1JmRklCUHNmTlhyUTBYaDFLbmp4ZEVhV2VEaWtxOXhCREJPcl9MU2FCT0RXWl9wamVZbWJfNlI5MnRNei1sUVZxUVIzSUZqc3o5dGhuWVB1Z3VkVXdj?oc=5",
+      "past_days": 1,
+      "source": "google_rss"
+    },
+    {
+      "search_name": "Supply_Chain",
+      "search_query": "(\"supply chain\" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR \"supply chain disruption\" OR fragmentation OR instability OR \"road closure\" OR \"port strike\" OR \"transport strike\" OR \"freight disruption\" OR \"fuel protest\" OR \"farmers protest\" OR \"lorry driver\" OR \"trucker strike\" OR haulage OR \"border delay\" OR \"customs delay\" OR \"import ban\" OR \"export ban\" OR \"trade war\" OR \"trade disruption\" OR \"raw material shortage\" OR \"component shortage\") AND (company OR manufacturer OR factory OR supplier OR export OR import OR production OR delivery OR route OR network OR Europe OR UK OR global)",
+      "title": "DHL Freight restructures European road freight portfolio - Parcel and Postal Technology International",
+      "published": "Fri, 17 Apr 2026 09:02:51 GMT",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPSGFjYWwyWE1yeElEZFUzWlhzbThCa3ZxNmtVcEdzQW1ISUdIZUlka0hKTkJpTFFkR25nVzVQemJBSGxLYzktSjdTaEFtVDllUFpoek95cWlCWDkzYkdWSlJnaC1ZeU5abFg3U3N0X29QNzl1c0xIZ080ZU5PNHB0Y3otM0tRVm80VEhiN0w4NVR6RFBpcDZ0QlJuSmZIVDBUVUJydFlzaG83Q0FkTXlRb25fZ09KUDhMVmQ4VDg1RjJCVlFDQ2lRY2d2T1RvS25MbWc?oc=5",
+      "past_days": 1,
+      "source": "google_rss"
+    },
+    {
+      "search_name": "Fraud_Scam",
+      "search_query": "(fraud OR scam OR phishing OR \"identity theft\" OR \"payment fraud\" OR \"money laundering\" OR \"cyber fraud\" OR \"bank fraud\" OR \"invoice fraud\" OR \"romance scam\" OR \"courier fraud\" OR \"retail fraud\" OR \"card fraud\" OR \"mandate fraud\" OR \"authorised push payment\" OR \"APP fraud\" OR \"investment fraud\" OR \"crypto fraud\" OR counterfeit OR \"false accounting\" OR embezzlement OR bribery OR corruption OR \"insider dealing\" OR \"convicted\" OR \"sentenced\" OR \"pleaded guilty\" OR \"employee theft\" OR \"staff fraud\" OR \"workplace fraud\" OR \"data theft\" OR \"stolen data\" OR \"leaked data\" OR \"rogue employee\" OR \"disgruntled employee\" OR sabotage OR \"intellectual property theft\" OR \"trade secret\" OR \"charged with\" OR \"arrested for\" OR \"dismissed for\") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim OR company OR employee OR worker OR staff OR manager OR director)",
+      "title": "Investigation officer prevents £1.5m of housing fraud in Arun - SussexWorld",
+      "published": "Fri, 17 Apr 2026 10:24:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOdW9Rb2dOUndQUFlKTHpjZnFRdHFCMUJjVUxxVkRKdHJmMWNvZGgzREpnejhTUlh3NHJxMWFUVUk5bTBkMlJ4UXFpLVptc3hUWkUtcXptdmJoSWlFaWNQTmVNSXpyaG1SQWVUQU9QY3M4ZzdFUTFLSGREZk5HMmVWOXNCbE12OFd6ZEh3bnRma05aTm5LdFpyeUpCQmZEVWp0ek4wT28yaU83YUFuVVF0WTZKUzR2T2tpblNzeA?oc=5",
+      "past_days": 1,
+      "source": "google_rss"
+    },
+    {
+      "search_name": "Fraud_Scam",
+      "search_query": "(fraud OR scam OR phishing OR \"identity theft\" OR \"payment fraud\" OR \"money laundering\" OR \"cyber fraud\" OR \"bank fraud\" OR \"invoice fraud\" OR \"romance scam\" OR \"courier fraud\" OR \"retail fraud\" OR \"card fraud\" OR \"mandate fraud\" OR \"authorised push payment\" OR \"APP fraud\" OR \"investment fraud\" OR \"crypto fraud\" OR counterfeit OR \"false accounting\" OR embezzlement OR bribery OR corruption OR \"insider dealing\" OR \"convicted\" OR \"sentenced\" OR \"pleaded guilty\" OR \"employee theft\" OR \"staff fraud\" OR \"workplace fraud\" OR \"data theft\" OR \"stolen data\" OR \"leaked data\" OR \"rogue employee\" OR \"disgruntled employee\" OR sabotage OR \"intellectual property theft\" OR \"trade secret\" OR \"charged with\" OR \"arrested for\" OR \"dismissed for\") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim OR company OR employee OR worker OR staff OR manager OR director)",
+      "title": "Wisconsin officials warn of million-dollar lottery scam delivered by Priority Mail - WBAY",
+      "published": "Fri, 17 Apr 2026 11:12:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOWFY3MkF4ZjRvejBXLWlmenlCNi10WmlJZGt5M2k3WjdCeU42M1M5OGY1RWlzN3pla2J5bE1iMlE2OWNlM2J3Wk1nRHVkTTkwLXoyMmVvUkFqYlNVX3E0NFRlcURuQXRTSnJSSWpvQnNhMUdJZ0Q5SGhDRkMxTUxwSXVONG1jUi1tMVNoZTFqWUFNUEJIWnQyc2E5b0VxODN3dGpkWHU5Vy10ZFJGZExRU0p30gHGAUFVX3lxTE9pcUl6QUFIaURzVjFsNDNPS1pNM19Uem5OZTlwRzJDSmxacDdsdFFkMXJzckpzT0w3bmY1aUExQmpta2xMaHU1bktnYnVNdUhWTWNYcW94UUpMT3B3LU9QQ3RnLXRpS1lNZUg2SHlCczNxSjNreVFTeU5OQXdoSTZTdW1BbEtOazE3OHVzSmNtQlBUOUhQRVI4MWpWdXJLbTBiWmhEZnp6cDZfdVRQNkZrSnJuNjlwOHFxS05NbGtCNklwQmMydw?oc=5",
+      "past_days": 1,
+      "source": "google_rss"
+    },
+    {
+      "search_name": "Fraud_Scam",
+      "search_query": "(fraud OR scam OR phishing OR \"identity theft\" OR \"payment fraud\" OR \"money laundering\" OR \"cyber fraud\" OR \"bank fraud\" OR \"invoice fraud\" OR \"romance scam\" OR \"courier fraud\" OR \"retail fraud\" OR \"card fraud\" OR \"mandate fraud\" OR \"authorised push payment\" OR \"APP fraud\" OR \"investment fraud\" OR \"crypto fraud\" OR counterfeit OR \"false accounting\" OR embezzlement OR bribery OR corruption OR \"insider dealing\" OR \"convicted\" OR \"sentenced\" OR \"pleaded guilty\" OR \"employee theft\" OR \"staff fraud\" OR \"workplace fraud\" OR \"data theft\" OR \"stolen data\" OR \"leaked data\" OR \"rogue employee\" OR \"disgruntled employee\" OR sabotage OR \"intellectual property theft\" OR \"trade secret\" OR \"charged with\" OR \"arrested for\" OR \"dismissed for\") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim OR company OR employee OR worker OR staff OR manager OR director)",
+      "title": "Report Shows Online Scam Exposure Remains Widespread - Tech | Business | Economy - Techeconomy",
+      "published": "Fri, 17 Apr 2026 09:09:41 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNRXBiRWVRLWFPZDdlLVZOaDZ6aHJnVFJnb3Rva3ZMcm5mQTRlck5nVmR6a0dOTjI4cXR6RXRaQlpWdEJ5R1VjVndIbDNLaEQxQVA5bkhoWWRMN3VuUHM1d2VDWHYta2I4ekRRV0pDLUFsakd6RUR6S2o0UHdMYjBqR2ln?oc=5",
+      "past_days": 1,
+      "source": "google_rss"
+    },
+    {
+      "search_name": "Current_Affairs",
+      "search_query": "Europe politics government policy protest civil unrest",
+      "title": "The Fuel Protests: Fianna Fáil and Fine Gael’s Gift to the Right - Gript",
+      "published": "Fri, 17 Apr 2026 06:59:30 GMT",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNSWZPQ1dBU3o5NlI4ejBXckFQSmN0bW5IY3M2REplTkM4cm9VMHhkUUtZX054RVlpS3RVNXlLZVFnQWNKQjB3eHMxRjNvc2tVaVRBemxvdnBabF95Z1VSLTMwMlExLS15cGg2UTdJOWlOQXZzSEV6Tk4zVHlvd2pMVVdjVW1ueUE?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Current_Affairs",
+      "search_query": "UK politics government policy protest demonstration",
+      "title": "Violence erupts between right and left-wing protesters in Spanish city days after socialist government approved plans to give 500,000 migrants legal status - Daily Mail",
+      "published": "Fri, 17 Apr 2026 12:46:12 GMT",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOMUhlaGY1dzVJUHZKeEtsRld5QjRMR1hITTFseXBxYTFtLW9CejE3OVJuODVVWEU0V0J6b0c4ME1od3o2T3pPaEhPWlpIVFl4bUlzYnVyQ0tybFR3V3NKYmZFaWNab0Z1Q2thYVlHaGp5WGpZdHVILTFRWU15cjlVY3JPVTBuc0dsSkhGeXFjd2xlQk5kc0VTUWZudWpDSmtCRVplMG5DeHVRQ1Y1bWhSZ0hNU3R6UdIBuwFBVV95cUxOU1lrSXJKYk8zY19aeDhCcEFQMDFnbU42QjNaNmFkRkc5M1FCU1RYZXkzX3UzYmRfQUs3QmU2MWdld0JURktCRHdfTk1TTjlFSUUzNDZ3aVJsSmJpZzNsaHdNV2RhVWk5eGdQcTFYSnFoNmQwTlgtWXp5UXhqYzM4Y1Rpd2tKN25CZ3U0SkxuMkNncVRYUE9udnpHWFFURF9xd3Q4cXBpd3k1MVNUQzA1ejR6b3Z4N1lWS3Nr?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Current_Affairs",
+      "search_query": "UK politics government policy protest demonstration",
+      "title": "UK Day of Action for parks on 18 April as CPRE London targets grey belt policy and protests - westminsterpimliconews.co.uk",
+      "published": "Thu, 16 Apr 2026 13:32:06 GMT",
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQcG5QenIzbTcxRGpOV1FJOHZjNGN4TXNjZEVQRTFGQlgweUNDcDRGdFRSV05hTXJrakx1QkpJNkRYVnh0NzQzcjVrY0lSQWFPMmZ1aHlic2VjcmVfcXBDTDFuMW05VHdCSzcwMHB4OWlKQUhaRVFrOTdZTVhiTnFhVVZuTzVKdmE0eWRHMFlNTXpXX2s4aFE?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Current_Affairs",
+      "search_query": "conflict sanctions geopolitics international relations",
+      "title": "Iran’s War With Israel and the United States | Global Conflict Tracker - Council on Foreign Relations",
+      "published": "Fri, 17 Apr 2026 08:08:28 GMT",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQMWduRExjZXhMUjFuYjV4Zzc0LS11OHVKUEhXSlpUNUdFMm9MVGlJeFd5eGh1ZWpEWWhFNEdJX0tOVTlJbnZ5NmpBQ3dYeGNpSTBOSWtISUduak5WSHhfQUhQcHBKbVpLdG1IVi1ySWVGd05NM18yektrem1TM3ZvaV9xVjR2eC04cE9RZ3FZajNCZWFHNzBaS0hhSS02dw?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Current_Affairs",
+      "search_query": "conflict sanctions geopolitics international relations",
+      "title": "India Crude Oil Imports Drop 21% Amid Supply Disruptions - Discovery Alert",
+      "published": "Fri, 17 Apr 2026 03:07:25 GMT",
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNa3hjTllHM1ZzNG5OWnhadE5adS1zVUc3M25BQjlsMFczSmVWdGxFYWdXekZzcUxsN2dfU1AwU3VBVFNCUWxRSnZoVGZNTThXZ2g4bF93ZzEyWGFWTF9wV1NONU1GeV9sZ0t0V1VoMmtLUFJlQWNZSnRrVWhzelZYdnctd3NndHB2TG8wN2FR?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Current_Affairs",
+      "search_query": "conflict sanctions geopolitics international relations",
+      "title": "Global Sanctions Threaten British Economic Stability Amid Middle East Conflict - world.infonasional.com",
+      "published": "Fri, 17 Apr 2026 12:32:25 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1rdG53ZjdFYVlhZ2loRHprWi1fd1RDZzItR1Y0RldKRUxsOXJJQ2xUc0RMZEQtYm4tWUtTbFVReFlYb2xJazdWeE1pamZpVkpoY25zRF9JRFJyamZDYTdORUpQbVY2WkFWZTFNZ3lSdEh2anF6QTJkS2tn?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Current_Affairs",
+      "search_query": "hate crime antisemitic extremism far right attack Europe",
+      "title": "French Bill targeting anti-Semitism withdrawn after pushback - The Straits Times",
+      "published": "Fri, 17 Apr 2026 09:51:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQcUJKZ3FoN1hDYU5Ebi1oTktsUmJBb0VBLUMycDVGRUJSV1QzR0RtTWU5MklwNHNhVDNmNjVqT2dGVHNhWnZzemNJOGd4ZDk3cGxCbkJrdzNFdHdha2pkQ3hjZmVIOG9CdVR3ZmlXd0dGdmNrdF84YjdJMXhXblZnTzFlNlUzSU40VldNMUNReFRMR1FwUUF2Si1nbTVuVnB5a2dSaw?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Supply_Chain",
+      "search_query": "supply chain disruption logistics shipping freight delay",
+      "title": "Strait Of Hormuz Disruptions Hit Gulf Economic Outlook - Manufacturing Management",
+      "published": "Fri, 17 Apr 2026 11:00:15 GMT",
+      "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQT1JPR0lSOXN0NmdMQXJXSUZveUJYQ0ItdEEyZGZnM2dnNzlpN2FrQmlLOUpZVFZIbFprcEY1RGlUc2FHREZNdnNRQU9Jc3VLV3FQVFVCT29xa2JwSjZxMlBPTFBVOGhPM1RlT3B6a0NTaWhGU09WQ0l0bU51NmFEeU14Q21QZXlxdFpBNDIwUklZZ1hXcDMxMGE4YV9rczVEd0FWenB4MTZfME12QVE?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Supply_Chain",
+      "search_query": "supply chain disruption logistics shipping freight delay",
+      "title": "AD Ports Group activates alternative corridors to protect Gulf supply chains amid disruption - Fast Company Middle East",
+      "published": "Fri, 17 Apr 2026 06:41:08 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNdVpOTXB0eG0zYllwcEhEMC0waEVCb2JYbThCckI1ekI0R3N4bHlVVUUzZnNtZjdzRzBZZk9tOTh1MTdkRkZsdGZtcnpoaVpPN1J4OTREM2VhV2Z0Yk9FeUtOSWhaUHNNNHBYbEdvS3RBM1NvN09BeXJLRk5FdS1UZzE3MnpUbHI5djZYLXN3X3ZSU0RKXzdoVVZsRThla25NLUlzWmd3Z0VZbmtfNmpkQTY0X3J4SE9TMENsZWt1RXZCQQ?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Supply_Chain",
+      "search_query": "supply chain disruption logistics shipping freight delay",
+      "title": "Why India's SMEs are suffering from Hormuz Strait crisis - DW.com",
+      "published": "Fri, 17 Apr 2026 10:29:51 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPRWtmN0R4LUtFMnhURVlzc1J5X1ZhN1hGbWY3UWRyWlVVdkpoVGtRWVV4Tm5SNXBFVmxfUXVrNmlZQldxVTBkYzNveFZZckgxT1RGWnlPWXptLV9QRHM1elE3QW5xem84Vkw2UHpkNHlTMmVWUkZwX0hJM2FsMlM2SDZ5dW9yeGoyd1ZOMmhEaHJiY3RhQlNyTmQ0YUtVVU84N3FmZkFLRkpfZ9IBqgFBVV95cUxPRWtmN0R4LUtFMnhURVlzc1J5X1ZhN1hGbWY3UWRyWlVVdkpoVGtRWVV4Tm5SNXBFVmxfUXVrNmlZQldxVTBkYzNveFZZckgxT1RGWnlPWXptLV9QRHM1elE3QW5xem84Vkw2UHpkNHlTMmVWUkZwX0hJM2FsMlM2SDZ5dW9yeGoyd1ZOMmhEaHJiY3RhQlNyTmQ0YUtVVU84N3FmZkFLRkpfZw?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Supply_Chain",
+      "search_query": "supply chain disruption logistics shipping freight delay",
+      "title": "MICCI flags rising freight, insurance costs as Strait of Hormuz tensions strain supply chains - KLSE Screener",
+      "published": "Fri, 17 Apr 2026 08:53:56 GMT",
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOOTdac0RIX2Z6RGFlb082Y1ZNSEl6cE9TRUhvQUd1aFZ4UHp2dVIzQ18yMXJqZ1dVT0xFX2E0eW9tYVFmSVltVXduczh2Yzd1SngtenpzY0NDV3VHOHdVVWRIZ3JiNXdmZW5keTdPY1J6RHVlX1A4Q1hSNmdZRnNsdlhrcVFqaXZDVnRLWkpqY3BGN0NXSEE0MGVfSWtJejRzcmhqVDJFbVk0dXowVVVpVld2Z0dTUnRtMkw0TS1iLUJWMjNBYlZGS3hCQjB3aXJHczNQOXdpLTdYUQ?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Supply_Chain",
+      "search_query": "supply chain disruption logistics shipping freight delay",
+      "title": "Bengaluru LPG Delivery Delays Disrupt Household Supply - urbanacres.in",
+      "published": "Fri, 17 Apr 2026 02:40:51 GMT",
+      "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQM2FQZEN3TE9yQjZqWGhrQmpUWkNBd0h5NjlzSjQyUmttZjF3WEM1dEFXaHZsX1FLOC1ubEVud1FoUG4xQnBQQlB1R3VjX0lfSGZjamZzdjBiazNSZzNOZUdrbnBGbkg3MTlwS25oZG4tbUxLY2JfMFc3NFo2R2gwYVcyQQ?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Supply_Chain",
+      "search_query": "port strike shipping delay freight disruption",
+      "title": "Six-day truck protest in Italy threatens freight delays - Trans.INFO",
+      "published": "Fri, 17 Apr 2026 09:09:34 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5UU29meEFISWhMOWQ2bkhkUmRwVTE1LUhrZVBBa0loUEtQWkdLZmtTU25CTzdDTG9NY0FrS3o0cjNaOTk2UjdWZ1lKNlpGczRFZUdTUnZQZDA?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Supply_Chain",
+      "search_query": "border delay customs backlog supply disruption",
+      "title": "Planned outage of Poland’s ‘Single Window’ customs platform threatens overnight clearance on 16 April - VisaHQ",
+      "published": "Thu, 16 Apr 2026 21:50:05 GMT",
+      "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxOSDhOSE1JeF9FSWMtdl9vUnlYTEgzcUYzRXdOZVU5clluZzhJOThLalJSUk1LdDVKclRsODBEdV9ENEltcWhxblNXMGpCTjFLLWFTdlJKQlFhazV2WFY4M0EyTDBWLTdfb2xrdXdqdjdWMWtYNnZjRGU3TlBrLV9jbGp6cDlUZzV5d21teDRsUW50ZGpRLUJFRWY5R3ZhLUFqSTJ2cnFwS3g0M2h3Q3lzbS00d2ZLVWl0SlAzS2lSb3JBMXBrMUZKSW4yS0pjV3hERjMxaHFHcmg?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cybersecurity data breach ransomware hack malware",
+      "title": "Payouts King Rises as New Ransomware Threat Linked to Former BlackBasta Affiliates - CyberSecurityNews",
+      "published": "Fri, 17 Apr 2026 10:44:50 GMT",
+      "link": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNN1dya08yRWUyaWFtdjM0bVgyVjBjQ1cwWGxWQTMydG1fTjl2QjBuVFpJaEh3Xy1JWFdDMTFVVEZrUDg2V1VMcGRMLVVsb0lHY1ppbWJwaTJmdzY4U1dFc3JNVnlkYWtyZ2RCUU8yb2ZJU3J4MWgwYmd6U205dmNibWh6OFjSAYQBQVVfeXFMTTdXcmtPMkVlMmlhbXYzNG1YMlYwY0NXMFhsVkEzMnRtX045dkIwblRaSWhId18tSVhXQzExVVRGa1A4NldVTHBkTC1VbG9JR2NaaW1icGkyZnc2OFNXRXNyTVZ5ZGFrcmdkQlFPMm9mSVNyeDFoMGJnelNtOXZjYm1oejhY?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cybersecurity data breach ransomware hack malware",
+      "title": "New Ransomware Group Payouts King Linked To Former BlackBasta Members - cyberpress.org",
+      "published": "Fri, 17 Apr 2026 07:51:18 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE54VHBKc240SGZ2ZkttaFhNNnA3cTRBSVVLYTNkYjZ3Q0dJdHl4Yll6U0lDNUxiV19IR1RTVFpaYnVHbzkzNjF4UzUyd3pEQkJNVkFyR19NVnNUczlLdnJia1ZhcUtKQQ?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cybersecurity data breach ransomware hack malware",
+      "title": "Payouts King Emerges: New Ransomware Operation Tied to Ex-BlackBasta Members - gbhackers.com",
+      "published": "Fri, 17 Apr 2026 06:34:49 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5HUGhCb3F0Rnl1TWVuWnFPbUpieWc4aDVQbmt0eFlSVjMxNnZtMHBfdVFIWjllcFoyRTI1cTBpcEpVblV1dzhpenNJTmJwUnBMNi11cGpFcHF3MkE?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cybersecurity data breach ransomware hack malware",
+      "title": "EU Age Verification App Breached in Just 2 Minutes, Researchers Claim - gbhackers.com",
+      "published": "Fri, 17 Apr 2026 04:40:14 GMT",
+      "link": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9wcHZkcHB4RnRobU5XN1NZTEtqQjR4TnFESFlvbTFuWU1xRElYdUxyeWVvZ190U2JoMnFEOTZTdlhfREpYZ3ZTV2ZGeFFwVHhKSHhyT3g0QXAzM2stWGNZTFVqdEMxQjBkTHln0gFrQVVfeXFMT3BwdmRwcHhGdGhtTlc3U1lMS2pCNHhOcURIWW9tMW5ZTXFESVh1THJ5ZW9nX3RTYmgycUQ5NlN2WF9ESlhndlNXZkZ4UXBUeEpIeHJPeDRBcDMzay1YY1lMVWp0QzFCMGRMeWc?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cybersecurity data breach ransomware hack malware",
+      "title": "Hackers Deploy ATHR for Scalable AI-Driven Vishing and Credential Theft - gbhackers.com",
+      "published": "Fri, 17 Apr 2026 07:18:28 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1uSldWMVhOcThGOElEUnMwci1zQWJkUlZZMmtHZGRzRUdONXpLcXVrWFFUX1ZVcFdwdXJvdy1HbENsODlzcUJldzlkbUlfYzZmTmFXYVQ2cVJ0cUEyT0xCM25nQlg?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cybersecurity data breach ransomware hack malware",
+      "title": "Fake Zoom SDK Update Spreads Sapphire Sleet Malware in New macOS Attack Chain - gbhackers.com",
+      "published": "Fri, 17 Apr 2026 09:50:56 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1lcWt0VkpTWG9HRUg5VjlmRkZGc2hPLU9ONzRKVVdkYk9ZQkZDSnBqSXVTWTl6cnlJaURkcGw2QkJId3VLbEpBX3cxUWw2QnZmUEZaVlI2bl9GY3M?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cybersecurity data breach ransomware hack malware",
+      "title": "Cargo Hackers Hit Trucking Firms to Steal Physical Shipments - gbhackers.com",
+      "published": "Fri, 17 Apr 2026 04:36:07 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFAwVDB3R2MxRC1aM2habkpZMmpQQXRrdWtEWWh3dEV5X3lxZEdjRzdhQUFRYW5CN3lJWFZZSGdUYzdNTE5BUXdaWnV3RW44dTJoMlBLTVhBdzlPek42dl9iemZiVQ?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cybersecurity data breach ransomware hack malware",
+      "title": "Weaponized CVE-2026-39987 Pushes Blockchain Backdoor Through Hugging Face - gbhackers.com",
+      "published": "Fri, 17 Apr 2026 08:10:33 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9OTnFSZnRqV1RwLWZlUG1Wa2lFcGtsRkJSdkdSRHRVV2ZILVFHTnVSOGlwRHQ4eDYyN3FNLTdOM19aVnd0bVRJbEpGcHF1Sm9xdjdYb1l4ZkxvWG54RWtWWHFR?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cyber attack phishing zero day vulnerability exploit",
+      "title": "In Other News: Satellite Cybersecurity Act, $90K Chrome Flaw, Teen Hacker Arrested - SecurityWeek",
+      "published": "Fri, 17 Apr 2026 12:05:11 GMT",
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPaXRvaWVmckV2X3ZFMmpPM05fWkJTc3JoM2ZmaEJObmQxWmgtTnZFbURZMmZ2NzRsRk5uRlBwT3ZZcXFQZlI1emlLVk94QVp2V1ZJNlZndm5XUmVkeHBjYnlJMG5TYVZ5ZE5pU2RiQm13VWRSTmVTZTBzTkVFbG5UQzQxb1N4Yy1NRU1aZGtteVZNNGozVlhvWTh3bkd0dXJIQktJOHM4YlJheURvVXdvRkdB0gGyAUFVX3lxTE9pdG9pZWZyRXZfdkUyak8zTl9aQlNzcmgzZmZoQk5uZDFaaC1OdkVtRFkyZnY3NGxGTm5GUHBPdllxcVBmUjV6aUtWT3hBWnZXVkk2Vmd2bldSZWR4cGNieUkwblNhVnlkTmlTZGJCbXdVZFJOZVNlMHNORUVsblRDNDFvU3hjLU1FTVpka215Vk00ajNWWG9ZOHduR3R1ckhCS0k4czhiUmF5RG9Vd29GR0E?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cyber attack phishing zero day vulnerability exploit",
+      "title": "Microsoft Defender 0-Day Vulnerability “RedSun” Enables Full SYSTEM Access - CyberSecurityNews",
+      "published": "Fri, 17 Apr 2026 05:08:02 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE5kN1dUeTRyQ3dVWE5BVlZLdWJ0YzNVLW00SzdzdGptLUg2S3FBdEgtYWJqOUs1NXlwajR5RmdQY0lnRmltZHUtakhpd0FsZkZFZ0FhRjJrX2Y3WVJXZjQ4T3pR0gFnQVVfeXFMUGxTdGlHM3l6LTNLU3BsQXpKVy1jb3ctYjBKWUNORmdLaU1FMTlWUFZJd0MtcTlRTnZCMnhmRkxFUEN6YmE0RFl2UjRlSzVrWTh5VnRORWpYa0x5cHNWMXZFUlNBU2V1Zw?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cyber attack phishing zero day vulnerability exploit",
+      "title": "Windows Defender 0-days: BlueHammer (patched) and RedSun (unpatched)Born's Tech and Windows World - BornCity",
+      "published": "Fri, 17 Apr 2026 09:20:39 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNblM4WklkVW9fUkhrQ1VJRFpiYU4tRklmbk0yOUdSVTk2Q0RzWnQ1RjVIa3p1U2VjR0dWMG82UTFoNTVjaFdTX3I0RmdjOEwzVDlJT3Y0SGE5X29Sa0Y5MjRHOUc5SmVzcEtmcDh6UXNQaG5iZjBIcm1TcUhnNjlLSFVTblJGM1Z5LWxJcUd0dVVQenBWQlExcHRwQU9rSDZhaEE?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cyber attack phishing zero day vulnerability exploit",
+      "title": "Windows Snipping Tool Vulnerability Allows Attacker to Perform Spoofing Over a Network - CyberSecurityNews",
+      "published": "Fri, 17 Apr 2026 08:41:49 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9ZendXaEgzMUR1NzVZNjRHNXN1ME5qQ0NkSjZSNUVaZW1YQWgzaGIwczNUMjRkLURrOE5Yb0hCS1A2aDREN3haUnVGeTFZWlFkWC1zVUltY3dnamowRTVqWDBSMmZqY3d6dVpQMW8zWHNEUk9vc1pqNkhR0gF6QVVfeXFMT1l6d1doSDMxRHU3NVk2NEc1c3UwTmpDQ2RKNlI1RVplbVhBaDNoYjBzM1QyNGQtRGs4TlhvSEJLUDZoNEQ3eFpSdUZ5MVlaUWRYLXNVSW1jd2dqajBFNWpYMFIyZmpjd3p1WlAxbzNYc0RST29zWmo2SFE?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cyber attack phishing zero day vulnerability exploit",
+      "title": "Fake ProtonVPN, game mod sites spread NWHStealer in new Windows malware campaign - gbhackers.com",
+      "published": "Thu, 16 Apr 2026 13:34:42 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE91V1BwS3RQaVpESDFfZ2JUQ2hyWjZIS040QUt4MDRPU3J6aThpbjJabWdtemVsNHJ4alFPTVdNSjcwekwyRmdLV204cG5ZZURZ?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "cyber attack phishing zero day vulnerability exploit",
+      "title": "Hackers Target Trucking and Freight Firms to Steal Real-World Cargo Shipments - CyberSecurityNews",
+      "published": "Fri, 17 Apr 2026 05:43:12 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPdEdCTFNBblE3WE1uNkp4NHJCbXZUek9iNWthVVFNQlc5ZFQ3TjF0Tk16T1ozYlN2emJHRmw3a19IUVhDc0E5Y015cUllSFVkMG5qUUNVcDhxUlJyMk1OM05Kby13Zl9Lc2dVNzRub2Q2dG43Q3dxOTZwZWkwZkRlXzhn0gGCAUFVX3lxTE90R0JMU0FuUTdYTW42Sng0ckJtdlR6T2I1a2FVUU1CVzlkVDdOMXROTXpPWjNiU3Z6YkdGbDdrX0hRWENzQTljTXlxSWVIVWQwbmpRQ1VwOHFSUnIyTU4zTkpvLXdmX0tzZ1U3NG5vZDZ0bjdDd3E5NnBlaTBmRGVfOGc?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "artificial intelligence technology regulation policy",
+      "title": "Listen: With Little Federal Regulation, States Are Left To Shape the Rules on AI in Health Care - KFF Health News",
+      "published": "Fri, 17 Apr 2026 09:00:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPR0ZYUUV5STlBc0xVR1FtWjJQNWxwR3dBamtZcEcyVnJzT0tfQ3c0X2tKQ1Z6WGpRMzF6U3REdWNFUUlCbzBlZENONXB2enFJVHpZU0lwbUZlcFZoTTdIdUdiTThsVnJ1dXI3WThzdDJ1cmh2eXk4REJDRDRSaThoU3hIVVBDcU9ET1VaWFUza1QtU2c?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "artificial intelligence technology regulation policy",
+      "title": "India sets up AI Governance and Economic Group to align policy with jobs impact - Storyboard18",
+      "published": "Fri, 17 Apr 2026 10:59:01 GMT",
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOLXdpX0gyT1N0X2ZjTzdYQnlteFVmTUVSdFpoZ0F1RlFmMURpbGlHaGxwZllCSDQ4TzlGQXJGdnNHY3o3T2Z4U2Zaa2JGZnVDWmZCYzFvVmpicng4X21nTVFpQXZBSnhZMllxQ2pGdjJpMkRrdUhxXzJoWXhxTTlCcmc5ZDRCbXdhWGx2d05uVFh4OHprV3duSmc1Z19QYW5QVmx1QUt6RkhXa3BWTUxsTVdGNVdGWG5LS0xxS3pwQ2JwSllKd0tvSzhNaENqQjE30gHQAUFVX3lxTE4td2lfSDJPU3RfZmNPN1hCeW14VWZNRVJ0WmhnQXVGUWYxRGlsaUdobHBmWUJINDhPOUZBckZ2c0djejdPZnhTZlprYkZmdUNaZkJjMW9WamJyeDhfbWdNUWlBdkFKeFkyWXFDakZ2MmkyRGt1SHFfMmhZeHFNOUJyZzlkNEJtd2FYbHZ3Tm5UWHg4emtXd25KZzVnX1BhblBWbHVBS3pGSFdrcFZNTGxNV0Y1V0ZYbktLTHFLenBDYnBKWUp3S29LOE1oQ2pCMTc?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "artificial intelligence technology regulation policy",
+      "title": "The AI Interview: Sasha Rubel - AI Magazine",
+      "published": "Fri, 17 Apr 2026 11:32:41 GMT",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBzSldoOEI5SFFuU3dRVzdWUHRGMFhzSkp2UUVNVERkTzRuNU4wekhiVW8xb0dtZFkzLWZxakVYNTNaZ2x0YnEzY1h2N1RLdHFIWlcxNGVNSy1uSWtkOWE5SERQYTExQkplc2I2MEVVci1xMWJF?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "artificial intelligence technology regulation policy",
+      "title": "Centre forms AI governance body to assess job impact, frame policy - Tech Observer Magazine",
+      "published": "Fri, 17 Apr 2026 07:27:44 GMT",
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNSHhGbDlCUW9RMG9vMUtxSWpOTTNWWmdoVUowY3JDYl90T2k3YXpCQ3VXbDNGem8zWjVuQ1lNTFpuY2s4STVVUmFZeWkwR2pTS3hBZFlUemxSUXdxVGw3T29IRC02QnpqV3htYzY2VkV3WjE3VVFkN3NSQngtdUtIWE1MUmpHTjdRbjFpWDN2Vmk4ME5CeWQxVVhIMNIBmwFBVV95cUxNSHhGbDlCUW9RMG9vMUtxSWpOTTNWWmdoVUowY3JDYl90T2k3YXpCQ3VXbDNGem8zWjVuQ1lNTFpuY2s4STVVUmFZeWkwR2pTS3hBZFlUemxSUXdxVGw3T29IRC02QnpqV3htYzY2VkV3WjE3VVFkN3NSQngtdUtIWE1MUmpHTjdRbjFpWDN2Vmk4ME5CeWQxVVhIMA?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "artificial intelligence technology regulation policy",
+      "title": "AIGEG: MeitY forms new AI governance body, excludes key regulators - MediaNama",
+      "published": "Fri, 17 Apr 2026 09:57:44 GMT",
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOSnFLMi1fUGZTRDFubGplWmQyNnBXSWczbW9DWG5xeEo5N0plWFVIVHNCdGVISlZmYlN3UGU1dWp5a1d3d25DR05EcUhPVnZ1RVNLbnRTTjk2NnlzNm13TXZJRURSUGNhcnVnNVMtTjBybWluMTR4LVJ2RXFKNlV3dkc3WUV3Z0dGUHVJNXZCOGM2WnM3clNCTGdSaV80V1lLSl9lWW1GTWJmS24xMllnczFpaHhkVVE?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "artificial intelligence technology regulation policy",
+      "title": "Amid artificial intelligence explosion, lawmakers debate best path to regulate - Capitol City Now",
+      "published": "Thu, 16 Apr 2026 21:31:12 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNSXFOemtTOUowMmlGRlJIQmxYRGw1QkE2QXRISlBzTWQyV2p4VUx5cDAyamtRZFpUejYzZ1JMbkhBcWlKbDNGOVRSVHRHMHZJbDJTYTNWcnpiVTlQUUxrWjhfUDUxclo4T1VUVDNjZllQaUhMN0owc2dBbE8yd0FTenQyMXBvNnZldzFxcTFJTGVZZUFRbThrbnA3bFVaZ0o4UmpXbzkycU5KZUpZWmlaMmV1bGk1UzQy?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "artificial intelligence technology regulation policy",
+      "title": "The Latest on Southeast Asia: Technology Policy Developments Across Southeast Asia - CSIS | Center for Strategic and International Studies",
+      "published": "Thu, 16 Apr 2026 18:40:15 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxORkJJUWN2c1Rwc3Jpa1FYc1BWajVYQVBJblBUTm5WX0ZCQVFFd0Q4WUR2WkpMUDZZNHk1RkNfNjF3Vk16N1hIMFJhbVRNS2Y2WFdtc24yaVdDb05BbHBZMFVSYm5wdHBra1AzTHBxdDFIRXozQ2d6LVV4SzlFVU9PM1FXbUdwdUpmZUtvdmVhaHE4NldHdVJlUXNUY0ZweWpPNGdKaldFVG40NkNkXzljZEZib0RrR045SHc?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "artificial intelligence technology regulation policy",
+      "title": "Manitoba Launches AI Consultations To Tighten Protections - Let's Data Science",
+      "published": "Fri, 17 Apr 2026 08:58:54 GMT",
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOTnJQWHFzbmxHS01SRU5PZ1lTU000cnBTMkVSNzZwbVhJZkhmVmQ3SmJfMzNsSkJQNzgwcnVYaTZaNklYSi1VNk9lOXUyR2N3ZEp2VDI5Nk9STEZ4Y0thUk1naUhKQVhtbXVlN01kR2hqbG9ZUU9LVGtyb3VpcWlIOXo5T1R1Uld3TUpMLTJVMEtYMjZUUEJkSmdmNmRuR3Zr?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "artificial intelligence technology regulation policy",
+      "title": "Government constitutes AI Governance and Economic Group to lead India’s national AI governance strategy - tele.net",
+      "published": "Fri, 17 Apr 2026 05:31:36 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQcWE3bFpBOWd3dUE5c3NBeEdiNFJLb2hVZFN5b3JOV01sa1hTZzVzY0I5SWNKWlRPcnBtRS05WjZVNGVBNFV4TnhvSlZiX3BhZTFsbUd5cmh5N3VtRHViSjluMmRVczdnR2I2TUFUbGJmYmhHVWRyNVBqdnl0RFdYclJWb1BiRENGX3hQZ1dQS0d0VHhoeXczVjlNV0h1WUlVbVRIblJkcHJ6YVl3ZTVQdGNxbDFxYld5WlJOZkotSTU?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "artificial intelligence technology regulation policy",
+      "title": "Documents show how a tech-connected nonprofit shaped Biden-era AI policy - Washington Examiner",
+      "published": "Fri, 17 Apr 2026 09:00:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNdkVZVnBxaTNpTkwtTXZTcl9KRlJ6MlhmeFJhc21XOHBJUlFabkxBNzlLZVFwSHhfck41LUwwQ1ZmVDlnRHBDTEtsa1p4U1ZDeW11dGpEX3MzcFVSTV9zRFBvQWpDVUtDMjYwbG42Y0lEc2VJbjExSTM1SjNFOHNJbFFiMER6cUNhNXJVR2p6UkptVUgxV1ZCMXAxSmYyeHdibkMtMkVXRU5SNzhTaUZxRk55NmhKdw?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "artificial intelligence technology regulation policy",
+      "title": "South Africa draft AI policy opens for public comment - Joburg ETC",
+      "published": "Fri, 17 Apr 2026 08:48:44 GMT",
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZXJmZ2c3WUU1SDN6NmJDdUFLSVo3UDVVWUFDeGlmaVBKOW5zOU5SUG5qeDI1LUZWeE55RHdZSEY3RDRBTkFBQlJiU0NfakdnR0pPMFFsRFZaWDhvSjBiSVNXNmtGYU9aN1ZhWTNqVFE2d3AydWFweWVEQllnXy0xYw?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "surveillance biometrics facial recognition privacy",
+      "title": "AI: ‘African Governments Are Using “smart City” Systems to Monitor Dissent and Consolidate State Control’ - Global Issues.org",
+      "published": "Fri, 17 Apr 2026 07:07:48 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9rUE96QW5RcEZfbGZEeVZ5REZnX0lBRzduV3hXa0RSSzNDYWxYbEI4VE5MSWJES1NCQUlKaTMyYS05bUdSVWVjY3ZlMm8ybHFUMzI2eVBZN0gxOU5nNHgyQWstd03SAWRBVV95cUxPa1BPekFuUXBGX2xmRHlWeURGZ19JQUc3bld4V2tEUkszQ2FsWGxCOFROTEliREtTQkFJSmkzMmEtOW1HUlVlY2N2ZTJvMmxxVDMyNnlQWTdIMTlOZzR4MkFrLXdN?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "semiconductor chip shortage technology supply",
+      "title": "Best Semiconductor Stocks for 2026 and How to Invest - The Motley Fool",
+      "published": "Thu, 16 Apr 2026 21:54:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOT1dYNXFONXk3TGdVWUstTHRMeGNyX1RDMmVLWUNsOFBvSGplTndkeHA1YU54QXhKOHV2RXFmOS1kY2lmMjNJVFBodDQ0ajVCZm8zMUlqM0NBV1R5MzEwTk9TUUZuWUFTQ1BpV1otQW9DTnhiMGJLRS1sd0x1VUR6U1dQU2pWM3kwWmx2UHhtRDZxZmJIT1dPa2NtYVZQd3FEU1hld2xn?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "semiconductor chip shortage technology supply",
+      "title": "Meta (META) Stock; Edges Higher as Quest Headset Price Hike Reflects Rising Chip Costs - MEXC",
+      "published": "Fri, 17 Apr 2026 09:11:15 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5XeV9QRVBoSHZjYnpVeDdvWFdKRzlUZUZsN29kalpzX25hZlQxQjNzRWliaGFaQkpkWUdNMWRyZl9OdWJyZTlhQw?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "semiconductor chip shortage technology supply",
+      "title": "Taiwan Semiconductor Dominates AI Supply Chain, Even Shortages May Not Slow It Down: Analyst - Benzinga",
+      "published": "Fri, 17 Apr 2026 10:03:05 GMT",
+      "link": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxNVDRyX19rSDFGYU1yWDcxWUg5cEJMTi1CakMxdncyN3EwR0dwU3FIRTdYd2lZZHhodk4xMEh5RjJHM1dacGdjVHYxUUNKX3hFQXdGUlJXWW0tR3JZa3BxZ3kwcUExcE9PUHBUNG9zQmtoMThkTk5ISElpTHZDdndrZFY3eGgzNnY1bWlweG12S0RXNTQ5Mi0tZDNLSWxhODZManI5c2g5RzNscFZacnZkSktMOXdOY3hKLUNWcTlRZnhPSU9oeGtIRTRBWndSQkZFbTlnN1djSk9zRU04UjRQbDY0c2NCVTNJSXJzZkVmNDFkRE00ZnpJZExB?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "semiconductor chip shortage technology supply",
+      "title": "Tata to Build India's First Chip Fabrication Plant in Gujarat - Tech Observer Magazine",
+      "published": "Fri, 17 Apr 2026 06:47:56 GMT",
+      "link": "https://news.google.com/rss/articles/CBMi9AJBVV95cUxNNmZzazBBWl9Kbk9ITUNhMGNiQV8tQkxENl9sYUtUM2RydmJoZ2xuRU1WZGZFd3BDb3dxWjY4UVVMcmpKR3BRbjE5VWtlcU53VEJlRkZlMDlNcG9wVWh0YnFRV2JIbTJjekZmRzlFZDJYNGo5c3Q5THQ1Nm5GUmgwOXphbjV2QmR3QmZ5MGNEWEV2M2U1c3VEUVdqUFV5Wmhtb1ZzZkNpaHNDUDAtampVbHNRYXVVb3pOcmM5eGtnMVZnVENMYko2QXh4NGdtdE1ORzJaSFJ4SGI2QVBORkxuRXBzM2NuaU1WODUxdDN4Z211Yko5VC1aVkJEM01ETG56VDJqd3dtVllBTHhmVGF0STV6TTN1YmNCMFU2Y2gzX2lQMW9YTkpEUEdSQXAxUzdLdWdLbWx1VnBfbmVwOHNIeURtSDRjQUNJQkRkNTV0c09NRFdTMEdyZnQtbnZJT25CYS1ZelpqUWdKRXFFNXdGUGp5YmrSAfQCQVVfeXFMTTZmc2swQVpfSm5PSE1DYTBjYkFfLUJMRDZfbGFLVDNkcnZiaGdsbkVNVmRmRXdwQ293cVo2OFFVTHJqSkdwUW4xOVVrZXFOd1RCZUZGZTA5TXBvcFVodGJxUVdiSG0yY3pGZkc5RWQyWDRqOXN0OUx0NTZuRlJoMDl6YW41dkJkd0JmeTBjRFhFdjNlNXN1RFFXalBVeVpobW9Wc2ZDaWhzQ1AwLWpqVWxzUWF1VW96TnJjOXhrZzFWZ1RDTGJKNkF4eDRnbXRNTkcyWkhSeEhiNkFQTkZMbkVwczNjbmlNVjg1MXQzeGdtdWJKOVQtWlZCRDNNRExuelQyand3bVZZQUx4ZlRhdEk1ek0zdWJjQjBVNmNoM19pUDFvWE5KRFBHUkFwMVM3S3VnS21sdVZwX25lcDhzSHlEbUg0Y0FDSUJEZDU1dHNPTURXUzBHcmZ0LW52SU9uQmEtWXpaalFnSkVxRTV3RlBqeWJq?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "semiconductor chip shortage technology supply",
+      "title": "Philippines, US to build industrial hub to strengthen supply chain security - Rappler",
+      "published": "Fri, 17 Apr 2026 03:01:36 GMT",
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPdi1aMzJMMkttQjgycDJjSFZDb19xOTVNdWJVaGY2WG1aTmtrSnhkRnpGNzRmWHRyT25BUU9yV0lha2FWTEpmanNuWFZ0X3JCRlF6SndvcmEtM2hSaEs1WHVwYU84cDE4U2ZoQjR3YzlzbjVqUjM2UXFwX201QVhueXBBLW0ybFR0ankyRA?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "semiconductor chip shortage technology supply",
+      "title": "What Is India’s First Chip Fabrication Plant? Key Details About the Dholera SEZ Semiconductor Project - Indian Masterminds",
+      "published": "Fri, 17 Apr 2026 10:40:31 GMT",
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQdndHN2dlYl9BTFItMmhoV3dqWnR6Zm1XTUYxcGxTbDgxYUdEYllXd1ZZdG1ZU2N1QWpyVU1XdVlHZnI4elRDNmFTSmV1UkEtYUxZWXpLYzRlTGt0U3lmcXlGeGlPa1lOS2lMWWUtX015V1BaR1VIZUdaUTNtZ0Q0ZnVWTm1mT2t1YWVNOERkYVdFb1NsSmUzZ1NIb0JxZw?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "semiconductor chip shortage technology supply",
+      "title": "Musk's foundry push forces chipmakers to rethink customer relationships - digitimes",
+      "published": "Thu, 16 Apr 2026 23:44:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNd255eWl2WWRrUE9PaFczVk5vSXpqb1h5aTJPbEhfYUx1Y1hWSGJYdEpBN0wtbTRIcmJtckp4WE9BczVpRWFaTUZfQl81Zy0yWmxVbWx0WVhpN3JDb0x1a0NHVUNvQXprMVY3OGxkMzJ6ZThtZlJxQVNZaURaRlFVM19pS2trMHQ4bE84VGQ4NnJUbzhqdktLVE9qYWg5Tk1sNnc?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Technology",
+      "search_query": "semiconductor chip shortage technology supply",
+      "title": "Meta (META) Stock: Quest 3 Costs Rise as Supply Chain Pressures Mount - parameter.io",
+      "published": "Fri, 17 Apr 2026 09:20:02 GMT",
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOWjdJcS16N2w1cWRDMjJhd1drSUI0SXRiZ1V5bFB5VnNlanU4MVM5ODYycHRLS3hTSHU1bVpJVF9LRVJzcWVCZDVnb01WTXJURnBHRnpCVkhpVlVHSndsSzFCRjBxWERBZ1g5M0ZvTkIydkRhTFBvX1lIY3A4dGQ5THZmendWNWJjVGU2Y2tJVkI1QQ?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Fraud_Scam",
+      "search_query": "fraud scam financial crime money laundering UK Europe",
+      "title": "Investors Beware: More Stomach-Churning Action Is Ahead - Yahoo",
+      "published": "Fri, 17 Apr 2026 04:11:34 GMT",
+      "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9WdlBTeUxhUXY0dlNBbWFjLUJIOFpOdks5Vnd6R1FiM3pTb2ZzUm9zVTFpSTNncFg0UGlNMmJHazVzV0xLQm9UX3pkbV9zMlJka05XaGZkLVIwdmF0Ym5KUFc3N0ItbENROVNzYjg1b0NJNHZ4?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Fraud_Scam",
+      "search_query": "payment fraud bank fraud card fraud APP fraud mandate",
+      "title": "UK social engineering scams jump 62% as fraud tactics shift: BioCatch - Biometric Update",
+      "published": "Fri, 17 Apr 2026 07:41:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPeVpjZDJvZEl3LXF5RXFjajhkMXJlMF9ka1hjSE9FX2o1WUcxb0ZIYXVhTGRlQ3ZJR1dVS1pGMmVGWktNTzU0dGM5NU00c0Vyam90RTdGd2NNN1hPbHZ4UmN5WHpXYTZlSW80aDFoUnU1VTF4U3Y2c3ZhMzFqbGNDRlRDQ1BTVjdEN2JQcUhFLTBVUGl3LTBoc19NamR3N0xoS01NcFV5d1JlZw?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Fraud_Scam",
+      "search_query": "payment fraud bank fraud card fraud APP fraud mandate",
+      "title": "Wisconsin woman turns $4,400 crypto scam loss into advocacy - AOL.com",
+      "published": "Fri, 17 Apr 2026 07:39:18 GMT",
+      "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5yMndObmc5cGpXdWdjbEtrN2ZHT3JhVTBnY29JVThGYUF0Y0NfTmdUS2NVM2NpQ3U0LVZGY2ZMblA3bExBWTU2aXZ2ek5ORF9xTUxuV0JWcF9GTTNaS05zS2lHOFM4QnEteUlpRDFGeXE1VHRJcWc?oc=5",
+      "past_days": 1,
+      "source": "semantic_sweep"
+    },
+    {
+      "search_name": "Fraud_Scam",
+      "search_query": "payment fraud bank fraud card fraud APP fraud mandate",
+      "title": "RBI’s ‘Kill Switch’ Proposal – How It Could Protect Your Online Transactions Instantly - Trade Brains",
+      "published": "Fri, 17 Apr 2026 11:01:15 GMT",
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPMWtodkFLV3NjVTI2bHN0MUtxLW9oNFl3RG42Qm9ZLUI0V1dYTmRReWVqb2FsMkZ4eGJ1VXZOc1dFaS1UQlFseGd4RGVLVVJLNzU4aWJkTk9PYW54bW5rMlZ4NTlKX0NzUWtXVmJ0OUdQMXJzVkMxdlRhdFl4dU5nXy1sZXdoLUJXZWEzdjZMeWhjaXdlY0FzV29VbTBDM3hScHZPemNBcmJtREU3WjRPcg?oc=5",
       "past_days": 1,
       "source": "semantic_sweep"
     }
