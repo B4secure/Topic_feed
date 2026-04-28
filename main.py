@@ -44,72 +44,170 @@ for d in [DATA_DIR, DAILY_DIR, WEEKLY_DIR, DOCS_DIR]:
 
 
 # ---------------------------
-# EVENT TAXONOMY THEMES
-# 6 PESTLE categories + Supply Chain + Technology + Fraud
+# CANONICAL CATEGORY NAMES
+# These are the final saved names used throughout the pipeline.
+# A/B query pairs are collected under A/B names then normalised
+# to the canonical name before deduplication and saving.
 # ---------------------------
 
-EVENT_TAXONOMY_THEMES = [
-    # PESTLE_Political
-    "government policy trade war sanctions geopolitical risk political instability",
-    "diplomatic tension international relations trade deal bilateral agreement",
-    "regime change political crisis coup civil war conflict",
-    "election result political shift foreign policy NATO G7 G20",
-    "soft power energy politics food security water security",
-    # PESTLE_Economic
-    "inflation interest rates consumer spending cost of living recession",
-    "currency fluctuation exchange rate economic slowdown GDP unemployment",
-    "energy prices commodity prices supply chain costs import costs",
-    "consumer confidence retail sales economic outlook fiscal policy",
-    "central bank debt crisis market volatility stock market bond market",
-    # PESTLE_Social
-    "demographic change ageing population migration urbanisation lifestyle trend",
-    "consumer values brand authenticity ethical consumption sustainability demand",
-    "social inequality housing crisis mental health wellbeing workforce diversity",
-    "trust institutions polarisation culture war Gen Z millennial luxury demand",
-    "anti-consumerism experiential retail social media influencer cancel culture",
-    # PESTLE_Technological
-    "cybersecurity data breach ransomware hack malware attack zero day",
-    "agentic AI autonomous systems artificial intelligence regulation disruption",
-    "semiconductor chip shortage quantum computing technology supply",
-    "surveillance facial recognition biometrics deepfake privacy",
-    "R&D breakthrough robotics automation IoT digital transformation",
-    # PESTLE_Environmental
-    "climate change extreme weather flood drought wildfire heatwave",
-    "carbon emissions net zero sustainability regulation ESG green policy",
-    "carbon tax plastic ban deforestation biodiversity water scarcity",
-    "energy transition renewable energy hydrogen carbon capture greenwashing",
-    "climate litigation environmental protest supply chain sustainability scope 3",
-    # PESTLE_Legal
-    "employment law unfair dismissal data privacy GDPR AI regulation",
-    "EU AI Act data protection cyber law digital regulation competition law",
-    "antitrust consumer protection product liability intellectual property trademark",
-    "sanctions compliance money laundering AML KYC financial regulation",
-    "regulatory fine class action litigation modern slavery supply chain due diligence",
-    # Supply Chain
-    "supply chain disruption logistics shipping delay freight port strike",
-    "transport blockade haulage road closure lorry driver trucker strike",
-    "trade war tariffs import export ban sanctions embargo",
-    "raw material shortage component shortage factory closure border delay",
-    "freight disruption delivery delay customs backlog reshoring nearshoring",
-    # Technology Cyber
-    "cyber attack infrastructure critical systems outage nation state attack",
-    "phishing zero day vulnerability software exploit supply chain attack",
-    "LLMjacking AI threat cyber fraud cyber espionage",
-    # Technology Emerging
-    "chip shortage semiconductor supply quantum 5G 6G robotics automation",
-    "hydrogen battery energy storage carbon capture biotech genomics",
-    "satellite space tech autonomous vehicle digital twin smart city",
-    # Fraud and Insider Risk
-    "fraud scam financial crime money laundering payment fraud bank fraud",
-    "investment scam crypto fraud Ponzi scheme romance scam card fraud",
-    "employee theft staff fraud workplace misconduct insider threat embezzlement",
-    "data theft stolen data leaked confidential information sabotage bribery",
-    "convicted sentenced pleaded guilty employee fraud corruption trade secret",
+CANONICAL_CATEGORIES = [
+    "PESTLE_Political",
+    "PESTLE_Economic",
+    "PESTLE_Social",
+    "PESTLE_Technological",
+    "PESTLE_Environmental",
+    "PESTLE_Legal",
+    "Supply_Chain",
+    "Technology_Cyber",
+    "Technology_AI",
+    "Fraud_Financial",
+    "Fraud_Insider",
 ]
+
+# Maps A/B split query names back to their canonical category name
+AB_NAME_MAP = {
+    "PESTLE_Political_A":     "PESTLE_Political",
+    "PESTLE_Political_B":     "PESTLE_Political",
+    "PESTLE_Economic_A":      "PESTLE_Economic",
+    "PESTLE_Economic_B":      "PESTLE_Economic",
+    "PESTLE_Social_A":        "PESTLE_Social",
+    "PESTLE_Social_B":        "PESTLE_Social",
+    "PESTLE_Environmental_A": "PESTLE_Environmental",
+    "PESTLE_Environmental_B": "PESTLE_Environmental",
+    "PESTLE_Legal_A":         "PESTLE_Legal",
+    "PESTLE_Legal_B":         "PESTLE_Legal",
+    "Supply_Chain_A":         "Supply_Chain",
+    "Supply_Chain_B":         "Supply_Chain",
+    "Technology_AI_A":        "Technology_AI",
+    "Technology_AI_B":        "Technology_AI",
+    "Fraud_Insider_A":        "Fraud_Insider",
+    "Fraud_Insider_B":        "Fraud_Insider",
+}
+
+
+def normalise_category(name: str) -> str:
+    """Resolve A/B split names to their canonical category name."""
+    return AB_NAME_MAP.get(name, name)
+
+
+# ---------------------------
+# SEARCH LIBRARY
+# All queries are RSS-safe: under 700 encoded chars, max 25 OR terms,
+# no broken - exclusion operators.
+# A/B pairs are used where a topic needs more terms than one query allows.
+# After collection, A/B results are merged under the canonical name.
+# ---------------------------
+
+SEARCH_LIBRARY_TEXT = r"""
+PESTLE_Political_A   ("trade war" OR tariffs OR sanctions OR "political instability" OR "geopolitical risk" OR "diplomatic tension" OR "regime change" OR "political crisis" OR "coup" OR "civil war" OR "foreign policy" OR "NATO" OR "G7" OR "G20" OR "trade deal") AND (threat OR risk OR warning OR emerging OR escalation OR impact) AND (Europe OR UK OR "United States" OR global OR China OR Russia OR "Middle East")
+PESTLE_Political_B   ("trade policy" OR "government policy" OR "energy politics" OR "food security" OR "water security" OR "soft power" OR "UN resolution" OR "bilateral agreement" OR "supply chain politics" OR "economic bloc" OR "election result") AND (threat OR risk OR opportunity OR impact OR warning OR shift OR agreement) AND (Europe OR UK OR "United States" OR global OR China OR Russia)
+PESTLE_Economic_A   ("inflation" OR "interest rates" OR "recession" OR "economic slowdown" OR "GDP" OR "unemployment" OR "wage growth" OR "fiscal policy" OR "monetary policy" OR "central bank" OR "debt crisis" OR "currency fluctuation" OR "exchange rate") AND (threat OR risk OR warning OR forecast OR outlook OR decline OR crisis) AND (Europe OR UK OR "United States" OR global)
+PESTLE_Economic_B   ("cost of living" OR "consumer spending" OR "energy prices" OR "oil prices" OR "commodity prices" OR "supply chain costs" OR "consumer confidence" OR "retail sales" OR "economic outlook" OR "market volatility") AND (threat OR risk OR opportunity OR impact OR warning OR forecast OR growth OR decline) AND (Europe OR UK OR "United States" OR global OR retail)
+PESTLE_Social_A   ("demographic change" OR "ageing population" OR "migration" OR "urbanisation" OR "cost of living" OR "housing crisis" OR "social inequality" OR "workforce diversity" OR "ethical consumption" OR "sustainability demand") AND (Europe OR UK OR "United States" OR global OR retail OR consumer OR brand OR business)
+PESTLE_Social_B   ("Gen Z" OR "millennial" OR "luxury demand" OR "experiential retail" OR "anti-consumerism" OR "protest movement" OR "social unrest" OR "trust in institutions" OR "polarisation" OR "mental health" OR "brand authenticity") AND (Europe OR UK OR "United States" OR global OR retail OR luxury OR consumer OR trend OR brand)
+PESTLE_Technological   (semiconductor OR "chip shortage" OR quantum OR "5G" OR "6G" OR robotics OR automation OR drone OR satellite OR hydrogen OR battery OR "energy storage" OR biotech OR "autonomous vehicle") AND (threat OR ban OR shortage OR "supply chain" OR regulation OR "national security" OR disruption OR breakthrough) AND (Europe OR UK OR "United States" OR global OR government OR industry)
+PESTLE_Environmental_A   ("climate change" OR "extreme weather" OR "flood risk" OR "drought" OR "wildfire" OR "heatwave" OR "carbon emissions" OR "net zero" OR "water scarcity" OR "energy transition" OR "renewable energy") AND (threat OR risk OR warning OR impact OR disruption OR emerging) AND (Europe OR UK OR "United States" OR global OR company OR industry)
+PESTLE_Environmental_B   ("sustainability regulation" OR "ESG" OR "green policy" OR "carbon tax" OR "plastic ban" OR "deforestation" OR "biodiversity" OR "greenwashing" OR "climate litigation" OR "environmental protest" OR "scope 3 emissions") AND (threat OR risk OR opportunity OR warning OR regulation OR fine OR ban OR litigation) AND (Europe OR UK OR "United States" OR global OR retail OR company)
+PESTLE_Legal_A   ("data privacy" OR "GDPR" OR "AI Act" OR "EU AI Act" OR "data protection" OR "competition law" OR "antitrust" OR "consumer protection" OR "product liability" OR "intellectual property" OR "trademark" OR "FCA" OR "ICO" OR "FTC") AND (warning OR fine OR ban OR ruling OR compliance OR enforcement OR lawsuit) AND (Europe OR UK OR "United States" OR global OR company OR brand)
+PESTLE_Legal_B   ("employment law" OR "unfair dismissal" OR "sanctions compliance" OR "money laundering" OR "AML" OR "financial regulation" OR "tax law" OR "corporate governance" OR "whistleblower" OR "class action" OR "regulatory fine" OR "modern slavery" OR "supply chain due diligence") AND (threat OR risk OR warning OR fine OR ruling OR compliance OR enforcement OR lawsuit) AND (Europe OR UK OR "United States" OR global OR company OR employer)
+Supply_Chain_A   ("supply chain disruption" OR "port strike" OR "transport strike" OR "freight disruption" OR "fuel protest" OR "farmers protest" OR "lorry driver" OR "trucker strike" OR haulage OR "border delay" OR "customs delay" OR "road closure" OR "Suez" OR "Dover" OR "Channel Tunnel") AND (disruption OR delay OR closed OR strike OR collapsed OR warning OR shortage OR Europe OR UK)
+Supply_Chain_B   ("supply chain" OR logistics OR shipping OR freight OR tariffs OR reshoring OR nearshoring OR "import ban" OR "export ban" OR "raw material shortage" OR "component shortage") AND (disruption OR shortage OR delay OR collapsed OR strike OR blocked OR warning) AND (Europe OR UK OR global OR manufacturer OR supplier)
+Technology_Cyber   (cybersecurity OR ransomware OR "data breach" OR malware OR "cyber attack" OR "zero day" OR vulnerability OR hacking OR phishing OR "cyber incident" OR "critical infrastructure" OR "cyber espionage" OR "nation state" OR "supply chain attack" OR "LLMjacking" OR "AI security") AND (attack OR breach OR warning OR arrested OR convicted OR threat OR incident OR advisory OR disclosed OR government OR company)
+Technology_AI_A    ("ChatGPT" OR "Claude" OR "Gemini" OR "Copilot" OR "GPT-4" OR "GPT-5" OR "Grok" OR "Llama" OR "Mistral" OR "agentic AI" OR "AI agent" OR "AI assistant" OR "foundation model" OR "large language model" OR "generative AI") AND (launched OR released OR updated OR announced OR threat OR opportunity OR business OR enterprise OR productivity OR workforce OR jobs OR disruption) AND (Europe OR UK OR "United States" OR global OR company OR industry)
+Technology_AI_B   ("AI adoption" OR "AI investment" OR "AI strategy" OR "AI transformation" OR "AI in business" OR "AI tools" OR "AI automation" OR "AI productivity" OR "AI workforce" OR "AI jobs" OR "AI opportunity" OR "AI risk" OR "AI misuse" OR "deepfake" OR "synthetic media") AND (company OR business OR enterprise OR organisation OR threat OR opportunity OR warning OR deployed OR implemented OR growing OR declining) AND (Europe OR UK OR "United States" OR global)
+Fraud_Financial   (fraud OR scam OR "identity theft" OR "payment fraud" OR "money laundering" OR "bank fraud" OR "invoice fraud" OR "romance scam" OR "courier fraud" OR "card fraud" OR "mandate fraud" OR "APP fraud" OR "investment fraud" OR "crypto fraud" OR counterfeit OR embezzlement OR bribery OR corruption) AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim OR sentenced OR charged)
+Fraud_Insider_A   ("employee theft" OR "staff fraud" OR "workplace fraud" OR "insider threat" OR "insider risk" OR "rogue employee" OR "disgruntled employee" OR sabotage OR "data theft" OR "stolen data" OR "leaked data") AND (UK OR Britain OR Europe OR company OR employer OR arrested OR convicted OR dismissed OR charged OR sentenced)
+Fraud_Insider_B   ("intellectual property theft" OR "trade secret" OR "corporate espionage" OR "unauthorised access" OR "misuse of data" OR "internal fraud" OR "payroll fraud" OR "expense fraud" OR "HR fraud" OR "director fraud" OR "manager charged" OR "worker convicted") AND (UK OR Britain OR Europe OR company OR employer OR staff OR manager OR director OR arrested OR convicted OR charged)
+""".strip()
+
+
+# ---------------------------
+# RELEVANCE THEMES
+# Short phrases used to score whether a sweep article is relevant
+# to its assigned category. One set of phrases per category.
+# The semantic model compares article titles against these phrases
+# and keeps only articles that score above the threshold.
+# ---------------------------
+
+RELEVANCE_THEMES = {
+    "PESTLE_Political": [
+        "trade war sanctions geopolitics political instability government policy",
+        "diplomatic tension foreign policy NATO international relations conflict",
+        "election regime change coup civil war political crisis",
+        "energy politics food security water security bilateral agreement",
+    ],
+    "PESTLE_Economic": [
+        "inflation interest rates recession consumer spending cost of living",
+        "currency exchange rate GDP unemployment wage growth central bank",
+        "energy prices commodity prices retail sales economic outlook",
+        "market volatility fiscal policy debt crisis economic slowdown",
+    ],
+    "PESTLE_Social": [
+        "consumer values ethical consumption sustainability luxury brand retail",
+        "demographic change ageing population migration social inequality",
+        "Gen Z millennial experiential retail anti-consumerism protest",
+        "housing crisis mental health polarisation trust institutions",
+    ],
+    "PESTLE_Technological": [
+        "semiconductor chip shortage quantum 5G robotics automation supply",
+        "hydrogen battery energy storage carbon capture biotech autonomous vehicle",
+        "satellite drone national security disruption breakthrough regulation",
+    ],
+    "PESTLE_Environmental": [
+        "climate change extreme weather flood drought wildfire heatwave",
+        "net zero sustainability ESG regulation carbon tax greenwashing",
+        "energy transition renewable hydrogen climate litigation protest",
+        "biodiversity deforestation water scarcity scope 3 emissions",
+    ],
+    "PESTLE_Legal": [
+        "GDPR data privacy AI Act EU AI Act data protection regulation",
+        "antitrust competition law regulatory fine FCA ICO FTC lawsuit",
+        "employment law sanctions compliance money laundering AML financial regulation",
+        "modern slavery supply chain due diligence corporate governance whistleblower",
+    ],
+    "Supply_Chain": [
+        "supply chain disruption logistics shipping freight delay port strike",
+        "transport blockade haulage road closure lorry driver trucker strike",
+        "trade war tariffs import export ban sanctions raw material shortage",
+        "border delay customs backlog reshoring nearshoring Suez Dover",
+    ],
+    "Technology_Cyber": [
+        "cyber attack data breach ransomware malware hacking phishing zero day",
+        "critical infrastructure cyber espionage nation state attack vulnerability",
+        "LLMjacking AI security supply chain attack incident advisory",
+    ],
+    "Technology_AI": [
+        "artificial intelligence generative AI large language model foundation model",
+        "AI regulation AI Act governance safety risk misuse deepfake",
+        "AI automation productivity adoption investment breakthrough workforce",
+        "AI phishing AI-enabled fraud synthetic media machine learning",
+    ],
+    "Fraud_Financial": [
+        "fraud scam financial crime money laundering payment fraud bank fraud",
+        "investment scam crypto fraud romance scam card fraud APP fraud mandate",
+        "bribery corruption embezzlement counterfeit false accounting convicted sentenced",
+    ],
+    "Fraud_Insider": [
+        "employee theft staff fraud workplace misconduct insider threat rogue employee",
+        "data theft stolen data leaked confidential sabotage disgruntled employee",
+        "intellectual property theft trade secret corporate espionage unauthorised access",
+        "payroll fraud expense fraud HR fraud director fraud worker convicted",
+    ],
+}
+
+# Flatten into parallel lists for batch encoding
+RELEVANCE_THEME_LIST = []
+RELEVANCE_THEME_CATS = []
+for cat, phrases in RELEVANCE_THEMES.items():
+    for phrase in phrases:
+        RELEVANCE_THEME_LIST.append(phrase)
+        RELEVANCE_THEME_CATS.append(cat)
 
 
 # ---------------------------
 # SEMANTIC SWEEP SEARCHES
+# Plain natural-language queries — no boolean syntax.
+# Results scored against RELEVANCE_THEMES to filter off-topic articles.
 # ---------------------------
 
 SEMANTIC_SWEEP_SEARCHES = [
@@ -120,70 +218,51 @@ SEMANTIC_SWEEP_SEARCHES = [
     {"search_name": "PESTLE_Political", "query": "energy politics food security water security global threat"},
     # PESTLE Economic
     {"search_name": "PESTLE_Economic", "query": "inflation interest rates recession consumer spending UK Europe"},
-    {"search_name": "PESTLE_Economic", "query": "currency fluctuation exchange rate economic outlook GDP"},
+    {"search_name": "PESTLE_Economic", "query": "currency exchange rate economic outlook GDP unemployment"},
     {"search_name": "PESTLE_Economic", "query": "energy prices commodity prices retail sales market volatility"},
     {"search_name": "PESTLE_Economic", "query": "central bank fiscal policy debt crisis economic slowdown"},
     # PESTLE Social
     {"search_name": "PESTLE_Social", "query": "consumer values ethical consumption sustainability luxury brand"},
     {"search_name": "PESTLE_Social", "query": "demographic change ageing population migration social inequality"},
-    {"search_name": "PESTLE_Social", "query": "brand authenticity cancel culture Gen Z millennial retail trend"},
+    {"search_name": "PESTLE_Social", "query": "Gen Z millennial retail trend anti-consumerism protest"},
     {"search_name": "PESTLE_Social", "query": "housing crisis mental health polarisation trust institutions"},
     # PESTLE Technological
-    {"search_name": "PESTLE_Technological", "query": "cybersecurity data breach ransomware hack malware attack"},
-    {"search_name": "PESTLE_Technological", "query": "agentic AI autonomous systems technology regulation disruption"},
-    {"search_name": "PESTLE_Technological", "query": "semiconductor chip shortage quantum computing supply"},
-    {"search_name": "PESTLE_Technological", "query": "surveillance biometrics deepfake AI threat privacy"},
+    {"search_name": "PESTLE_Technological", "query": "semiconductor chip shortage quantum 5G robotics automation"},
+    {"search_name": "PESTLE_Technological", "query": "hydrogen battery energy storage biotech autonomous vehicle"},
+    {"search_name": "PESTLE_Technological", "query": "satellite drone national security disruption breakthrough"},
     # PESTLE Environmental
     {"search_name": "PESTLE_Environmental", "query": "climate change extreme weather flood drought wildfire Europe"},
     {"search_name": "PESTLE_Environmental", "query": "net zero sustainability ESG regulation carbon tax greenwashing"},
-    {"search_name": "PESTLE_Environmental", "query": "energy transition renewable hydrogen carbon capture"},
-    {"search_name": "PESTLE_Environmental", "query": "climate litigation environmental protest supply chain sustainability"},
+    {"search_name": "PESTLE_Environmental", "query": "energy transition renewable hydrogen climate litigation"},
+    {"search_name": "PESTLE_Environmental", "query": "biodiversity deforestation water scarcity scope 3 emissions"},
     # PESTLE Legal
-    {"search_name": "PESTLE_Legal", "query": "employment law GDPR AI regulation data protection Europe UK"},
-    {"search_name": "PESTLE_Legal", "query": "EU AI Act antitrust competition law regulatory fine lawsuit"},
+    {"search_name": "PESTLE_Legal", "query": "GDPR AI Act data protection regulation Europe UK fine"},
+    {"search_name": "PESTLE_Legal", "query": "antitrust competition law regulatory fine FCA ICO lawsuit"},
     {"search_name": "PESTLE_Legal", "query": "sanctions compliance money laundering AML financial regulation"},
-    {"search_name": "PESTLE_Legal", "query": "modern slavery supply chain due diligence intellectual property"},
+    {"search_name": "PESTLE_Legal", "query": "modern slavery supply chain due diligence corporate governance"},
     # Supply Chain
     {"search_name": "Supply_Chain", "query": "supply chain disruption logistics shipping freight delay"},
     {"search_name": "Supply_Chain", "query": "transport strike blockade road closure haulage disruption"},
-    {"search_name": "Supply_Chain", "query": "trade war tariffs import export ban sanctions"},
-    {"search_name": "Supply_Chain", "query": "port strike shipping delay raw material shortage factory closure"},
-    {"search_name": "Supply_Chain", "query": "border delay customs backlog supply disruption reshoring"},
+    {"search_name": "Supply_Chain", "query": "trade war tariffs import export ban raw material shortage"},
+    {"search_name": "Supply_Chain", "query": "port strike border delay customs backlog Suez Dover"},
     # Technology Cyber
-    {"search_name": "Technology_Cyber", "query": "cybersecurity data breach ransomware hack malware"},
-    {"search_name": "Technology_Cyber", "query": "cyber attack phishing zero day vulnerability exploit"},
-    {"search_name": "Technology_Cyber", "query": "nation state attack critical infrastructure cyber espionage"},
-    {"search_name": "Technology_Cyber", "query": "LLMjacking AI security threat supply chain attack"},
-    # Technology Emerging
-    {"search_name": "Technology_Emerging", "query": "semiconductor chip shortage quantum 5G robotics automation"},
-    {"search_name": "Technology_Emerging", "query": "hydrogen battery energy storage carbon capture biotech"},
-    {"search_name": "Technology_Emerging", "query": "satellite space tech autonomous vehicle digital twin"},
-    # Fraud
-    {"search_name": "Fraud_Scam", "query": "fraud scam financial crime money laundering UK Europe"},
-    {"search_name": "Fraud_Scam", "query": "payment fraud bank fraud card fraud APP fraud mandate"},
-    {"search_name": "Fraud_Scam", "query": "investment scam crypto fraud Ponzi scheme romance scam"},
-    {"search_name": "Fraud_Scam", "query": "employee arrested convicted fraud theft data stolen workplace"},
-    {"search_name": "Fraud_Scam", "query": "insider threat staff fraud embezzlement bribery corruption"},
+    {"search_name": "Technology_Cyber", "query": "cyber attack data breach ransomware malware hacking"},
+    {"search_name": "Technology_Cyber", "query": "cyber espionage nation state attack critical infrastructure"},
+    {"search_name": "Technology_Cyber", "query": "zero day vulnerability phishing LLMjacking AI security"},
+    # Technology AI
+    {"search_name": "Technology_AI", "query": "artificial intelligence generative AI regulation risk businesses"},
+    {"search_name": "Technology_AI", "query": "AI model launched regulation governance safety misuse deepfake"},
+    {"search_name": "Technology_AI", "query": "AI automation productivity adoption workforce disruption"},
+    {"search_name": "Technology_AI", "query": "AI phishing fraud synthetic media machine learning threat"},
+    # Fraud Financial
+    {"search_name": "Fraud_Financial", "query": "fraud scam financial crime money laundering UK Europe"},
+    {"search_name": "Fraud_Financial", "query": "payment fraud bank fraud card fraud APP fraud mandate"},
+    {"search_name": "Fraud_Financial", "query": "investment scam crypto fraud romance scam convicted sentenced"},
+    # Fraud Insider
+    {"search_name": "Fraud_Insider", "query": "employee arrested convicted fraud theft workplace insider"},
+    {"search_name": "Fraud_Insider", "query": "insider threat staff fraud embezzlement bribery data stolen"},
+    {"search_name": "Fraud_Insider", "query": "intellectual property theft trade secret corporate espionage rogue employee"},
 ]
-
-
-# ---------------------------
-# SEARCH LIBRARY
-# Categories: PESTLE x6 + Supply_Chain + Technology_Cyber + Technology_Emerging + Fraud_Scam
-# ---------------------------
-
-SEARCH_LIBRARY_TEXT = r"""
-PESTLE_Political	("trade policy" OR "trade war" OR tariffs OR sanctions OR "government policy" OR "political instability" OR "geopolitical risk" OR "soft power" OR "diplomatic tension" OR "regime change" OR "political crisis" OR "election result" OR "coup" OR "civil war" OR "international relations" OR "foreign policy" OR "NATO" OR "UN resolution" OR "G7" OR "G20" OR "bilateral agreement" OR "trade deal" OR "economic bloc" OR "supply chain politics" OR "energy politics" OR "food security" OR "water security") AND (threat OR risk OR opportunity OR impact OR warning OR emerging OR shift OR change OR tension OR escalation OR agreement) AND (Europe OR UK OR "United States" OR global OR international OR China OR Russia OR "Middle East")
-PESTLE_Economic	("inflation" OR "interest rates" OR "consumer spending" OR "cost of living" OR "currency fluctuation" OR "exchange rate" OR "recession" OR "economic slowdown" OR "GDP" OR "unemployment" OR "labour market" OR "wage growth" OR "energy prices" OR "oil prices" OR "commodity prices" OR "supply chain costs" OR "import costs" OR "export decline" OR "consumer confidence" OR "retail sales" OR "economic outlook" OR "fiscal policy" OR "monetary policy" OR "central bank" OR "debt crisis" OR "market volatility" OR "stock market" OR "bond market") AND (threat OR risk OR opportunity OR impact OR warning OR emerging OR forecast OR outlook OR decline OR growth OR crisis) AND (Europe OR UK OR "United States" OR global OR international)
-PESTLE_Social	("demographic change" OR "ageing population" OR "birth rate" OR "migration" OR "urbanisation" OR "lifestyle trend" OR "consumer values" OR "brand authenticity" OR "ethical consumption" OR "sustainability demand" OR "social media" OR "influencer" OR "mental health" OR "wellbeing" OR "workforce diversity" OR "gender equality" OR "cost of living" OR "housing crisis" OR "social inequality" OR "class divide" OR "trust in institutions" OR "polarisation" OR "culture war" OR "cancel culture" OR "Gen Z" OR "millennial" OR "luxury demand" OR "experiential retail" OR "anti-consumerism") AND (threat OR risk OR opportunity OR trend OR shift OR emerging OR change OR impact OR warning OR growing OR declining) AND (Europe OR UK OR "United States" OR global OR retail OR luxury OR brand OR consumer)
-PESTLE_Technological	(cybersecurity OR ransomware OR "data breach" OR malware OR "cyber attack" OR "zero day" OR vulnerability OR hacking OR phishing OR "agentic AI" OR "autonomous systems" OR "AI regulation" OR "AI risk" OR "LLMjacking" OR "AI security" OR semiconductor OR "chip shortage" OR quantum OR "5G" OR robotics OR automation OR deepfake OR surveillance OR biometrics OR "facial recognition" OR "R&D breakthrough" OR "tech regulation" OR "digital transformation") AND (threat OR risk OR opportunity OR warning OR breach OR attack OR disruption OR regulation OR emerging OR breakthrough OR ban OR sanction) AND (Europe OR UK OR "United States" OR global OR government OR company OR industry) AND -(rumor OR gaming OR podcast OR "live blog" OR "product review" OR review)
-PESTLE_Environmental	("climate change" OR "global warming" OR "extreme weather" OR "flood risk" OR "drought" OR "wildfire" OR "storm" OR "heatwave" OR "carbon emissions" OR "net zero" OR "sustainability regulation" OR "ESG" OR "green policy" OR "carbon tax" OR "carbon border" OR "plastic ban" OR "deforestation" OR "biodiversity" OR "water scarcity" OR "energy transition" OR "renewable energy" OR "hydrogen" OR "carbon capture" OR "supply chain sustainability" OR "scope 3 emissions" OR "greenwashing" OR "climate litigation" OR "environmental protest") AND (threat OR risk OR opportunity OR warning OR regulation OR fine OR ban OR emerging OR impact OR disruption OR litigation) AND (Europe OR UK OR "United States" OR global OR retail OR luxury OR brand OR company)
-PESTLE_Legal	("employment law" OR "unfair dismissal" OR "data privacy" OR "GDPR" OR "AI regulation" OR "AI Act" OR "EU AI Act" OR "data protection" OR "cyber law" OR "digital regulation" OR "competition law" OR "antitrust" OR "consumer protection" OR "product liability" OR "intellectual property" OR "trademark" OR "copyright" OR "sanctions compliance" OR "money laundering regulation" OR "AML" OR "KYC" OR "financial regulation" OR "tax law" OR "corporate governance" OR "whistleblower" OR "class action" OR "litigation" OR "regulatory fine" OR "ICO" OR "FCA" OR "FTC" OR "right to repair" OR "modern slavery" OR "supply chain due diligence") AND (threat OR risk OR opportunity OR warning OR fine OR ban OR ruling OR emerging OR change OR compliance OR enforcement OR lawsuit OR regulation) AND (Europe OR UK OR "United States" OR global OR company OR employer OR brand OR retail)
-Supply_Chain	("supply chain" OR logistics OR shipping OR freight OR port OR tariffs OR sanctions OR embargoes OR reshoring OR nearshoring OR "supply chain disruption" OR fragmentation OR instability OR "road closure" OR "port strike" OR "transport strike" OR "freight disruption" OR "fuel protest" OR "farmers protest" OR "lorry driver" OR "trucker strike" OR haulage OR "border delay" OR "customs delay" OR "import ban" OR "export ban" OR "trade war" OR "trade disruption" OR "raw material shortage" OR "component shortage") AND (company OR manufacturer OR factory OR supplier OR export OR import OR production OR delivery OR route OR network OR Europe OR UK OR global)
-Technology_Cyber	(cybersecurity OR ransomware OR "data breach" OR malware OR "cyber attack" OR "zero day" OR vulnerability OR hacking OR phishing OR "cyber incident" OR "critical infrastructure" OR "cyber espionage" OR "nation state attack" OR "supply chain attack" OR deepfake OR surveillance OR biometrics OR "facial recognition" OR "cyber fraud" OR "LLMjacking" OR "AI threat" OR "AI security") AND (attack OR breach OR warning OR arrested OR convicted OR victim OR threat OR vulnerability OR incident OR regulation OR government OR company) AND -(rumor OR gaming OR podcast OR "live blog" OR review)
-Technology_Emerging	(semiconductor OR chip OR "chip shortage" OR quantum OR "5G" OR "6G" OR robotics OR automation OR drone OR satellite OR "space tech" OR hydrogen OR battery OR "energy storage" OR "carbon capture" OR biotech OR genomics OR nanotechnology OR "digital twin" OR blockchain OR "smart city" OR "autonomous vehicle" OR "edge computing") AND (attack OR breach OR warning OR threat OR ban OR sanction OR shortage OR "supply chain" OR regulation OR legislation OR "national security" OR espionage OR vulnerability OR incident OR disruption) AND -(AI OR "artificial intelligence" OR "machine learning") AND -(investment OR funding OR IPO OR shares OR stock OR shareholder OR "annual meeting" OR "quarterly results" OR "private placement" OR review OR podcast OR gaming)
-Fraud_Scam	(fraud OR scam OR phishing OR "identity theft" OR "payment fraud" OR "money laundering" OR "cyber fraud" OR "bank fraud" OR "invoice fraud" OR "romance scam" OR "courier fraud" OR "retail fraud" OR "card fraud" OR "mandate fraud" OR "authorised push payment" OR "APP fraud" OR "investment fraud" OR "crypto fraud" OR counterfeit OR "false accounting" OR embezzlement OR bribery OR corruption OR "insider dealing" OR "convicted" OR "sentenced" OR "pleaded guilty" OR "employee theft" OR "staff fraud" OR "workplace fraud" OR "data theft" OR "stolen data" OR "leaked data" OR "rogue employee" OR "disgruntled employee" OR sabotage OR "intellectual property theft" OR "trade secret" OR "charged with" OR "arrested for" OR "dismissed for") AND (UK OR Britain OR Europe OR warning OR arrested OR convicted OR victim OR company OR employee OR worker OR staff OR manager OR director)
-""".strip()
 
 
 # ---------------------------
@@ -255,39 +334,39 @@ def google_news_rss_url(query: str, past_days: int,
 
 
 def remap_legacy_unmapped(df: pd.DataFrame) -> pd.DataFrame:
+    """Handle old category names from previous pipeline versions."""
     df = df.copy()
-    m  = df["search_name"].astype(str).eq("UNMAPPED_LINE")
-    sq = df.loc[m, "raw_query"].astype(str)
-    df.loc[m & sq.str.startswith("Insider Risk"), "search_name"] = "Fraud_Scam"
-    df.loc[m & sq.str.startswith("Fraud/Scam"),   "search_name"] = "Fraud_Scam"
-    df.loc[df["search_name"].eq("Fraud_Scam") & df["raw_query"].astype(str).str.startswith("Fraud/Scam"),
-           "raw_query"] = df["raw_query"].astype(str).str.replace(r"^Fraud/Scam\s*", "", regex=True)
-    # Remap old category names to new ones
     remap = {
-        "Current_Affairs":    "PESTLE_Political",
-        "Technology":         "Technology_Cyber",
-        "Tech":               "Technology_Emerging",
-        "Insider_Risk":       "Fraud_Scam",
+        "Current_Affairs":     "PESTLE_Political",
+        "Technology":          "Technology_Cyber",
+        "Tech":                "PESTLE_Technological",
+        "Insider_Risk":        "Fraud_Insider",
+        "Fraud_Scam":          "Fraud_Financial",
+        "Technology_Emerging": "PESTLE_Technological",
     }
     df["search_name"] = df["search_name"].replace(remap)
+    df["search_name"] = df["search_name"].apply(normalise_category)
     return df
 
 
 # ---------------------------
 # KEYWORD COLLECTION
+# Parses SEARCH_LIBRARY_TEXT, runs each query as a Google News RSS fetch,
+# and immediately normalises A/B names to their canonical category name.
 # ---------------------------
 
 def collect_google_news(df_searches: pd.DataFrame, past_days: int, max_items: int) -> pd.DataFrame:
     out_rows = []
     for _, r in df_searches.iterrows():
-        name = r["search_name"]
-        q    = r["raw_query"]
-        rss  = google_news_rss_url(q, past_days)
-        feed = feedparser.parse(rss)
-        print(f"  {name}: {len(feed.entries)} raw entries")
+        raw_name = r["search_name"]
+        q        = r["raw_query"]
+        rss      = google_news_rss_url(q, past_days)
+        feed     = feedparser.parse(rss)
+        canon    = normalise_category(raw_name)
+        print(f"  {raw_name} -> {canon}: {len(feed.entries)} raw entries")
         for entry in feed.entries[:max_items]:
             out_rows.append({
-                "search_name":  name,
+                "search_name":  canon,
                 "search_query": q,
                 "title":        entry.get("title", ""),
                 "published":    entry.get("published", ""),
@@ -298,8 +377,8 @@ def collect_google_news(df_searches: pd.DataFrame, past_days: int, max_items: in
 
     if out_rows:
         temp_df = pd.DataFrame(out_rows)
-        print("\nRaw collection summary:")
-        for name in df_searches["search_name"].unique():
+        print("\nRaw collection summary (canonical categories):")
+        for name in sorted(temp_df["search_name"].unique()):
             count = len(temp_df[temp_df["search_name"] == name])
             print(f"  {name}: {count} articles")
 
@@ -307,35 +386,41 @@ def collect_google_news(df_searches: pd.DataFrame, past_days: int, max_items: in
 
 
 # ---------------------------
-# SEMANTIC DEDUPE
+# SEMANTIC DEDUPE — INTRA-TOPIC ONLY
+#
+# KEY BEHAVIOUR:
+# - Deduplication runs independently per canonical category
+# - An article appearing in both PESTLE_Political AND Supply_Chain
+#   is kept in BOTH — cross-topic duplicates are intentional and preserved
+# - Only near-identical articles within the SAME category are removed
+# - The duplicate check key is (link, search_name) not just link
 # ---------------------------
 
-def semantic_dedupe_excel(infile: str, out_clean: str, out_audit: str,
-                          threshold: float, model_name: str) -> tuple:
-    df = pd.read_excel(infile)
-    df["title"] = df["title"].fillna("").astype(str)
-
+def semantic_dedupe_within_topic(df: pd.DataFrame, threshold: float, model_name: str) -> tuple:
     if df.empty:
-        df.to_excel(out_clean, index=False, engine="openpyxl")
-        pd.DataFrame().to_excel(out_audit, index=False, engine="openpyxl")
-        return 0, 0
+        return df.copy(), pd.DataFrame()
 
-    model           = SentenceTransformer(model_name)
-    keep_global_idx = set()
-    audit_rows      = []
+    df["title"] = df["title"].fillna("").astype(str)
+    model      = SentenceTransformer(model_name)
+    keep_rows  = []
+    audit_rows = []
 
-    for topic, gdf in df.groupby("search_name", dropna=False):
-        gdf  = gdf.copy()
-        gdf["compare_text"] = gdf["title"]
-        mask  = gdf["compare_text"].str.len() > 0
-        gwork = gdf[mask].copy()
+    for topic in sorted(df["search_name"].unique()):
+        topic_df = df[df["search_name"] == topic].copy().reset_index(drop=True)
 
-        if gwork.empty:
-            keep_global_idx.update(gdf.index.tolist())
+        if topic_df.empty:
+            continue
+
+        valid_mask = topic_df["title"].str.strip().str.len() > 0
+        work_df    = topic_df[valid_mask].reset_index(drop=True)
+        empty_df   = topic_df[~valid_mask].reset_index(drop=True)
+
+        if work_df.empty:
+            keep_rows.append(topic_df)
             continue
 
         emb = model.encode(
-            gwork["compare_text"].tolist(),
+            work_df["title"].tolist(),
             normalize_embeddings=True,
             show_progress_bar=False,
         )
@@ -353,9 +438,12 @@ def semantic_dedupe_excel(infile: str, out_clean: str, out_audit: str,
 
         def union(a, b):
             ra, rb = find(a), find(b)
-            if ra == rb: return
-            if rank[ra] < rank[rb]:   parent[ra] = rb
-            elif rank[ra] > rank[rb]: parent[rb] = ra
+            if ra == rb:
+                return
+            if rank[ra] < rank[rb]:
+                parent[ra] = rb
+            elif rank[ra] > rank[rb]:
+                parent[rb] = ra
             else:
                 parent[rb] = ra
                 rank[ra] += 1
@@ -365,34 +453,54 @@ def semantic_dedupe_excel(infile: str, out_clean: str, out_audit: str,
                 if sim[i, j] >= threshold:
                     union(i, j)
 
-        groups    = {}
-        gwork_idx = gwork.index.to_list()
+        groups = {}
         for i in range(n):
-            r = find(i)
-            groups.setdefault(r, []).append(i)
+            groups.setdefault(find(i), []).append(i)
 
+        kept_indices = []
         for members in groups.values():
-            keep_i   = min(members, key=lambda k: gwork_idx[k])
-            keep_row = gwork_idx[keep_i]
-            keep_global_idx.add(keep_row)
+            keep_i = min(members)
+            kept_indices.append(keep_i)
             for drop_i in members:
-                drop_row = gwork_idx[drop_i]
-                if drop_row == keep_row:
+                if drop_i == keep_i:
                     continue
                 audit_rows.append({
-                    "search_name":          topic,
-                    "kept_original_row":    int(keep_row),
-                    "dropped_original_row": int(drop_row),
-                    "similarity":           float(sim[keep_i, drop_i]),
-                    "kept_title":           df.loc[keep_row, "title"],
-                    "dropped_title":        df.loc[drop_row, "title"],
+                    "search_name":   topic,
+                    "kept_index":    keep_i,
+                    "dropped_index": drop_i,
+                    "similarity":    float(sim[keep_i, drop_i]),
+                    "kept_title":    work_df.loc[keep_i, "title"],
+                    "dropped_title": work_df.loc[drop_i, "title"],
                 })
 
-    df_clean = df.loc[sorted(keep_global_idx)].reset_index(drop=True)
-    audit    = pd.DataFrame(audit_rows)
+        kept_df = work_df.loc[sorted(kept_indices)].reset_index(drop=True)
+        if not empty_df.empty:
+            kept_df = pd.concat([kept_df, empty_df], ignore_index=True)
+
+        keep_rows.append(kept_df)
+        removed = len(topic_df) - len(kept_df)
+        print(f"  [{topic}] {len(topic_df)} -> {len(kept_df)} (removed {removed} intra-topic duplicates)")
+
+    df_clean = pd.concat(keep_rows, ignore_index=True) if keep_rows else pd.DataFrame()
+    df_audit = pd.DataFrame(audit_rows)
+    return df_clean, df_audit
+
+
+def semantic_dedupe_excel(infile: str, out_clean: str, out_audit: str,
+                          threshold: float, model_name: str) -> tuple:
+    df = pd.read_excel(infile)
+
+    if df.empty:
+        df.to_excel(out_clean, index=False, engine="openpyxl")
+        pd.DataFrame().to_excel(out_audit, index=False, engine="openpyxl")
+        return 0, 0
+
+    orig_count          = len(df)
+    df_clean, df_audit  = semantic_dedupe_within_topic(df, threshold, model_name)
+
     df_clean.to_excel(out_clean, index=False, engine="openpyxl")
-    audit.to_excel(out_audit,   index=False, engine="openpyxl")
-    return len(df), len(df_clean)
+    df_audit.to_excel(out_audit, index=False, engine="openpyxl")
+    return orig_count, len(df_clean)
 
 
 # ---------------------------
@@ -407,7 +515,8 @@ def update_master_excel_rolling(new_df: pd.DataFrame, master_path: Path, keep_da
         combined = new_df.copy()
 
     combined["past_days"] = keep_days
-    combined = combined.drop_duplicates(subset=["link"]).reset_index(drop=True)
+    # Drop exact same article in exact same category — keep cross-topic copies
+    combined = combined.drop_duplicates(subset=["link", "search_name"]).reset_index(drop=True)
     combined["published_dt_utc"] = combined["published"].apply(parse_published_dt)
     cutoff   = datetime.now(timezone.utc) - timedelta(days=keep_days)
     combined = combined[combined["published_dt_utc"].notna()]
@@ -418,30 +527,29 @@ def update_master_excel_rolling(new_df: pd.DataFrame, master_path: Path, keep_da
 
 # ---------------------------
 # SEMANTIC SWEEP
+# Runs broad natural-language searches to catch articles that the
+# boolean keyword queries may have missed. Each article is scored
+# against the RELEVANCE_THEMES for its assigned category.
+# Articles scoring below 0.30 are dropped as off-topic.
 # ---------------------------
 
 def semantic_sweep(existing_links: set, past_days: int,
                    max_items: int, model_name: str) -> pd.DataFrame:
 
-    all_categories = [
-        "PESTLE_Political", "PESTLE_Economic", "PESTLE_Social",
-        "PESTLE_Technological", "PESTLE_Environmental", "PESTLE_Legal",
-        "Supply_Chain", "Technology_Cyber", "Technology_Emerging", "Fraud_Scam",
-    ]
-
     print(f"\n{'='*60}")
-    print(f"SEMANTIC SWEEP — broad topic searches + relevance scoring")
-    print(f"  Searches: {len(SEMANTIC_SWEEP_SEARCHES)}  |  Threshold: 0.30")
+    print(f"SEMANTIC SWEEP — broad searches + relevance scoring")
+    print(f"  Searches: {len(SEMANTIC_SWEEP_SEARCHES)}  |  Relevance threshold: 0.30")
     print(f"{'='*60}\n")
 
     print(f"Loading model: {model_name}...")
     model = SentenceTransformer(model_name)
+
     theme_vectors = model.encode(
-        EVENT_TAXONOMY_THEMES,
+        RELEVANCE_THEME_LIST,
         normalize_embeddings=True,
         show_progress_bar=False,
     )
-    print(f"✅ {len(EVENT_TAXONOMY_THEMES)} theme vectors built\n")
+    print(f"Relevance themes loaded: {len(RELEVANCE_THEME_LIST)} phrases across {len(RELEVANCE_THEMES)} categories\n")
 
     all_articles = []
 
@@ -464,14 +572,13 @@ def semantic_sweep(existing_links: set, past_days: int,
                     "source":       "semantic_sweep",
                 })
                 new_count += 1
-            print(f"  [{search['search_name']}] {search['query'][:50]}: {new_count} new")
+            print(f"  [{search['search_name']}] {search['query'][:55]}: {new_count} new")
         except Exception as e:
-            print(f"  ⚠️  Error '{search['query'][:40]}': {e}")
+            print(f"  Warning '{search['query'][:40]}': {e}")
 
     print(f"\nTotal new articles from sweep: {len(all_articles)}")
 
     if not all_articles:
-        print("  Nothing new to score")
         return pd.DataFrame()
 
     df = pd.DataFrame(all_articles)
@@ -487,7 +594,7 @@ def semantic_sweep(existing_links: set, past_days: int,
 
     print(f"After time filter: {len(df)} articles to score")
 
-    print("Translating for semantic scoring...")
+    print("Translating non-English titles...")
     translator = GoogleTranslator(source="auto", target="en")
     titles_en  = []
     for title in df["title"].fillna("").astype(str):
@@ -508,32 +615,46 @@ def semantic_sweep(existing_links: set, past_days: int,
             titles_en.append(title)
     df["title_en"] = titles_en
 
-    print("Scoring semantic relevance...")
-    texts = df["title_en"].fillna(df["title"]).fillna("").tolist()
+    print("Scoring relevance against category themes...")
+    texts           = df["title_en"].fillna(df["title"]).fillna("").tolist()
     article_vectors = model.encode(texts, normalize_embeddings=True, show_progress_bar=False)
-    sim_matrix  = cosine_similarity(article_vectors, theme_vectors)
-    max_scores  = sim_matrix.max(axis=1)
-    best_themes = sim_matrix.argmax(axis=1)
+    sim_matrix      = cosine_similarity(article_vectors, theme_vectors)
 
-    df["semantic_score"] = max_scores
-    df["matched_theme"]  = [EVENT_TAXONOMY_THEMES[i] for i in best_themes]
+    scores       = []
+    matched_cats = []
+    for i, row in df.iterrows():
+        assigned_cat = row["search_name"]
+        # Score against themes for the article's assigned category only
+        cat_indices = [j for j, c in enumerate(RELEVANCE_THEME_CATS) if c == assigned_cat]
+        if cat_indices:
+            cat_scores  = sim_matrix[i, cat_indices]
+            best_score  = float(cat_scores.max())
+            best_theme  = RELEVANCE_THEME_LIST[cat_indices[int(cat_scores.argmax())]]
+        else:
+            best_score = float(sim_matrix[i].max())
+            best_theme = RELEVANCE_THEME_LIST[int(sim_matrix[i].argmax())]
+        scores.append(best_score)
+        matched_cats.append(best_theme)
+
+    df["relevance_score"] = scores
+    df["matched_theme"]   = matched_cats
 
     RELEVANCE_THRESHOLD = 0.30
     before = len(df)
-    df = df[df["semantic_score"] >= RELEVANCE_THRESHOLD].reset_index(drop=True)
-    print(f"Semantic filter (≥{RELEVANCE_THRESHOLD}): {before} → {len(df)} relevant articles")
+    df = df[df["relevance_score"] >= RELEVANCE_THRESHOLD].reset_index(drop=True)
+    print(f"Relevance filter (>={RELEVANCE_THRESHOLD}): {before} -> {len(df)} kept")
 
     if not df.empty:
         print(f"\nTop matches by category:")
-        for cat in all_categories:
+        for cat in CANONICAL_CATEGORIES:
             cat_df = df[df["search_name"] == cat]
             if not cat_df.empty:
-                top = cat_df.nlargest(2, "semantic_score")
+                top = cat_df.nlargest(2, "relevance_score")
                 print(f"  {cat}:")
                 for _, row in top.iterrows():
-                    print(f"    [{row['semantic_score']:.2f}] {str(row.get('title_en', row['title']))[:70]}")
+                    print(f"    [{row['relevance_score']:.2f}] {str(row.get('title_en', row['title']))[:70]}")
 
-    df = df.drop(columns=["published_dt_utc", "semantic_score", "matched_theme", "title_en"],
+    df = df.drop(columns=["published_dt_utc", "relevance_score", "matched_theme", "title_en"],
                  errors="ignore")
 
     return df
@@ -570,7 +691,7 @@ def export_daily_feed_json(df_today: pd.DataFrame, df_master: pd.DataFrame, past
     output_path = DOCS_DIR / "daily_feed.json"
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-    print(f"daily_feed.json written → {len(articles)} articles → {output_path}")
+    print(f"daily_feed.json written -> {len(articles)} articles -> {output_path}")
 
 
 def export_weekly_feed_json(df: pd.DataFrame):
@@ -585,7 +706,7 @@ def export_weekly_feed_json(df: pd.DataFrame):
     output_path = DOCS_DIR / "weekly_feed.json"
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-    print(f"weekly_feed.json written → {len(articles)} articles → {output_path}")
+    print(f"weekly_feed.json written -> {len(articles)} articles -> {output_path}")
 
 
 def export_feed_json(df: pd.DataFrame, past_days: int, run_mode: str):
@@ -599,7 +720,7 @@ def export_feed_json(df: pd.DataFrame, past_days: int, run_mode: str):
     output_path = DOCS_DIR / "feed.json"
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-    print(f"feed.json written → {len(articles)} articles → {output_path}")
+    print(f"feed.json written -> {len(articles)} articles -> {output_path}")
 
 
 # ---------------------------
@@ -609,6 +730,7 @@ def export_feed_json(df: pd.DataFrame, past_days: int, run_mode: str):
 def main():
     ts = datetime.now(timezone.utc).strftime("%d_%m%y_UTC")
 
+    # Parse search library — A/B names normalised to canonical inside collect_google_news
     search_df = parse_search_library(SEARCH_LIBRARY_TEXT)
     print(f"Parsed search library: {len(search_df)} rows")
 
@@ -623,13 +745,14 @@ def main():
     search_df["google_news_compatible"] = search_df["raw_query"].apply(is_google_news_compatible)
     to_run = search_df[search_df["google_news_compatible"]].copy()
 
-    print(f"\nRunning {len(to_run)} keyword searches across 10 categories")
+    print(f"\nRunning {len(to_run)} RSS queries across {len(CANONICAL_CATEGORIES)} canonical categories")
 
     results = collect_google_news(to_run, past_days=PAST_DAYS, max_items=MAX_ITEMS)
     results = filter_last_n_days(results, n_days=PAST_DAYS)
 
     if not results.empty:
-        results = results.drop_duplicates(subset=["link"]).reset_index(drop=True)
+        # Drop exact same URL in exact same category — keep cross-topic copies
+        results = results.drop_duplicates(subset=["link", "search_name"]).reset_index(drop=True)
 
     raw_results_file  = DATA_DIR / f"google_news_raw_{ts}_past{PAST_DAYS}d.xlsx"
     audit_search_file = DATA_DIR / f"search_audit_{ts}.xlsx"
@@ -658,6 +781,8 @@ def main():
         model_name=MODEL_NAME,
     )
 
+    print(f"\nDedup: {orig} -> {cleaned} articles (intra-topic only, cross-topic preserved)")
+
     df_final   = pd.read_excel(dedup_file)
     master     = DATA_DIR / "topic_feeds.xlsx"
     daily_file = DAILY_DIR / "topic_feeds_daily.xlsx"
@@ -683,11 +808,11 @@ def main():
 
     if not df_semantic.empty:
         df_final = pd.concat([df_final, df_semantic], ignore_index=True)
-        df_final = df_final.drop_duplicates(subset=["link"]).reset_index(drop=True)
+        df_final = df_final.drop_duplicates(subset=["link", "search_name"]).reset_index(drop=True)
         df_final.to_excel(daily_file, index=False, engine="openpyxl")
         update_master_excel_rolling(df_semantic, master, keep_days=7)
-        print(f"\n✓ Semantic sweep added {len(df_semantic)} new articles")
-        print(f"✓ Final feed total: {len(df_final)} articles")
+        print(f"\nSemantic sweep added {len(df_semantic)} new articles")
+        print(f"Final feed total: {len(df_final)} articles")
         print(f"\nFinal breakdown by category:")
         for cat, count in df_final["search_name"].value_counts().items():
             print(f"  {cat}: {count}")
@@ -708,7 +833,7 @@ def main():
                 common_cols  = [c for c in df_final.columns if c in df_existing.columns]
                 df_existing  = df_existing[common_cols]
                 df_merged    = pd.concat([df_existing, df_final[common_cols]], ignore_index=True)
-                df_merged    = df_merged.drop_duplicates(subset=["link"]).reset_index(drop=True)
+                df_merged    = df_merged.drop_duplicates(subset=["link", "search_name"]).reset_index(drop=True)
                 df_merged["published_dt_utc"] = df_merged["published"].apply(parse_published_dt)
                 cutoff       = datetime.now(timezone.utc) - timedelta(days=7)
                 df_merged    = df_merged[df_merged["published_dt_utc"].notna()]
