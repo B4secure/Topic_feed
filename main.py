@@ -28,8 +28,8 @@ if RUN_MODE == "weekly":
 else:
     PAST_DAYS = int(os.getenv("PAST_DAYS_DAILY", "1"))
 
-MAX_ITEMS     = int(os.getenv("MAX_ITEMS", "50"))
-DUP_THRESHOLD = float(os.getenv("DUP_THRESHOLD", "0.60"))
+MAX_ITEMS     = int(os.getenv("MAX_ITEMS", "30"))
+DUP_THRESHOLD = float(os.getenv("DUP_THRESHOLD", "0.70"))
 MODEL_NAME    = os.getenv("MODEL_NAME", "all-MiniLM-L6-v2")
 
 HL, GL, CEID = "en-GB", "GB", "GB:en"
